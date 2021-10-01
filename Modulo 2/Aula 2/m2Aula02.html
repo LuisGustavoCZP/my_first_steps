@@ -2,9 +2,88 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Minha página de teste</title>
+    <title>Fundamento HTML - Tags</title>
   </head>
   <body>
-    <img src="imagens/firefox-icon.png" alt="minha página de teste">
+    <h1>Fundamento HTML</h1>
+    <ul>
+        <li>
+            <h2>Tags</h2>
+            <p>
+                <strong>
+                    Vazias:<br>
+                </strong>
+                Não necessitam de fechamento ou conteúdo.
+            </p>
+            <ol type="A">
+               <li>
+                <h3>html</h3>
+                <p>Deve estar logo no início e no final de uma página.
+               </li>
+               <li>
+                <h3>head</h3>
+                <p>Deve estar dentro da <strong>html</strong> e logo no início.</p>
+                <p>Onde são declaradas informações adicionais que não fazem parte do conteudo.</p>
+               </li>
+               <li>
+                <h3>meta charset=“utf-8”</h3>
+                <p>Deve estar dentro do <strong>head</strong>.</p>
+                <p>Onde se define o padrão de texto, no caso <strong>utf-8</strong> que abrange a maioria das linguagens.</p>
+               </li>
+               <li>
+                <h3>title</h3>
+                <p>Deve estar dentro do <strong>head</strong>.</p>
+                <p>Onde se define o titulo da pagina que aparece na aba do navegador.</p>
+               </li>
+               <li>
+                <h3>body</h3>
+                <p>Deve estar dentro da <strong>html</strong> e logo depois do <strong>head</strong>.</p>
+                <p>Onde são declaradas informações que fazem parte do conteudo.</p>
+               </li>
+               <li>
+                <h3>Cabeçalhos: h1, h2, h3, h4</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>Onde são declarados cabeçalhos, textos em destaque. Onde menor o numero, maior é o tamanho do texto.</p>
+               </li>
+               <li>
+                <h3>p</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>Onde é declarado um parágrafo de texto, possui passagem de linha e identação.</p>
+               </li>
+               <li>
+                <h3>br</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>A tag é <strong>vazia</strong>.</p>
+                <p>Pula uma linha.</p>
+               </li>
+               <li>
+                <h3>a</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>A tag é <strong>vazia</strong>.</p>
+                <p>Abre ou projeta uma página.</p>
+                <p>Possui atributo <strong>href</strong> onde é declarado o link da página.</p>
+                <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/HTML_basics">Exemplo</a>
+               </li>
+               <li>
+                <h3>img</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>A tag é <strong>vazia</strong>.</p>
+                <p>Projeta uma imagem que pode vir do diretorio local ou um link.</p>
+                <p>Possui atributo <strong>src</strong> onde é declarado o diretorio/link da imagem.</p>
+                <img src="https://mdn.mozillademos.org/files/9351/finished-test-page-small.png"/>
+               </li>
+               <li>
+                <h3>ul</h3>
+                <p>Deve estar dentro da <strong>body</strong>.</p>
+                <p>Cria uma lista não-ordenada, possui o atributo "type" onde é definida a forma prefixada.</p>
+               </li>
+               <li>
+                <h3>li</h3>
+                <p>Deve estar dentro da <strong>ul</strong> ou da <strong>ol</strong>.</p>
+                <p>Onde é declarado o item de uma lista.</p>
+               </li>
+            </ol>
+        </li>
+    </ul>
   </body>
 </html>
