@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Aula4</title>
+        <meta charset="utf-8">
+        <style>
+            .subtitulo {background-color: darkgrey;}
+        </style>
+    </head>
+    <body>
+        <article>
+            <header>
+                <h1>Criar um <strong>HTML</strong> com um texto</h1>
+                <div class="subtitulo">
+                    
+                    <p>
+                        <strong>O formato deve ser:</strong>
+                        Nome, Quantia, Preço
+                        <br />
+                        Adicione arquivo:
+                        <input id="arquivo-input" type="file" />
+                    </p>
+                </div>
+            </header>
+            <section>
+                <table id="textos-output">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantia</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                    </tr>
+                </table>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h1>Criar um <strong>HTML</strong> com um XML</h1>
+                <div class="subtitulo">     
+                    <p id="log-output">
+                        <strong>O formato deve ser: </strong>
+                        &ltitem nome="Pão"&gt
+                        &ltpreco tipo="un"&gt0.25&lt/preco&gt
+                        &ltquantia tipo="un"&gt4&lt/quantia&gt
+                        &lt/item&gt
+                        <br />
+                        Adicione arquivo:
+                        <input id="arquivo-inputa" type="file" />
+                    </p>
+                </div>
+            </header>
+            <section>
+                <table id="textos-outputa">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantia</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                    </tr>
+                </table>
+            </section>
+        </article>
+    </body>
+
+    <script>
+        
+        function StartArquivoTexto ()
+        {
+            var textosOutput = document.getElementById("textos-output");
+            var arquivoInput = document.getElementById("arquivo-input");
+            
+            arquivoInput.addEventListener("change", f => 
+            {
+                var reader = new FileReader();
+                
+                reader.onload = e => 
+                {
+                    
+                    var inputTxt = e.target.result;
+                    var txts = inputTxt.split("\n");
+                    txts.forEach(txt => 
+                    {
+                        var tr = document.createElement("TR");
+                        textosOutput.appendChild(tr);
+                        var rows = txt.split(";");
+                        var n = 0;
+                        var total = 0;
+                        rows.forEach(row =>
+                        {
+                            if(n > 0)
+                            {
+                                var val = parseFloat(row);
+                                if(total == 0) total = val;
+                                else total *= val;
+                            }
+                            var td = document.createElement("TD");
+                            td.innerText = row;
+                            tr.appendChild(td);
+                            n++;
+                        });
+
+                        var td = document.createElement("TD");
+                        td.innerText = total.toString();
+                        tr.appendChild(td);
+                    });
+                    
+                }
+                reader.readAsText(f.target.files[0]);
+
+                var log = document.createElement("H6");
+                log.innerText = "Arquivo foi carregado";
+                arquivoInput.appendChild(log);
+            });
+        }
+        
+        function StartArquivoXML ()
+        {
+            var textosOutput = document.getElementById("textos-outputa");
+            var logOutput = document.getElementById("log-output");
+            var arquivoInput = document.getElementById("arquivo-inputa");
+            
+            arquivoInput.addEventListener("change", f => 
+            {
+                var reader = new FileReader();
+                
+                reader.onload = e => 
+                {
+                    var xmlStr = e.target.result;
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(xmlStr, "application/xml");
+                    
+                    var txts = doc.getElementsByTagName("item");
+                    var log = document.createElement("P");
+                    logOutput.innerText += " " + txts.length.toString();
+                    //logOutput.appendChild(log);
+                    for(i = 0; i < txts.length; i++)
+                    {
+                        var t = txts[i];
+                        var tr = document.createElement("TR");
+                        textosOutput.appendChild(tr);
+
+                        var td = document.createElement("TD");
+                        td.innerText = t.getAttribute("nome");
+                        tr.appendChild(td);
+
+                        for(j = 0; j < t.childElementCount; j++)
+                        {
+                            var t2 = t.children[j];
+                            var td2 = document.createElement("TD");
+                            td2.innerText = t2.textContent + (j==0?"/":" ") + t2.getAttribute("tipo");
+                            tr.appendChild(td2);
+                        }
+                    }
+                }
+                reader.readAsText(f.target.files[0]);
+
+                var log = document.createElement("H6");
+                log.innerText = "Arquivo foi carregado";
+                logOutput.appendChild(log);
+            });
+        }
+        
+        StartArquivoTexto();
+        StartArquivoXML();
+    </script>
+</html>

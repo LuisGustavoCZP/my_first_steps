@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Aula5</title>
+        <meta charset="utf-8">
+        <style>
+            .subtitulo {background-color: darkgrey;}
+        </style>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Clique na <strong>LABEL</strong></h1>
+            </header>
+            <article>
+                <form id="fm" name="formulario">
+                    <input id="r1" type="radio" name="escolha" value="1" />
+                    <label for="r1">Um</label>
+                    <input id="r2" type="radio" name="escolha" value="2" />
+                    <label for="r2">Dois</label>
+                    <input id="r3" type="radio" name="escolha" value="3" />
+                    <label for="r3">Tres</label>
+                </form>
+                <label id="retorno">0</label>
+            </article>
+        </main>
+    </body>
+
+    <script>
+        
+        var retu = document.getElementById("retorno");
+        var form = document.getElementById("fm");
+        //var els = document.getElementsByTagName("input");
+        var output = "";
+        form.addEventListener("change", x => 
+        {
+            var fdata = new FormData(form);
+
+            for(const entry of fdata)
+            {
+                output = entry[1];
+            }
+            retu.innerText = output;
+        });
+    </script>
+</html>

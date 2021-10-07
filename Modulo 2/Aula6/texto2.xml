@@ -1,0 +1,14 @@
+<lista>
+    <item nome="Pão">
+        <preco tipo="un">0.25</preco>
+        <quantia tipo="un">4</quantia>
+    </item>
+    <item nome="Hamburguer">
+        <preco tipo="un">1.39</preco>
+        <quantia tipo="un">8</quantia>
+    </item>
+    <item nome="Queijo Mussarela">
+        <preco tipo="kg">31.20</preco>
+        <quantia tipo="g">100</quantia>
+    </item>
+</lista>

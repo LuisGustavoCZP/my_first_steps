@@ -1,0 +1,3 @@
+Pão;4; 0.25
+Hamburguer;8; 1.39
+Queijo Mussarela;0.100; 31.20
