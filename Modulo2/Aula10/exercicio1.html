@@ -11,16 +11,16 @@
         <meta property="og:image:height" content="300" />
     </head>
     <body style="display: flex; flex-direction: column;">
-        <video id="videoplayer" src="" poster="arcadia.jpg" height="400">
+        <video id="videoplayer" src="" poster="arcadia.jpg" height="400" controls>
             Desculpa, o seu navegador não suporta vídeos incorporados
           </video>
           <audio id="audioplayer" src="thefatrat-arcadia-chapter2.ogg" loop>
             O seu navegador não suporta o elemento <code>audio</code>.
           </audio>
-          <button id="videobutton" onclick="playVideo ()">Play</button>
+          <button id="videobutton" onclick="nextVideo ()">Proximo</button>
     </body>
     <script>
-        var videos = ["mobilelegendsgloo.mp4", "mobilelegendsgloo2.mp4"];
+        var videos = ["mobilelegendsgloo.mp4", "mobilelegendsgloo0.mp4", "mobilelegendsgloo1.mp4", "mobilelegendsgloo2.mp4", "mobilelegendsgloo3.mp4", "mobilelegendsgloo4.mp4"];
         var videoPlayer = document.getElementById("videoplayer");
         var audioPlayer = document.getElementById("audioplayer");
         var videoButton = document.getElementById("videobutton");
@@ -52,12 +52,15 @@
             videoPlayer.play();
         }
 
-        function playVideo ()
+        function nextVideo ()
         {
-            pause = !pause;
-            videoButton.textContent = pause ? "Play" : "Pause";
-            if(!pause) videoPlayer.play();
-            else videoPlayer.pause();
+            if(videoNumber >= videos.length) videoNumber = 0;
+            videoPlayer.src = videos[videoNumber++];
+            videoPlayer.play();
+            //pause = !pause;
+            //videoButton.textContent = pause ? "Play" : "Pause";
+            //if(!pause) videoPlayer.play();
+            //else videoPlayer.pause();
         }
     </script>
 </html>
