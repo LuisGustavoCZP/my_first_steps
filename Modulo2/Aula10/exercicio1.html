@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" prefix="og: https://ogp.me/ns#">
+    <head>
+        <title>A Ligação</title>
+        <meta property="og:title" content="Site de sistemas" />
+        <meta property="og:description" content="Projeto criado pela turma Lovelace de aspirantes a AlphaEdTech." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://luisgustavoczp.github.io/my_first_steps/Modulo2/Aula9/exercicio1.html" />
+        <meta property="og:image" content="arcadia.jpg" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+    </head>
+    <body style="display: flex; flex-direction: column;">
+        <video id="videoplayer" src="" poster="arcadia.jpg" height="400">
+            Desculpa, o seu navegador não suporta vídeos incorporados
+          </video>
+          <audio id="audioplayer" src="thefatrat-arcadia-chapter2.ogg" loop>
+            O seu navegador não suporta o elemento <code>audio</code>.
+          </audio>
+          <button id="videobutton" onclick="playVideo ()">Play</button>
+    </body>
+    <script>
+        var videos = ["mobilelegendsgloo.mp4", "mobilelegendsgloo2.mp4"];
+        var videoPlayer = document.getElementById("videoplayer");
+        var audioPlayer = document.getElementById("audioplayer");
+        var videoButton = document.getElementById("videobutton");
+        var pause = true;
+        var videoNumber = 0;
+        //videoPlayer.onload = onVideoLoad;
+        videoPlayer.onpause = onVideoPause;
+        //videoPlayer.oncanplay = onVideoCanPlay;
+        videoPlayer.onplay = onVideoPlay;
+        videoPlayer.onended = onVideoEnded;
+
+        videoPlayer.src = videos[videoNumber++];
+
+        function onVideoPlay (evt)
+        {
+            audioPlayer.play();
+        }
+
+        function onVideoPause (evt)
+        {
+            audioPlayer.pause();
+        }
+
+        function onVideoEnded (evt)
+        {
+            audioPlayer.pause();
+            if(videoNumber >= videos.length) videoNumber = 0;
+            videoPlayer.src = videos[videoNumber++];
+            videoPlayer.play();
+        }
+
+        function playVideo ()
+        {
+            pause = !pause;
+            videoButton.textContent = pause ? "Play" : "Pause";
+            if(!pause) videoPlayer.play();
+            else videoPlayer.pause();
+        }
+    </script>
+</html>
