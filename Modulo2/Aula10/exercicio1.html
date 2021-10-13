@@ -19,60 +19,51 @@
             <audio id="audioplayer" controls>
                 O seu navegador não suporta o elemento <code>audio</code>.
             </audio>
-            <button id="videobutton" onclick="nextVideo ()">Proxima</button>
+            <button id="audiobutton" onclick="nextAudio ()">Proxima</button>
         </section>
     </body>
     <script>
+        var pause = true;
+
         var audios = ["thefatrat-arcadia-chapter2.ogg", "thefatrat-timelapse.mp3"];
         var audioPlayer = document.getElementById("audioplayer");
-        //var videoNextButton = document.getElementById("videobutton");
-        var audioSector = document.getElementById("audiosector");
-        var pause = true;
-        var videoNumber = 0;
-        //videoPlayer.onload = onVideoLoad;
-        videoPlayer.onpause = onVideoPause;
-        //videoPlayer.oncanplay = onVideoCanPlay;
-        videoPlayer.onplay = onVideoPlay;
-        videoPlayer.playbackRate = 2;
-        videoPlayer.onended = onVideoEnded;
+        var audioButton = document.getElementById("audiobutton");
+        
+        var audioNumber = 0;
+        audioPlayer.onpause = onAudioPause;
+        audioPlayer.onplay = onAudioPlay;
+        audioPlayer.playbackRate = 2;
         audioPlayer.onended = onAudioEnded;
 
-        videoPlayer.src = videos[videoNumber++];
-
-        function onVideoPlay (evt)
+        audioPlayer.src = audios[audioNumber++];
+        audioButton.setAttribute("hidden", "");
+        
+        function onAudioPlay (evt)
         {
             pause = false;
             audioPlayer.play();
-            //audioSector.setAttribute("hidden", "");
+            audioButton.removeAttribute("hidden");
         }
 
-        function onVideoPause (evt)
+        function onAudioPause (evt)
         {
             pause = true;
             audioPlayer.pause();
-            //audioSector.removeAttribute("hidden");
-        }
-
-        function onVideoEnded (evt)
-        {
-            audioPlayer.pause();
-            if(videoNumber >= videos.length) videoNumber = 0;
-            videoPlayer.src = videos[videoNumber++];
-            videoPlayer.play();
+            audioButton.setAttribute("hidden", "");
         }
 
         function onAudioEnded (evt)
         {
+            if(audioNumber >= audios.length) audioNumber = 0;
+            audioPlayer.src = audios[audioNumber++];
             audioPlayer.play();
-            audioPlayer.currentTime = 60;
-            
         }
 
-        function nextVideo ()
+        function nextAudio ()
         {
-            if(videoNumber >= videos.length) videoNumber = 0;
-            videoPlayer.src = videos[videoNumber++];
-            videoPlayer.play();
+            if(audioNumber >= audios.length) audioNumber = 0;
+            audioPlayer.src = audios[audioNumber++];
+            audioPlayer.play();
             //pause = !pause;
             //videoButton.textContent = pause ? "Play" : "Pause";
             //if(!pause) videoPlayer.play();
