@@ -25,14 +25,21 @@
         </section>
     </body>
     <script>
+        var pause = true;
+        var lstorage = localStorage.getItem("gameplaynumber");
+        var videoNumber = 0;
+        if(lstorage != null)
+        {
+            videoNumber = parseInt(lstorage);
+        }
+        
         var videos = ["mobilelegendsgloo.mp4", "mobilelegendsgloo0.mp4", "mobilelegendsgloo1.mp4", "mobilelegendsgloo2.mp4", "mobilelegendsgloo3.mp4", "mobilelegendsgloo4.mp4"];
         var audios = ["thefatrat-arcadia-chapter2.ogg", "thefatrat-timelapse.mp3"];
         var videoPlayer = document.getElementById("videoplayer");
         var audioPlayer = document.getElementById("audioplayer");
         //var videoNextButton = document.getElementById("videobutton");
         var audioSector = document.getElementById("audiosector");
-        var pause = true;
-        var videoNumber = 0;
+        
         //videoPlayer.onload = onVideoLoad;
         videoPlayer.onpause = onVideoPause;
         //videoPlayer.oncanplay = onVideoCanPlay;
@@ -42,7 +49,7 @@
         audioPlayer.onended = onAudioEnded;
 
         videoPlayer.src = videos[videoNumber++];
-
+        localStorage.setItem("gameplaynumber", videoNumber);
         function onVideoPlay (evt)
         {
             pause = false;
@@ -62,6 +69,7 @@
             audioPlayer.pause();
             if(videoNumber >= videos.length) videoNumber = 0;
             videoPlayer.src = videos[videoNumber++];
+            localStorage.setItem("gameplaynumber", videoNumber);
             videoPlayer.play();
         }
 
