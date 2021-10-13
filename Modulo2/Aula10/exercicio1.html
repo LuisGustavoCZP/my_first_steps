@@ -25,7 +25,7 @@
     <script>
         var pause = true;
 
-        var audios = ["thefatrat-arcadia-chapter2.ogg", "thefatrat-timelapse.mp3"];
+        var audios = ["thefatrat-timelapse.mp3", "thefatrat-arcadia-chapter2.ogg"];
         var audioPlayer = document.getElementById("audioplayer");
         var audioButton = document.getElementById("audiobutton");
         
@@ -37,7 +37,7 @@
 
         audioPlayer.src = audios[audioNumber++];
         audioButton.setAttribute("hidden", "");
-        
+
         function onAudioPlay (evt)
         {
             pause = false;
