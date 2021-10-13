@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" prefix="og: https://ogp.me/ns#">
     <head>
+        <meta charset="utf-8">
         <title>Gameplay Mobile Legends : Gloo</title>
         <meta property="og:title" content="Gameplay Mobile Legends : Gloo" />
         <meta property="og:description" content="Um video divertido com os melhores momentos de duas gameplays com o herói Gloo." />
@@ -44,16 +45,18 @@
         videoPlayer.onpause = onVideoPause;
         //videoPlayer.oncanplay = onVideoCanPlay;
         videoPlayer.onplay = onVideoPlay;
-        videoPlayer.playbackRate = 2;
+        
         videoPlayer.onended = onVideoEnded;
         audioPlayer.onended = onAudioEnded;
 
         videoPlayer.src = videos[videoNumber++];
         localStorage.setItem("gameplaynumber", videoNumber);
+
         function onVideoPlay (evt)
         {
             pause = false;
             audioPlayer.play();
+            videoPlayer.playbackRate = 2;
             //audioSector.setAttribute("hidden", "");
         }
 
