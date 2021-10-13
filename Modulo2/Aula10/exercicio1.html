@@ -11,37 +11,48 @@
         <meta property="og:image:height" content="300" />
     </head>
     <body style="display: flex; flex-direction: column;">
-        <video id="videoplayer" src="" poster="arcadia.jpg" height="400" controls>
+        <h1 style="text-align: center;">Gameplay Mobile Legends : Gloo</h1>
+        <video id="videoplayer" poster="arcadia.jpg" height="400" controls>
             Desculpa, o seu navegador não suporta vídeos incorporados
-          </video>
-          <audio id="audioplayer" src="thefatrat-arcadia-chapter2.ogg" loop>
-            O seu navegador não suporta o elemento <code>audio</code>.
-          </audio>
-          <button id="videobutton" onclick="nextVideo ()">Proximo</button>
+        </video>
+        <button id="videobutton" onclick="nextVideo ()">Proximo</button>
+        <section id="audiosector">
+            <h4>Ouça apenas a musica</h4>
+            <audio id="audioplayer" src="thefatrat-arcadia-chapter2.ogg" controls>
+                O seu navegador não suporta o elemento <code>audio</code>.
+            </audio>
+        </section>
     </body>
     <script>
         var videos = ["mobilelegendsgloo.mp4", "mobilelegendsgloo0.mp4", "mobilelegendsgloo1.mp4", "mobilelegendsgloo2.mp4", "mobilelegendsgloo3.mp4", "mobilelegendsgloo4.mp4"];
         var videoPlayer = document.getElementById("videoplayer");
         var audioPlayer = document.getElementById("audioplayer");
-        var videoButton = document.getElementById("videobutton");
+        //var videoNextButton = document.getElementById("videobutton");
+        var audioSector = document.getElementById("audiosector");
         var pause = true;
         var videoNumber = 0;
         //videoPlayer.onload = onVideoLoad;
         videoPlayer.onpause = onVideoPause;
         //videoPlayer.oncanplay = onVideoCanPlay;
         videoPlayer.onplay = onVideoPlay;
+        videoPlayer.playbackRate = 2;
         videoPlayer.onended = onVideoEnded;
+        audioPlayer.onended = onAudioEnded;
 
         videoPlayer.src = videos[videoNumber++];
 
         function onVideoPlay (evt)
         {
+            pause = false;
             audioPlayer.play();
+            audioSector.setAttribute("hidden", "");
         }
 
         function onVideoPause (evt)
         {
+            pause = true;
             audioPlayer.pause();
+            audioSector.removeAttribute("hidden");
         }
 
         function onVideoEnded (evt)
@@ -50,6 +61,13 @@
             if(videoNumber >= videos.length) videoNumber = 0;
             videoPlayer.src = videos[videoNumber++];
             videoPlayer.play();
+        }
+
+        function onAudioEnded (evt)
+        {
+            audioPlayer.play();
+            audioPlayer.currentTime = 60;
+            
         }
 
         function nextVideo ()
