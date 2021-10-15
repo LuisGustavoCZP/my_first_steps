@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Aula12 - Exercicio 2</title>
     </head>
     <body>
+        <header>
+            Imagem criada com SVG e animação
+        </header>
         <main>
-            <svg viewBox="-10 -10 120 120" width="100px" >
-                <!-- polygon is an closed shape -->
-                <polygon stroke="black" fill="gray" points="50,0 21,90 79,90" />
+            <svg viewBox="0 0 200 200" width="100px" >
+                <g>
+                    <!-- polygon is an closed shape -->
+                    <circle cx="115" cy="100" r="5" stroke="black" fill="red">
+                        <!--<animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0 0" to="0 180 0" dur="1s" repeatCount="indefinite"/>-->
+                        <animateTransform attributeName="transform" begin="0s" dur=".25s" fill="remove"
+                        calcMode="linear" type="translate" additive="sum" repeatCount="indefinite"
+                        from="0 0" to="0 -100"/>
+                    </circle>
+                    <circle cx="85" cy="100" r="5" stroke="black" fill="red">
+                        <!--<animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0 0" to="0 180 0" dur="1s" repeatCount="indefinite"/>-->
+                        <animateTransform attributeName="transform" begin="0s" dur=".25s" fill="remove"
+                        calcMode="linear" type="translate" additive="sum" repeatCount="indefinite"
+                        from="0 0" to="0 -100"/>
+                    </circle>
+                    <polygon stroke="black" fill="gray" points="100,100 75,150 125,150">
+                        
+                    </polygon>
+                    <rect width="10" height="20" x="110" y="110" stroke="black" fill="gray" >
+
+                    </rect>
+                    <rect width="10" height="20" x="80" y="110" stroke="black" fill="gray" >
+
+                    </rect>
+                    <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="0 60 70"
+                          to="360 60 70"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+                </g>
+                
               </svg>
         </main>
     </body>
