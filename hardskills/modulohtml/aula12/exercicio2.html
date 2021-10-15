@@ -2,46 +2,96 @@
 <html>
     <head>
         <title>Aula12 - Exercicio 2</title>
+        <script>
+        </script>
     </head>
     <body>
         <header>
             Imagem criada com SVG e animação
         </header>
         <main>
-            <svg viewBox="0 0 200 200" width="100px" >
-                <g>
+            <svg id="space" viewBox="-300 -300 600 600" width="300px" onpointermove="MouseHover()" onmousedown="MouseClick () ">
+                <g id="nave-jogador">
                     <!-- polygon is an closed shape -->
-                    <circle cx="115" cy="100" r="5" stroke="black" fill="red">
-                        <!--<animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0 0" to="0 180 0" dur="1s" repeatCount="indefinite"/>-->
-                        <animateTransform attributeName="transform" begin="0s" dur=".25s" fill="remove"
-                        calcMode="linear" type="translate" additive="sum" repeatCount="indefinite"
-                        from="0 0" to="0 -100"/>
-                    </circle>
-                    <circle cx="85" cy="100" r="5" stroke="black" fill="red">
-                        <!--<animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0 0" to="0 180 0" dur="1s" repeatCount="indefinite"/>-->
-                        <animateTransform attributeName="transform" begin="0s" dur=".25s" fill="remove"
-                        calcMode="linear" type="translate" additive="sum" repeatCount="indefinite"
-                        from="0 0" to="0 -100"/>
-                    </circle>
-                    <polygon stroke="black" fill="gray" points="100,100 75,150 125,150">
-                        
+                    <template>
+                        <g id="bullet">
+                            <circle cx="-15" cy="0" r="5" stroke="black" fill="red">
+                            </circle>
+                            <circle cx="15" cy="0" r="5" stroke="black" fill="red">
+                            </circle>
+                            <animateTransform attributeName="transform" begin="0s" dur=".25s" fill="remove"
+                            calcMode="linear" type="translate" additive="sum" repeatCount="indefinite"
+                            from="0 0" to="0 100"/>
+                        </g>
+                    </template>
+
+                    <polygon stroke="black" fill="gray" points="0,25 -25,-25 25,-25">    
                     </polygon>
-                    <rect width="10" height="20" x="110" y="110" stroke="black" fill="gray" >
+                    <rect width="10" height="20" x="10" y="-10" stroke="black" fill="lightgray" >
 
                     </rect>
-                    <rect width="10" height="20" x="80" y="110" stroke="black" fill="gray" >
+                    <rect width="10" height="20" x="-20" y="-10" stroke="black" fill="lightgray" >
 
                     </rect>
-                    <animateTransform attributeName="transform"
+                    
+                    <!--<animateTransform attributeName="transform"
                           attributeType="XML"
                           type="rotate"
-                          from="0 60 70"
-                          to="360 60 70"
+                          
+                          from="0 0 0"
+                          to="360 0 0"
                           dur="10s"
                           repeatCount="indefinite"/>
+                    -->
                 </g>
                 
               </svg>
         </main>
+
+        <script>
+            var id = null;
+            var xmlns = "http://www.w3.org/2000/svg";
+            var view = document.getElementById("space");
+            var nave = document.getElementById("nave-jogador");
+            var prefabs = document.getElementsByTagName("template");
+
+            function MouseHover ()
+            {
+                var px = event.clientX - 150;
+                var py = event.clientY - 150;
+                var atg = Math.atan(py/px)*180;
+                nave.setAttribute("transform", "rotate("+atg+")");
+                //
+            }
+
+            function MouseClick () 
+            {
+                var tempPrefab = prefabs[0];
+                var t = nave.getBoundingClientRect();
+                var px = t.x;
+                var py = t.y;
+                var bullet = document.createElementNS(xmlns, "circle");
+                view.appendChild(bullet);
+                bullet.setAttribute("cx", px+15+"");
+                bullet.setAttribute("cy", py+"");
+                bullet.setAttribute("r", "5");
+                bullet.setAttribute("stroke", "black");
+                bullet.setAttribute("fill", "red");
+
+                var pos = 0;
+                clearInterval(id);
+                id = setInterval(frame, 10);
+                function frame() {
+                    var posBullet = bullet.getBoundingClientRect();//bullet.getAttribute("transform", "translate");
+                    bullet.setAttribute("transform", "translate(0, "+posBullet.y+5+")");
+                    
+                    console.log(posBullet.y);
+                    if(pos++ == 10) {
+                        clearInterval(id);
+                        bullet.remove();
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
