@@ -17,7 +17,7 @@ class GameObjeto extends Objeto
         this.sprite = sprite;
         this.rotation = rot;
     }
-    
+
     size;
     sprite;
     rotation;
@@ -66,18 +66,16 @@ class PhysicObjeto extends GameObjeto
 class DynamicObjeto extends PhysicObjeto 
 {
     speedRot;
-    speedX;
-    speedY;
+    speed;
     directionX;
     directionY;
 
-    constructor (sprite, positionX, positionY, size, rotation, speedRotation, speedX, speedY)
+    constructor (sprite, positionX, positionY, size, rotation, speedRotation, speed)
     {
         super(sprite, positionX, positionY, size, rotation);
 
         this.speedRot = speedRotation;
-        this.speedX = speedX;
-        this.speedY = speedY;
+        this.speed = speed;
         this.directionX = 0;
         this.directionY = 0;
     }
@@ -85,9 +83,11 @@ class DynamicObjeto extends PhysicObjeto
     update()
     {
         let rad = (this.rotation*Math.PI)/180;
-        this.positionX += Math.sin(rad)*this.directionY;
-        this.positionY -= Math.cos(rad)*this.directionY;
-        this.rotation += this.directionX;
+        let sin = Math.sin(rad), cos = Math.cos(rad);
+        let vel = this.directionY*this.speed;
+        this.positionX += sin*vel;
+        this.positionY -= cos*vel;
+        this.rotation += this.directionX * this.speedRot;
         //console.log("moving");
     }
 }

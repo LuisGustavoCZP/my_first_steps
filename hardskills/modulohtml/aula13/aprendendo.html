@@ -5,12 +5,9 @@
         <style>
             canvas {border:solid black 1px}
         </style>
-        <script src="gosprite.js">
-
-        </script>
-        <script src="rpgobjetos.js">
-            
-        </script>
+        <script src="gosprite.js"></script>
+        <script src="gamemath.js"></script>
+        <script src="rpgobjetos.js"></script>
     </head>
     <body>
         <canvas id="canvas" width="600" height="600"></canvas>
@@ -22,25 +19,35 @@
             var ctx = canvas.getContext("2d");
             var jogador = 0;
             var gameObjetos = [
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 1), 0, 0, 50, 0),
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 5), 250, 50, 50, 270), 
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 5), 50, 250, 50, 0),
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 6), 50, 50, 50, 90),
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 1), 0, 0, 50, 0, 5, 1),
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 5), 250, 50, 50, 270, 5, 1), 
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 5), 50, 250, 50, 0, 5, 1),
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 6), 50, 50, 50, 90, 5, 1),
                 //new PhysicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 6), 50, 50, 50, 90),
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 3), -250, 50, 50, 0),
-                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 7), -50, 50, 50, 0)
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 3), -250, 50, 50, 0, 5, 1),
+                new DynamicObjeto(new GOSprite(32, 32, "sprites/ships_packed.png", 7), -50, 50, 50, 0, 5, 1)
             ];
             var iaTargets = [
-                
+                new Objeto (300,300)
             ]
-            window.addEventListener("keydown", keyDownHandler, false)
-            window.addEventListener("keyup", keyUpHandler, false)
+
+            window.addEventListener("click", mouseClick, false)
+            //window.addEventListener("keydown", keyDownHandler, false)
+            //window.addEventListener("keyup", keyUpHandler, false)
+
+            function mouseClick (e){
+                //let gameObjeto = gameObjetos[jogador];
+                var tgt = iaTargets[jogador];
+                tgt.positionX = e.clientX-(canvas.width/2);
+                tgt.positionY = e.clientY-(canvas.height/2);
+                
+            }
 
             function updateIAControls()
             {
                 for(i = 0; i < gameObjetos.length; i++){
                     
-                    if(i == jogador || !(gameObjetos[i] instanceof DynamicObjeto)){
+                    if(!(gameObjetos[i] instanceof DynamicObjeto)){
                         if(iaTargets.length <= i){
                         iaTargets.push(null);
                         }
@@ -57,11 +64,28 @@
                         tgt = iaTargets[i];
                     }
 
-                    let dirX = gameObjeto.positionX - tgt.positionX;
-                    let dirY = gameObjeto.positionY - tgt.positionY;
-                    gameObjeto.directionX = dirX/dirX;
-                    gameObjeto.directionY = dirY/dirY;
+                    let dirX = tgt.positionX - gameObjeto.positionX;
+                    let dirY = tgt.positionY - gameObjeto.positionY;
+                    let maxDist = Math.sqrt(Math.pow(dirX, 2) + Math.pow(dirY, 2));
+                    if(maxDist < 10 && i != jogador) {
+                        tgt.positionX = (Math.random()-.5)*canvas.width;
+                        tgt.positionY = (Math.random()-.5)*canvas.height;
+                        continue;
+                    }
+
+                    dirX = maxDist > 0 ? dirX / maxDist : 0;
+                    dirY = maxDist > 0 ? dirY / maxDist : 0;
+                    let rad = ((360-gameObjeto.rotation+90)*Math.PI)/180;
+                    let sin = Math.sin(rad), cos = Math.cos(rad);
+
+                    let odirX = (sin != 0? (sin)*dirX : 0) + (cos != 0? (cos)*dirY : 0);
+                    let odirY = (cos != 0? (cos)*dirX : 0) + (sin != 0? (sin)*dirY : 0);
+
+                    gameObjeto.directionX = odirX;//(1/Math.sin(rad))*dirX + (1/Math.cos(rad))*dirY;
+                    gameObjeto.directionY = 1 - (1/maxDist);
+                    //gameObjeto.directionY = Math.sin(rad)*dirX + Math.cos(rad)*dirY;//(1/Math.cos(rad))*dirX + (1/Math.sin(rad))*dirY;
                     //
+                    
                 }
             }
 
@@ -131,7 +155,7 @@
             function gameloop (){
                 
                 window.requestAnimationFrame(gameloop, canvas);
-                updatePlayerControls();
+                //updatePlayerControls();
                 updateIAControls();
                 gameupdate();
                 gamedraw();

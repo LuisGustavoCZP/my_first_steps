@@ -59,7 +59,7 @@
             {
                 var px = event.clientX - 150;
                 var py = event.clientY - 150;
-                var atg = Math.atan(py/px)*180;
+                var atg = Math.atan(py/px)*180/Math.PI;
                 nave.setAttribute("transform", "rotate("+atg+")");
                 //
             }
