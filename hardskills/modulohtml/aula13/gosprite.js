@@ -77,17 +77,16 @@ class AnimatedSprite extends GOSprite
         super(spriteFrame, source, id);
         this.animation = 0;
         this.frame = 0;
+        this.frameReal = 0;
     }
     animation;
     frame;
+    frameReal;
 
     draw(context, posX, posY, size) {
         let hsize = size / 2;
         posX = posX - hsize;
         posY = posY - hsize;
-
-        //ctx.fillStyle = "AAAA";
-        //ctx.fillRect(posX, posY, size, size);
 
         if(this.readyDraw)
         {
@@ -95,7 +94,14 @@ class AnimatedSprite extends GOSprite
             let fh = this.spriteFrame.height;
             let fs = this.spriteFrame.space;
             let maxColum = Math.ceil(this.spriteSheet.width / (fw));
-            let frameIndex = this.index + this.animation + (this.frame*fw);
+            this.frameReal++;
+            if(this.frameReal > 10) 
+            {
+                this.frameReal=0;
+                this.frame += 1;
+                if(this.frame >= 3) this.frame = 0;
+            }
+            let frameIndex = this.index + this.animation + (this.frame*maxColum);
             let x = frameIndex % maxColum, y = (frameIndex - x) / maxColum;
             let fx = (fw * x);
             let fy = (fh * y);
