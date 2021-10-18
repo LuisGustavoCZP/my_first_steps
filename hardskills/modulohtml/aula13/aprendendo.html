@@ -3,7 +3,7 @@
     <head>
         <title>Aprendendo Canvas</title>
         <style>
-            canvas {border:solid black 1px}
+            canvas {border:solid black 1px; background-image: url("mapa.png"); background-repeat: no-repeat; background-size: cover;}
         </style>
         <script src="gosprite.js"></script>
         <script src="rpgobjetos.js"></script>
@@ -24,7 +24,7 @@
                 new DynamicObjeto(new AnimatedSprite(defaultFrame, "sprites/tilemap_packed.png", 266), 50, 50, 64, 0, false, 3, 1),
             ];
             tiles = [
-                new PhysicObjeto(new GOSprite(defaultFrame, "sprites/tilemap_packed.png", 0), 0, 0, 64, 0, true),
+                //new PhysicObjeto(new GOSprite(defaultFrame, "sprites/tilemap_packed.png", 0), 0, 0, 64, 0, true),
             ]
             var rpgmanager = new RPGManager (canvas, ctx, gameObjetos, tiles);
             
