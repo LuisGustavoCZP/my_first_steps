@@ -39,9 +39,16 @@ class RPGManager
             let dirX = tgt.positionX - gameObjeto.positionX;
             let dirY = tgt.positionY - gameObjeto.positionY;
             let maxDist = Math.sqrt(Math.pow(dirX, 2) + Math.pow(dirY, 2));
-            if(maxDist < gameObjeto.speed && i != this.jogador) {
-                tgt.positionX = (Math.random()-.5)*this.canvas.width;
-                tgt.positionY = (Math.random()-.5)*this.canvas.height;
+            if(maxDist < gameObjeto.speed) {
+                if(i == this.jogador){
+                    //tgt.positionX = gameObjeto.positionX;
+                    //tgt.positionY = gameObjeto.positionY;
+                }
+                else
+                {
+                    tgt.positionX = (Math.random()-.5)*this.canvas.width;
+                    tgt.positionY = (Math.random()-.5)*this.canvas.height;
+                }
                 continue;
             }
 

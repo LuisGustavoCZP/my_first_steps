@@ -87,6 +87,37 @@ class DynamicObjeto extends PhysicObjeto
     update()
     {
         let velX = this.directionX*this.speed, velY = this.directionY*this.speed;
+        if(this.colliding)
+        {
+            velX = -velX;
+            velY = -velY;
+        }
+
+        let vXmod = Math.abs(velX);
+        let vYmod = Math.abs(velY);
+
+        if(vXmod + vYmod == 0){
+
+        } 
+        else if(vXmod <= vYmod) 
+        {
+            if(velY > 0) {
+                this.sprite.animation = 1;
+            }
+            else if(velY < 0) {
+                this.sprite.animation = 2;
+            }
+        } 
+        else if(vXmod > vYmod) 
+        {
+            if(velX > 0) {
+                this.sprite.animation = 3;
+            }
+            else if(velX < 0) {
+                this.sprite.animation = 0;
+            }
+        }
+        
         this.positionX += velX;
         this.positionY += velY;
     }

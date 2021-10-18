@@ -16,8 +16,13 @@ class GOSprite
         this.spriteFrame = spriteFrame;
         this.spriteSheet = new Image();
         this.readyDraw = false;
+        this.width = 0;
+        this.height = 0;
         this.spriteSheet.onload = () => 
         {
+            let maxColum = Math.ceil(this.spriteSheet.width / (this.spriteFrame.width));
+            this.width = this.index % maxColum;
+            this.height = (this.index - this.width) / maxColum;
             this.readyDraw = true;
         }
         this.spriteSheet.onloadstart = () => 
@@ -28,9 +33,53 @@ class GOSprite
         this.index = id;
     }
     spriteFrame;
-    spriteSheet;  
+    spriteSheet;
+    width;
+    height;
     index;
     readyDraw;
+
+    draw(context, posX, posY, size) {
+        let hsize = size / 2;
+        posX = posX - hsize;
+        posY = posY - hsize;
+        let fw = this.spriteFrame.width;
+        let fh = this.spriteFrame.height;
+        let fs = this.spriteFrame.space;
+        //ctx.fillStyle = "AAAA";
+        //ctx.fillRect(posX, posY, size, size);
+
+        if(this.readyDraw)
+        {
+            let fx = (fw * this.width);
+            let fy = (fh * this.height);
+            //console.log(maxColum + " = (" + x + " , " + y + ") = (" + fx + " , " + fy + ")");
+
+            context.drawImage(
+                this.spriteSheet,
+                fx,
+                fy,
+                fw,
+                fh,
+                posX, 
+                posY,
+                size,
+                size
+            );
+        }
+    }
+    
+}
+
+class AnimatedSprite extends GOSprite
+{ 
+    constructor (spriteFrame, source, id){
+        super(spriteFrame, source, id);
+        this.animation = 0;
+        this.frame = 0;
+    }
+    animation;
+    frame;
 
     draw(context, posX, posY, size) {
         let hsize = size / 2;
@@ -46,8 +95,8 @@ class GOSprite
             let fh = this.spriteFrame.height;
             let fs = this.spriteFrame.space;
             let maxColum = Math.ceil(this.spriteSheet.width / (fw));
-
-            let x = this.index % maxColum, y = (this.index - x) / maxColum;
+            let frameIndex = this.index + this.animation + (this.frame*fw);
+            let x = frameIndex % maxColum, y = (frameIndex - x) / maxColum;
             let fx = (fw * x);
             let fy = (fh * y);
 
