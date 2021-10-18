@@ -24,8 +24,8 @@ class GameObjeto extends Objeto
 
     draw(canvas, context) {
         let hsize = this.size / 2;
-        let cx = this.positionX - hsize + (canvas.width/2), cy = this.positionY - hsize + (canvas.height/2);
-        
+        let cx = this.positionX + (canvas.width/2), cy = this.positionY + (canvas.height/2); //hsize
+        //console.log("Drawing GO");
         context.translate(cx, cy);
         context.rotate((Math.PI / 180) * this.rotation);     
         context.translate(-cx, -cy);
@@ -38,23 +38,27 @@ class GameObjeto extends Objeto
 
 class PhysicObjeto extends GameObjeto 
 {
-    constructor (sprite, positionX, positionY, size, rotation)
+    constructor (sprite, positionX, positionY, size, rotation, isTrigger)
     {
         super(sprite, positionX, positionY, size, rotation);
         this.colliding = false;
         this.collisions = [];
+        this.isTrigger = isTrigger;
     }
+
+    isTrigger;
     colliding;
     collisions;
 
     collision (other){
-        if(this.positionX + this.size > other.positionX 
+        if(!this.isTrigger && (this.positionX + this.size > other.positionX 
             && this.positionX < other.positionX + other.size 
             && this.positionY + this.size > other.positionY 
-            && this.positionY < other.positionY + other.size)
+            && this.positionY < other.positionY + other.size))
         {
             this.colliding = true;
             other.colliding = false;
+            //console.log(this + " colidiu " + other);
         } else {
             other.colliding = false;
             this.colliding = false;
@@ -65,14 +69,9 @@ class PhysicObjeto extends GameObjeto
 
 class DynamicObjeto extends PhysicObjeto 
 {
-    speedRot;
-    speed;
-    directionX;
-    directionY;
-
-    constructor (sprite, positionX, positionY, size, rotation, speedRotation, speed)
+    constructor (sprite, positionX, positionY, size, rotation, isTrigger, speedRotation, speed)
     {
-        super(sprite, positionX, positionY, size, rotation);
+        super(sprite, positionX, positionY, size, rotation, isTrigger);
 
         this.speedRot = speedRotation;
         this.speed = speed;
@@ -80,19 +79,30 @@ class DynamicObjeto extends PhysicObjeto
         this.directionY = 0;
     }
 
+    speedRot;
+    speed;
+    directionX;
+    directionY;
+
     update()
     {
-        let rad = (this.rotation*Math.PI)/180;
-        let sin = Math.sin(rad), cos = Math.cos(rad);
-        let vel = this.directionY*this.speed;
-        this.positionX += sin*vel;
-        this.positionY -= cos*vel;
-        this.rotation += this.directionX * this.speedRot;
-        //console.log("moving");
+        let velX = this.directionX*this.speed, velY = this.directionY*this.speed;
+        this.positionX += velX;
+        this.positionY += velY;
     }
 }
 
 class Character extends DynamicObjeto 
 {
 
+}
+
+class Tile extends PhysicObjeto
+{
+    constructor (sprite, positionX, positionY, size, rotation, isTrigger)
+    {
+        super(sprite, positionX, positionY, size, rotation, isTrigger);
+        this.colliding = false;
+        this.collisions = [];
+    }
 }
