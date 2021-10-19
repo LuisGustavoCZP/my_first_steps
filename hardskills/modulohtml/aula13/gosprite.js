@@ -46,14 +46,11 @@ class GOSprite
         let fw = this.spriteFrame.width;
         let fh = this.spriteFrame.height;
         let fs = this.spriteFrame.space;
-        //ctx.fillStyle = "AAAA";
-        //ctx.fillRect(posX, posY, size, size);
 
         if(this.readyDraw)
         {
             let fx = (fw * this.width);
             let fy = (fh * this.height);
-            //console.log(maxColum + " = (" + x + " , " + y + ") = (" + fx + " , " + fy + ")");
 
             context.drawImage(
                 this.spriteSheet,

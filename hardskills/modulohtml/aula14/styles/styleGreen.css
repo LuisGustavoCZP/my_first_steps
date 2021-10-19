@@ -1,0 +1,12 @@
+header {background-color:darkgreen; color: white;}
+.arquivo {color:yellowgreen}
+.menu {background-color:darkolivegreen;}
+/*.menu__ferramenta {}*/
+.menu__ferramenta:hover {background-color:palegreen; color: black; }
+main { background-color:olivedrab; }
+.documento__aba {background-color:darkolivegreen; border-style: solid;}
+.documento__ferramenta {color:lightgreen;}
+.documento__ferramenta:hover {background-color:palegreen; color: black; user-select: none;}
+.documento__conteudo {background-color:aliceblue;}
+.documento__conteudo__ferramentas {background-color:darkolivegreen}
+.documento__conteudo__edicao {background-color:gainsboro}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Editor de Tiles</title>
+        
+        <link id="estilo" rel="stylesheet" href="styles/styleBlue.css">
+        <style>
+            header {display: flex; justify-content: stretch; padding: 3px; user-select: none;}
+            .arquivo {user-select:text;}
+            .menu__ferramenta {padding: 5px; user-select: none;}
+            .documento {display: block; flex-grow: 1; flex-direction: column; user-select: none;}
+            .documento__ferramentas {border: 1px; border-style: solid; border-left: 0px; border-right: 0px; padding: 5px;}
+            .documento__ferramenta {padding: 5px;}
+            .documento__aba {display: block; border: 1px; border-style: solid;}
+            .documento__conteudo {display: flex; min-height: 500px; flex-direction: row;}
+            .documento__conteudo__ferramentas {display: block; padding: 10px; min-width: 200px; height:auto;}
+            .documento__conteudo__edicao {display: block; flex-grow: 1;}
+        </style>
+    </head>
+    <body style="border: 1px; border-style: solid; border-collapse:collapse;">
+        <header>
+            <svg id="space" viewBox="-10 -10 20 20" width="15px">
+                <polygon stroke="black" fill="gray" points="-8,-8 -8,10 8,10">    
+                </polygon>
+                <polygon stroke="black" fill="lightgray" points="8,-8 -8,-8 8,10">    
+                </polygon>
+            </svg>
+            <span style="padding-left: 5px; padding-right: 5px;">Editor de Tiles - </span>
+            <span class="arquivo">exemplo.xml</span>
+        </header>
+        <nav class="menu" style="display:flex; flex-direction: row;">
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">F</span>icheiro</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">E</span>ditar</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">V</span>er</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">M</span>undo</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">M</span>apa</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">C</span>amada</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">P</span>rojeto</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">A</span>juda</span>
+        </nav>
+        <main>
+            <section class="documento">
+                <span class="documento__aba" style="border-bottom: 0px; width: fit-content; padding: 5px;">exemplo.xml</span>
+                <article class="documento__aba" style="border-top: 0px;">
+                    <nav class="documento__ferramentas">
+                        <span class="documento__ferramenta">Novo</span>
+                        <span class="documento__ferramenta">Abrir</span>
+                        <span class="documento__ferramenta">Salvar</span> 
+                        |
+                        <span class="documento__ferramenta">Pintar</span>
+                        <span class="documento__ferramenta">Preencher</span>
+                        |
+                        <span class="documento__ferramenta">Selecionar</span>
+                        <span class="documento__ferramenta">Mover</span>
+                    </nav>
+                    <div class="documento__conteudo">
+                        <div class="documento__conteudo__edicao">
+                            <canvas width="100">
+
+                            </canvas>
+                        </div>
+                        <div class="documento__conteudo__ferramentas">
+                            <span>Escolha um dos Styles:</span>
+                            <span class="documento__ferramenta"onclick="OnClickEstilo(0)">Verde</span>
+                            <span class="documento__ferramenta" onclick="OnClickEstilo(1)">Azul</span>
+                        </div>
+                    </div>
+                </article>
+                <script>
+                    var estiloLink = document.getElementById("estilo");
+                    var styles = ["styles/styleGreen.css", "styles/styleBlue.css"]
+
+                    function OnClickEstilo(indice)
+                    {
+                        estiloLink.href = styles[indice];
+                    }
+                    function OnClickBlue()
+                    {
+
+                    }
+                </script>
+            </section>
+        </main>
+    </body>
+</html>
