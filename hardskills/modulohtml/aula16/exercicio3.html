@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demonstrar a utilização de caixas</title>
+        <style>
+            header {display: block; text-align:center; }
+            header > h1 {padding-top: 10px; padding-left: 10px; margin-bottom: 0px; }
+            header > p {margin-top: 0px;}
+            header > p > span { color: red; padding: 0px; }
+            main {display:flex; justify-content: center;}
+            main > div { display:block; overflow: scroll; padding: 5px; height: 400px; flex-direction: column; }
+            main > div > p { width: 100px; height: 100px; background-color: gray; overflow: hidden; }
+            main > div > span > p { display: inline-block; height: 20px;  width: 200px; background-color: gray; overflow:visible; }
+            div > div > p { display: block; height: 50px;  width: 100px; background-color: gray; overflow:auto; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Demonstrar a utilização de caixas </h1>
+            <p>Aqui demonstraremos o uso de <span>width</span>, <span>height</span>, <span>padding</span> e <span>margin</span>.</p>
+            <p>Também de <span>visible</span>, <span>hidden</span>, <span>scroll</span> e <span>auto</span>.</p>
+        </header>
+        <main>
+            <div>
+                <h3>Exercicio 1</h3>
+                <p>A caixa do tipo 'block' é basicamente um bloco como o nome diz, ao alcançar o limite estipulado de tamanho, quebrará em uma nova linha.</p>
+                <span>
+                    <p>A 'inline' não pode quebrar em outra linha, se ajustando assim a uma linha.</p>
+                </span>
+                <div>
+                    <p>O auto escolhe por sí a forma de renderizar o conteúdo que não cabe na caixa.</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

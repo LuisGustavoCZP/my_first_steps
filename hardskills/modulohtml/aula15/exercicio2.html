@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Exercicio 2</title>
+        <style>
+            #porid 
+            {
+                color: greenyellow;
+            }
+            .porclasse 
+            {
+                color: blue;
+            }
+            .porclasse::after {
+                content: " pseudo-elemento";
+            }
+            #porid:hover {
+                color: rebeccapurple;
+                font-weight: bold;
+            }
+            span[class="porclasse"] {
+                color: red;
+            }
+            p+span {
+                color:gold;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <h1>Demonstrando o uso de <span id="porid">Seletores</span></h1>
+        <p class="porclasse"><span class="porclasse">Usando um</span></p>
+        <span>Usando atributo</span>
+    </body>
+</html>

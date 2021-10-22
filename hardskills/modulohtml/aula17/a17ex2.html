@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Aula 17 - Exercicio 2</title>
+        <style>
+            body {
+                
+                color: green;
+                background-color: palegreen;
+            }
+            main {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            div > span {
+                display:flex;
+                flex-direction: row;
+                overflow: none;
+                border: 1px inset gray;
+            }
+
+            div > span > div
+            {
+                background-color: white;
+                display: block;
+                flex-shrink: 0;
+                width: 100px;
+                height: 100px;
+                justify-content: center;
+                margin: 5px;
+                border: 1px inset gray;
+            }
+
+            h4
+            {
+                margin: 0px;
+                flex-shrink: 1;
+                flex-grow: 0;
+                text-align: center;
+            }
+
+            b {
+                color: brown;
+            }
+
+            #border-style0 {
+                border: 0px;
+            }
+            #border-style1 {
+                border: 1px solid green;
+            }
+            #border-style2 {
+                border: 1px dotted green;
+            }
+            #border-style3 {
+                border: 1px inset green;
+            }
+            #border-style4 {
+                border: 1px dashed green;
+            }
+            #border-style5 {
+                border: 1px double green;
+            }
+            #border-style6 {
+                border: 1px groove green;
+            }
+            #border-style7 {
+                border: 1px ridge green;
+            }
+
+            #border-color1 {
+                border-color:red;
+            }
+            #border-color2 {
+                border-color:yellow;
+            }
+            #border-color3 {
+                border-color:blue;
+            }
+
+            #border-width1 {
+                border-width: 1px;
+            }
+            #border-width2 {
+                border-width: 3px;
+            }
+            #border-width3 {
+                border-width: 5px;
+            }
+
+            #border-round1 {
+                border-radius: 0px;
+            }
+            #border-round2 {
+                border-radius: 15px;
+            }
+            #border-round3 {
+                border-radius: 30px;
+            }
+
+            #image-clamp {
+                background-color: rgba(165, 42, 42, 0.356);
+                background-image: url(/images/lovelacelogo.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-clip: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Exercicio 2</h1>
+            <h2>Demonstração da utilização de <b>estilos de bordas</b></h3>
+        </header>
+        <main>
+            <div>
+                <h3>Tipos de Bordas</h3>
+                <span>
+                    <div id="border-style0">
+                        <h4>Sem</h4>
+                    </div>
+                    <div id="border-style1">
+                        <h4>Solida</h4>
+                    </div>
+                    <div id="border-style2">
+                        <h4>Pontilhada</h4>
+                    </div>
+                    <div id="border-style3">
+                        <h4>Inset</h4>
+                    </div>
+                    <div id="border-style4">
+                        <h4>Dashed</h4>
+                    </div>
+                    <div id="border-style5">
+                        <h4>Double</h4>
+                    </div>
+                    <div id="border-style6">
+                        <h4>Groove</h4>
+                    </div>
+                    <div id="border-style7">
+                        <h4>Ridge</h4>
+                    </div>
+                </span>
+            </div>
+            <div>
+                <h3>Cores de Bordas</h3>
+                <span>
+                    <div id="border-color1">
+                        <h4>Cor Vermelha</h4>
+                    </div>
+                    <div id="border-color2">
+                        <h4>Cor Amarela</h4>
+                    </div>
+                    <div id="border-color3">
+                        <h4>Cor Azul</h4>
+                    </div>
+                </span>
+            </div>
+            <div>
+                <h3>Espressuras de Bordas</h3>
+                <span>
+                    <div id="border-width1">
+                        <h4>Espessura 1px</h4>
+                    </div>
+                    <div id="border-width2">
+                        <h4>Espessura 3px</h4>
+                    </div>
+                    <div id="border-width3">
+                        <h4>Espessura 5px</h4>
+                    </div>
+                </span>
+            </div>
+            <div>
+                <h3>Arredondamentos de Bordas</h3>
+                <span>
+                    <div id="border-round1">
+                        <h4>Arredondar 0px</h4>
+                    </div>
+                    <div id="border-round2">
+                        <h4>Arredondar 15px</h4>
+                    </div>
+                    <div id="border-round3">
+                        <h4>Arredondar 30px</h4>
+                    </div>
+                </span>
+            </div>
+        </main>
+    </body>
+</html>

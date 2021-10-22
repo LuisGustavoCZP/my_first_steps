@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demonstrar a utilização de caixas</title>
+        <style>
+            header {display: block; text-align:center; }
+            header > h1 {padding-top: 10px; padding-left: 10px; margin-bottom: 0px; }
+            header > p {margin-top: 0px;}
+            header > p > span { color: red; padding: 0px; }
+            main {display:flex; justify-content: center;}
+            main > div { padding: 5px;}
+            main > div > p { width: 200px; background-color: gray; }
+            main > div > span > p { height: 300px; background-color: gray; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Demonstrar a utilização de caixas </h1>
+            <p>Aqui demonstraremos o uso de <span>width</span>, <span>height</span>, <span>padding</span> e <span>margin</span>.</p>
+        </header>
+        <main>
+            <div>
+                <h3>Exercicio 1</h3>
+                <p>A caixa do tipo 'block' é basicamente um bloco como o nome diz, ao alcançar o limite estipulado de tamanho, quebrará em uma nova linha.</p>
+                <span>
+                    <p>A 'inline' não pode quebrar em outra linha, se ajustando assim a uma linha.</p>
+                </span>
+            </div>
+        </main>
+    </body>
+</html>

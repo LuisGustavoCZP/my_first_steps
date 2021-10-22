@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Aula 17 - Exercicio 1</title>
+        <style>
+            body {
+                
+                color: white;
+                background-color: black;
+                background-image: url(/images/lovelacelogo.png);
+                background-repeat: repeat;
+            }
+            main {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            main > div 
+            {
+                display: block;
+                flex-shrink: 0;
+                width: 100px;
+                height: 100px;
+                justify-content: center;
+                margin: 5px;
+            }
+            h4
+            {
+                margin: 0px;
+                flex-shrink: 1;
+                flex-grow: 0;
+                text-align: center;
+            }
+            b {
+                color: brown;
+            }
+            #solid-color {
+                background-color: palegreen;
+            }
+            #transparent-color {
+                background-color: rgba(152, 251, 152, 0.171);
+            }
+            #gradient-color {
+                background-image: linear-gradient(105deg, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%);
+            }
+            #image-clamp {
+                background-color: rgba(165, 42, 42, 0.356);
+                background-image: url(images/recortephotopea.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-clip: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Exercicio 1</h1>
+            <h2>Demonstração da utilização de <b>fundos de caixas</b></h3>
+        </header>
+        <aside>
+            <h4>Imagem repetida ao fundo</h4>
+        </aside>
+        <main>
+            <div id="solid-color">
+                <h4>Cor sólida</h4>
+            </div>
+            <div id="transparent-color">
+                <h4>Cor transparente</h4>
+            </div>
+            <div id="gradient-color">
+                <h4>Cor Gradiente</h4>
+            </div>
+            <div id="image-clamp">
+                <h4>Imagem unica</h4>
+            </div>
+        </main>
+    </body>
+</html>
