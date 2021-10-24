@@ -1,19 +1,32 @@
 html {font-size: 10px;}
 body {background-color: black; margin: 0px;}
-header {text-align: center; background-color: greenyellow;}
+header {text-align:center; background-color:forestgreen;}
+header > span {
+    display: flex; 
+    justify-content: center;  
+    vertical-align: bottom; 
+    flex-direction: row;
+    
+}
+header > span > img {
+    display: flex; 
+    height: 10em;
+}
+
 h1 {font-size: 5rem; text-decoration: underline; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 0px; padding: 10px 10px 0px 10px}
-h2 {font-size: 4rem; text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+h2 {color: rgb(114, 167, 36); font-size: 4rem; text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 h3 {font-size: 3rem; text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 h4 {font-size: 2rem; text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-ul {display: flex; flex-direction: column; justify-content: center; margin: 20px;}
+ul {display: flex; flex-direction: column; justify-content: center; margin: 10px;}
 p {font-size: 1.5rem; padding: 5px; margin: 0px;}
-nav {background-color: chartreuse;}
+nav {display: flex; justify-content: center; background-color: chartreuse;}
 a {font-size: 2rem; padding: 10px;}
 a:hover {color: white; font-weight: bold;}
 p > b {color:sandybrown;}
 li > b {color:crimson;}
-h3 > b {color: greenyellow;}
+h3 > b {color: rgb(116, 194, 0);}
 h4 > b {color: cadetblue;}
-main {color: white; display: flex; flex-grow: 1; padding: 10px;}
+main {background-color: palegreen; color: rgb(77, 87, 68); display: flex; flex-grow: 1; padding: 10px 10% 10px 10%;}
 li {font-size: 1.5rem;}
 #subpage-container {justify-content: center;}
+footer {background-color: chartreuse; text-align: center;}
