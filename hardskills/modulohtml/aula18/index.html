@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Aula 18 - Exercicio 1</title>
+        <link rel="stylesheet" href="styles/defaultStyle.css">
+        <script src="scripts/loadobject.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Mercadroid Web</h1>
+            <p>Seu especialista pessoal em economia doméstica</p>
+            <nav>
+                <button onclick="UpdateSubPage(0)">Home</button>
+                <button onclick="UpdateSubPage(1)">Nossa História</button>
+                <button onclick="UpdateSubPage(2)">Nossos Produtos</button>
+                <button onclick="UpdateSubPage(3)">Fale Conosco</button>
+            </nav>
+        </header>
+        <main id="subpage-container">
+            
+        </main>
+        <footer>
+            Todos os direitos reservados a BrasilPK
+        </footer>
+        <script>
+            var subpageContainer = document.getElementById("subpage-container");
+            var subpages = [
+                "subpages/home.html",
+                "subpages/historia.html",
+                "subpages/produtos.html",
+                "subpages/contato.html"
+            ];
+            var subpageIndex = 0;
+            
+            function UpdateSubPage (index){
+                if(index < 0 || index >= subpages.length) return;
+                
+                subpageIndex = index;
+                subpageContainer.firstChild.remove();
+                LoadHTML(subpages[index], FinishLoadSubPage);
+            }
+
+            function FinishLoadSubPage (element){
+                subpageContainer.append(element);
+            }
+
+            UpdateSubPage(0);
+        </script>
+    </body>
+</html>

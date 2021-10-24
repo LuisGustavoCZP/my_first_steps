@@ -89,6 +89,7 @@
                 display: block;
                 position: absolute;
                 justify-self: center;
+                align-content: center;
                 flex-direction: row;
                 z-index: 2;
                 left: 0px;
@@ -97,8 +98,39 @@
                 height: 100%;
                 padding: 0px;
             }
+            .menu__windowbox__child {
+                
+                display: flex;
+                position: relative;
+                justify-content: center;
+                top: 25%;
+                overflow: auto;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                flex-direction: row;
+                flex-grow: 1;
+                
+            }
+
+            .menu__windowbox__container
+            {
+                display: block;
+                background-color: gold;
+                flex-grow: 0;
+                width: 50%;
+                height: 50%;
+                text-align: center;
+            }
+
+            .menu__windowbox__container > button {
+                display: block;
+                align-self: flex-end;
+            }
+
         </style>
-        <link id="estilo" rel="stylesheet" href="styles/styleBlue.css">
+        <script src="scripts/loadobject.js"></script>
+        <link name="estilo" id="estilo" rel="stylesheet" href="styles/styleBlue.css">
     </head>
     <body>
         <header>
@@ -130,12 +162,12 @@
                     </span>
                 </div>
             </span>
-            <span class="menu__ferramenta" ><span style="text-decoration: underline;">V</span>er</span>
+            <!--<span class="menu__ferramenta" ><span style="text-decoration: underline;">V</span>er</span>
             <span class="menu__ferramenta" ><span style="text-decoration: underline;">M</span>undo</span>
             <span class="menu__ferramenta" ><span style="text-decoration: underline;">M</span>apa</span>
             <span class="menu__ferramenta" ><span style="text-decoration: underline;">C</span>amada</span>
             <span class="menu__ferramenta" ><span style="text-decoration: underline;">P</span>rojeto</span>
-            <span class="menu__ferramenta" ><span style="text-decoration: underline;">A</span>juda</span>
+            <span class="menu__ferramenta" ><span style="text-decoration: underline;">A</span>juda</span>-->
         </nav>
         <main>
             <section class="documento">
@@ -160,6 +192,7 @@
                         </div>
                         <div class="documento__conteudo__ferramentas">
                             <span>Escolha um dos Styles:</span>
+                            <a href="styles/styleGreen.css" target="estilo">Verde</a>
                             <table>
                                 <th>
                                     <td>
@@ -186,6 +219,8 @@
         </aside>
     </body>
     <script>
+        var body = document.body;
+
         //#region Styles
         var estiloLink = document.getElementById("estilo");
         var styles = 
@@ -241,12 +276,14 @@
         {
             console.log("Clicou");
             
-            let mapcreation = document.createElement("div");
-            
-            mapcreation.classList.add("menu__windowbox");
-            
+            let popupWindow = document.createElement("div");
+            //mapcreation.data = "mapcreation.html";
+            popupWindow.classList.add("menu__windowbox");
+            LoadHTML("mapcreation.html", x => {popupWindow.append(x);});
+            //
             //mapcreation.offsetTop.valueOf(window.innerWidth/2);
-            document.body.insertBefore(mapcreation, document.body.firstChild);
+            body.insertBefore(popupWindow, body.firstChild);
+            
             //mapcreation.tabIndex = 0;
         }
 

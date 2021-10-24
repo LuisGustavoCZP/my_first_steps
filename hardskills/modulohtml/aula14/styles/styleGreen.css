@@ -4,7 +4,7 @@ header {background-color:#1a2d06; color: white;}
 /*.menu__ferramenta {}*/
 .menu__ferramenta:hover {background-color:#20df50; color: black; }
 main { background-color:#b3ec79; }
-.documento__aba {background-color:#99e54d; border-style: solid;}
+.documento__aba {background-color:#d0d8c7; border-style: solid;}
 .documento__ferramenta {color:black;}
 .documento__ferramenta:hover {background-color:#20df50; color: black; user-select: none;}
 .documento__conteudo {background-color:aliceblue;}
@@ -27,4 +27,9 @@ td > div {
 }
 td > div > img { 
 
+}
+
+.menu__windowbox__container
+{
+    background-color: #99e54d;
 }
