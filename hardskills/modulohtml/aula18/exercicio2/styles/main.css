@@ -1,0 +1,70 @@
+body{
+    margin: 0px;
+}
+header {
+    background-color:blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+header > span {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+}
+header > span > h1 {
+    font-family: 'Globotipo Rounded', sans-serif;
+    writing-mode: vertical-rl;
+    margin: 0px;
+}
+header > span > q {
+    font-family: 'Globotipo Condensada', sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+header > span > p {
+    font-family: 'Globotipo Condensada', sans-serif;
+    padding: 5px;
+    text-align: right;
+}
+header > span > iframe {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+}
+p > {
+    font-family: 'Globotipo Texto', sans-serif;
+}
+
+h2 {
+    font-family: 'Globotipo Condensada', sans-serif;
+    text-decoration: underline;
+    text-align: center;
+}
+
+article {
+    background-color:cadetblue;
+    padding: 5px;
+}
+
+article > section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+article > section > div {
+    display: block;
+    width: 40%;
+}
+article > section > div > p{
+    font-family: 'Globotipo Texto', sans-serif;
+}
+article > section > div > p > span {
+    text-decoration:line-through;
+}
+article > section > img {
+    display: flex;
+    padding: 10px;
+}
+footer {text-align: center;}

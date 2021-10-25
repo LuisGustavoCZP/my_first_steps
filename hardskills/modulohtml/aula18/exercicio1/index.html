@@ -41,11 +41,12 @@
                 if(index < 0 || index >= subpages.length) return;
                 
                 subpageIndex = index;
-                subpageContainer.firstChild.remove();
+                
                 LoadHTML(subpages[index], FinishLoadSubPage);
             }
 
             function FinishLoadSubPage (element){
+                subpageContainer.firstChild.remove();
                 subpageContainer.append(element);
             }
 
