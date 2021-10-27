@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'kenney_future_narrowregular';
+    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
+         url('../fonts/kenney_future_narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    font-size: 10px;
+}
+body {
+    font-family: 'kenney_future_narrowregular';
+    margin: 0px;
+}
+header {
+    background-color:darkslategrey;
+    text-align:center;
+    color:white;
+    padding: 5px;
+    
+}
+header > div {
+    background: -webkit-linear-gradient(rgb(132, 0, 255), rgb(0, 162, 255), blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+main {
+    padding: 10px;
+    background-image:url('../images/gato-feliz-1280x720.jpg');
+    height: 512px;
+}
+h1{
+    font-size: 5rem;
+    margin: 0px;
+    padding: 1rem;
+}
+h4{
+    font-size: 2rem;
+    text-decoration: underline;
+}
+footer{
+    background-color: lightgray;
+    text-align:center;
+}
+nav{
+}
+a{
+    background-color: wheat;
+    color: black;
+    font-size: 3rem;
+    padding: 1rem;
+    border: 3px solid black;
+}
+a:link {
+    border-color:darkblue;
+}
+a:hover {
+    border-color:darkturquoise;
+}
+a:visited {
+    font-weight: bold;
+}
+a:active {
+    border-color:blue;
+}
+a:focus {
+    border-color:cadetblue;
+}

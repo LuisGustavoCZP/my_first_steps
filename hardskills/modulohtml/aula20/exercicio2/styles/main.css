@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'kenney_future_narrowregular';
+    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
+         url('../fonts/kenney_future_narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    font-size: 10px;
+    --cor1: hsl(0, 58%, 55%);
+    --cor2: hsl(172, 58%, 55%);
+    --cor3: hsl(268, 58%, 55%);
+    --gradient1: -webkit-linear-gradient(var(--cor2), var(--cor3));
+}
+body {
+    font-family: 'kenney_future_narrowregular';
+    margin: 0px;
+}
+header {
+    background-color:var(--cor1);
+    text-align:center;
+    color:white;
+    padding: 5px;
+    
+}
+header > div {
+    display: block;
+    flex-direction: column;
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    justify-items: center;
+}
+main {
+    background-color:var(--cor2);
+    display: flex;
+    padding: 10px;
+    background-image:url('../images/gato-feliz-1280x720.jpg');
+    height: 512px;
+     
+    justify-content: center;
+}
+h1{
+    max-width:fit-content;
+    font-size: 10rem;
+    margin: 0px;
+    text-align: end;
+    padding: 2rem 2rem 2rem 15rem;
+    background-image: url("../images/budayingyang.png");
+    background-position: 0rem 3.5rem;
+    background-size: 10rem 10rem;
+    background-repeat: no-repeat;
+}
+h4{
+    font-size: 2rem;
+    text-decoration: underline;
+}
+footer{
+    background-color: lightgray;
+    text-align:center;
+}
+a{
+    background-color: var(--cor3);
+    color: black;
+    font-size: 3rem;
+    padding: 1rem;
+    border: 3px solid black;
+}
+a:link {
+    color:var(--cor1);
+}
+a:hover {
+    border-color:var(--cor3);
+}
+a:visited {
+    font-weight: bold;
+}
+a:active {
+    color:var(--cor3);
+}
+a:focus {
+    border-color:var(--cor2);
+}
+
+ul{
+    
+    margin: 5rem;
+    padding-left: 2rem;
+    list-style-type: none;
+    font-family: 'Festive', cursive;
+    
+    max-width:fit-content;
+}
+ul > li {
+    background-color: var(--cor1);
+    border: .2rem solid var(--cor3);
+    font-size: 4rem;
+    text-align: end;
+    padding: 2rem 2rem 2rem 8rem;
+    background-image: url("../images/YingYang.png");
+    background-position: 2rem 2rem;
+    background-size: 5rem 5rem;
+    background-repeat: no-repeat;
+      
+}

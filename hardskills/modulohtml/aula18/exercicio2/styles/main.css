@@ -65,6 +65,7 @@ article > section > div > p > span {
 }
 article > section > img {
     display: flex;
+    object-fit: cover;
     padding: 10px;
 }
 footer {text-align: center;}
