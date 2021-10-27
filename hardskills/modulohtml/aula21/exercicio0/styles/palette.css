@@ -1,0 +1,12 @@
+html{
+    font-size: 10px;
+    --cinza: lightgray;
+    --preto: black;
+    --cor1: hsl(0, 58%, 55%);
+    --cor2: rgb(74, 207, 189);
+    --cor3: #884acf;
+    --cor1t: hsla(0, 58%, 55%, 0.452);
+    --cor2t: rgba(74, 207, 189, 0.486);
+    --cor3t: #884acf6b;
+    --gradient1: -webkit-linear-gradient(var(--cor2), var(--cor2t), var(--cor2));
+}
