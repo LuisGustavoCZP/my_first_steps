@@ -102,6 +102,11 @@ ul > li
 }
 
 iframe {
-    display: flex;
+    display:flex;
+    overflow: none;
+}
+
+
+iframe.max {
     flex-grow: 1;
 }

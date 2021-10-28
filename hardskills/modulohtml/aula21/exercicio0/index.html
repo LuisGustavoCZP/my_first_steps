@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>Aula 20 - Exercicio 2</title>
@@ -26,43 +26,70 @@
                 <h4>Site destinado a turma Lovelace</h4>
             </div>
             <nav>
-                <a>Home</a>
-                <a>Votações</a>
-                <a>Contatos</a>
+                <a onclick="OnChangeFrame(0)">Votação</a>
+                <a onclick="OnChangeFrame(1)">Grafico Tendencial</a>
+                <a onclick="OnChangeFrame(2)">Sugestões</a>
             </nav>
         </header>
         <main>
-            <iframe id="mainframe"></iframe>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf7MSCkpZozEygDQ1TTL3lzU6F4pLTD5Ac-VeuOVthLRQdXpg/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubhtml?gid=1622923589&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            <iframe id="mainframe" frameborder="0"></iframe>
         </main>
         <footer>
             Todos os direitos reservados a OURPG.
         </footer>
         <script>
+            var indiceFrame = 0;
             var mainframe = document.getElementById("mainframe"); 
             var gsheetlinks = 
             [
-                "https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubhtml?gid=1208770726&amp;single=true&amp;widget=true&amp;headers=false",
+                {
+                    max : false,
+                    width : "610px",
+                    height : "380px",
+                    link :"https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubchart?oid=1328399861&amp;format=interactive"   
+                },
+                {
+                    max : false,
+                    width : "610px",
+                    height : "380px",
+                    link :"https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubchart?oid=693454208&amp;format=interactive"   
+                },
+                {
+                    max : true,
+                    width : "10px",
+                    height : "auto",
+                    link :"https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubhtml?gid=819187703&amp;single=true&amp;widget=false&amp;headers=false&chrome=false"
+                },
             ];
-
-
+            //
+            //"https://docs.google.com/forms/d/e/1FAIpQLSf7MSCkpZozEygDQ1TTL3lzU6F4pLTD5Ac-VeuOVthLRQdXpg/viewform?embedded=true",
+            //"https://docs.google.com/spreadsheets/d/e/2PACX-1vQimoXabtbl90O-l0ydyUlMulE2Dcve9lwRKtEDM4zm9oOVTIb3prjE4lpXmNNxpwFgX55nBFNgszcV/pubhtml?gid=1208770726&amp;single=true&amp;widget=true&amp;headers=false",
             
-            function LerFrame ()
+            function OnChangeFrame (index) 
             {
-                //var innerDoc = mainframe.contentDocument || mainframe.contentWindow.document;
-                //var currentFrame = innerDoc.location.href;
-                //var body = currentFrame;
-                var body;
-                var tbody = mainframe.getElementsByTagName("tbody")[0];
-
-                console.log(body + " | " + tbody);
-
+                indiceFrame = index; 
+                let frame = gsheetlinks[indiceFrame];
+                mainframe.src = frame.link;
+                if(frame.max)
+                {
+                    if(!mainframe.classList.contains("max")) mainframe.classList.add("max");
+                }
+                else
+                {
+                    if(mainframe.classList.contains("max")) mainframe.classList.remove("max");
+                }
+                mainframe.height = frame.height;
+                mainframe.width = frame.width;
             }
-            mainframe.onload = LerFrame;
-            mainframe.src = gsheetlinks[0];
-            
-            
+
+            function OnLoadFrame (){
+                
+                
+            }
+
+            mainframe.onload=OnLoadFrame;
+
+            OnChangeFrame(indiceFrame);
 
         </script>
     </body>

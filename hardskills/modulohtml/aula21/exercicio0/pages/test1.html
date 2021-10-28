@@ -1,0 +1,593 @@
+<html>
+
+<head>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link href='/static/spreadsheets2/client/css/2367411393-v3-ritz_chart_css_ltr.css' type='text/css' rel='stylesheet'
+        nonce="4hZZrCN9bc5ZbfghctWawQ">
+</head>
+
+<body style="padding:0;margin:0">
+    <div id="embed_chart" style='width:600;height:371;overflow:hidden;'>
+    </div>
+    <script type="text/javascript" nonce="4hZZrCN9bc5ZbfghctWawQ">
+        var ritzspreadsheetconstants = {
+            "localeName": "pt_BR",
+            "timeZoneConstants": {
+                "GMT": {
+                    "names_ext": {
+                        "STD_GENERIC_LOCATION": "GMT",
+                        "STD_LONG_NAME_GMT": "GMT"
+                    },
+                    "std_offset": 0,
+                    "names": ["GMT", "Horário do Meridiano de Greenwich"],
+                    "id": "GMT",
+                    "transitions": []
+                },
+                "America/Sao_Paulo": {
+                    "names_ext": {
+                        "STD_GENERIC_LOCATION": "Horário São Paulo",
+                        "STD_LONG_NAME_GMT": "GMT-03:00"
+                    },
+                    "std_offset": -180,
+                    "names": ["BRT", "Horário Padrão de Brasília"],
+                    "id": "America/Sao_Paulo",
+                    "transitions": [138819, 60, 142010, 0, 147387, 60, 150074, 0, 156147, 60, 158666, 0, 164715, 60,
+                        167234, 0, 173451, 60, 176306, 0, 182355, 60, 185210, 0, 191091, 60, 193778, 0, 199995,
+                        60, 202346, 0, 208563, 60, 211586, 0, 217299, 60, 220322, 0, 226035, 60, 228890, 0,
+                        234603, 60, 237794, 0, 243363, 60, 246866, 0, 252243, 60, 255434, 0, 260811, 60, 264338,
+                        0, 269715, 60, 272906, 0, 278619, 60, 281642, 0, 287859, 60, 290378, 0, 296259, 60,
+                        299114, 0, 305379, 60, 308018, 0, 313731, 60, 316754, 0, 322971, 60, 325658, 0, 331203,
+                        60, 334226, 0, 340107, 60, 342962, 0, 348843, 60, 351866, 0, 357579, 60, 360602, 0,
+                        366315, 60, 369506, 0, 375219, 60, 378074, 0, 383955, 60, 386810, 0, 392691, 60, 395714,
+                        0, 401427, 60, 404450, 0, 410163, 60, 413186, 0, 418899, 60, 421922, 0, 428139, 60,
+                        430658, 0
+                    ]
+                }
+            },
+            "numberFormatSymbols": {
+                "DECIMAL_SEP": ",",
+                "PERMILL": "‰",
+                "MINUS_SIGN": "-",
+                "PERCENT_PATTERN": "#,##0%",
+                "INFINITY": "∞",
+                "DEF_CURRENCY_CODE": "BRL",
+                "PLUS_SIGN": "+",
+                "CURRENCY_PATTERN": "¤ #,##0.00",
+                "DECIMAL_PATTERN": "#,##0.###",
+                "SCIENTIFIC_PATTERN": "#E0",
+                "PERCENT": "%",
+                "EXP_SYMBOL": "E",
+                "GROUP_SEP": ".",
+                "NAN": "NaN",
+                "ZERO_DIGIT": "0"
+            },
+            "allowTerminalDateSeparator": true,
+            "amPmEnglishAccepted": false,
+            "currencyPrefix": true,
+            "currencyTag": "[$R$ -416]",
+            "datePostsAreSuffix": true,
+            "dateTimeWithoutYearPattern": "dd/MM HH:mm",
+            "dateWithoutYearPattern": "dd/MM",
+            "dayPost": "",
+            "decimalSeparator": ",",
+            "defaultDatePattern": "dd/MM/yyyy",
+            "defaultDateTimePattern": "dd/MM/yyyy HH:mm:ss",
+            "defaultTimePattern": "HH:mm:ss",
+            "defaultUiLanguage": "pt_BR",
+            "exponentSeparator": "E",
+            "extraDateSeparator": "",
+            "firstDayOfWeek": 0,
+            "additionalFonts": [],
+            "additionalFormats": [{
+                "1": 5,
+                "2": "dd/MM/yy",
+                "3": 1
+            }, {
+                "1": 5,
+                "2": "dd/MM",
+                "3": 1
+            }, {
+                "1": 5,
+                "2": "yyyy-MM-dd",
+                "3": 1
+            }, {
+                "1": 5,
+                "2": "d-MMM-yyyy",
+                "3": 1
+            }, {
+                "1": 6,
+                "2": "HH:mm",
+                "3": 1
+            }, {
+                "1": 7,
+                "2": "dd/MM HH:mm",
+                "3": 1
+            }],
+            "amPmStrings": ["AM", "PM"],
+            "amString": "AM",
+            "monthsFull": ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro",
+                "outubro", "novembro", "dezembro"
+            ],
+            "monthsShort": ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.",
+                "dez."
+            ],
+            "pmString": "PM",
+            "timePrefix": "",
+            "timeSeparator": ":",
+            "weekdaysFull": ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira",
+                "sexta-feira", "sábado"
+            ],
+            "weekdaysShort": ["dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."],
+            "groupingSeparator": ".",
+            "hourPost": "",
+            "minimalDaysInFirstWeek": 1,
+            "minusSign": "-",
+            "minutePost": "",
+            "monthPost": "",
+            "negativeParens": true,
+            "percent": "%",
+            "periodIsDateSeparator": true,
+            "plusSign": "+",
+            "secondPost": "",
+            "shortDateFormatSuffix": "",
+            "yearPost": "",
+            "textInputCurrencySymbol": "$"
+        };
+    </script>
+    <script type="text/javascript" nonce="4hZZrCN9bc5ZbfghctWawQ">
+        var chartData = {};
+        chartData['chart'] = null;
+
+        function initCharts() {
+            chartData['chart'] = {
+                'chartId': 'chart',
+                'elementId': 'embed_chart',
+                'chartJson': '\x7b\x22view\x22:\x7b\x22columns\x22:\x5b0\x5d\x7d,\x22dataTable\x22:\x7b\x22parsedNumHeaders\x22:1,\x22rows\x22:\x5b\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b7,0,0,0\x5d,\x22f\x22:\x2207:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,0,0,0\x5d,\x22f\x22:\x2208:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,0,0,0\x5d,\x22f\x22:\x2208:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,0,0,0\x5d,\x22f\x22:\x2208:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,0,0,0\x5d,\x22f\x22:\x2208:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,0,0,0\x5d,\x22f\x22:\x2208:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b8,30,0,0\x5d,\x22f\x22:\x2208:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b10,0,0,0\x5d,\x22f\x22:\x2210:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b12,0,0,0\x5d,\x22f\x22:\x2212:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b12,0,0,0\x5d,\x22f\x22:\x2212:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b12,30,0,0\x5d,\x22f\x22:\x2212:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b15,15,0,0\x5d,\x22f\x22:\x2215:15:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b16,0,0,0\x5d,\x22f\x22:\x2216:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b16,0,0,0\x5d,\x22f\x22:\x2216:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b16,0,0,0\x5d,\x22f\x22:\x2216:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b16,0,0,0\x5d,\x22f\x22:\x2216:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b18,0,0,0\x5d,\x22f\x22:\x2218:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b18,0,0,0\x5d,\x22f\x22:\x2218:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b18,0,0,0\x5d,\x22f\x22:\x2218:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b18,0,0,0\x5d,\x22f\x22:\x2218:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b18,0,0,0\x5d,\x22f\x22:\x2218:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b21,0,0,0\x5d,\x22f\x22:\x2221:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b17,0,0,0\x5d,\x22f\x22:\x2217:00:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d,\x7b\x22c\x22:\x5b\x7b\x22v\x22:\x5b14,30,0,0\x5d,\x22f\x22:\x2214:30:00\x22\x7d\x5d\x7d\x5d,\x22cols\x22:\x5b\x7b\x22pattern\x22:\x22HH:mm:ss\x22,\x22id\x22:\x22D\x22,\x22label\x22:\x22Sugestão de Horário\x22,\x22type\x22:\x22timeofday\x22\x7d\x5d\x7d,\x22chartType\x22:\x22ImageChart\x22,\x22options\x22:\x7b\x22applyAggregateData\x22:0,\x22backgroundColor\x22:\x7b\x22fillOpacity\x22:0,\x22fill\x22:\x22#ffffff\x22\x7d,\x22chls\x22:\x224.0\x22,\x22treatLabelsAsText\x22:true,\x22pieSliceTextStyle\x22:\x7b\x7d,\x22vAxes\x22:\x7b\x220\x22:\x7b\x22textStyle\x22:\x7b\x7d,\x22titleTextStyle\x22:\x7b\x7d\x7d\x7d,\x22legend\x22:\x22auto\x22,\x22annotations\x22:\x7b\x22total\x22:\x7b\x22textStyle\x22:\x7b\x7d\x7d,\x22domain\x22:\x7b\x22textStyle\x22:\x7b\x7d\x7d\x7d,\x22titleTextStyle\x22:\x7b\x7d,\x22displayMode\x22:\x22markers\x22,\x22cht\x22:\x22r\x22,\x22schemeFontIndex\x22:0,\x22chxs\x22:\x22\x22,\x22points\x22:\x5b\x7b\x22size\x22:10\x7d\x5d,\x22legendTextStyle\x22:\x7b\x7d,\x22bubble\x22:\x7b\x22textStyle\x22:\x7b\x7d\x7d,\x22series\x22:\x7b\x220\x22:\x7b\x22lineDashType\x22:\x22solid\x22,\x22annotations\x22:\x7b\x22textStyle\x22:\x7b\x7d\x7d,\x22aggregateFunction\x22:\x22sum\x22,\x22colorSchemeIndex\x22:4\x7d\x7d,\x22useFirstColumnAsDomain\x22:true,\x22subtitleTextStyle\x22:\x7b\x7d,\x22width\x22:600,\x22textStyle\x22:\x7b\x22schemeFontIndex\x22:0\x7d,\x22height\x22:371\x7d\x7d',
+                'serializedChartProperties': '\x5bnull,\x5b\x22865004360\x22\x5d,0,1,0,null,\x5b\x22\x7b\\\x22cols\\\x22:\x5b\x7b\\\x22id\\\x22:\\\x220\\\x22,\\\x22label\\\x22:\\\x22Sugestão de Horário\\\x22,\\\x22type\\\x22:\\\x22timeofday\\\x22\x7d\x5d,\\\x22rows\\\x22:\x5b\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b7,0,0,0\x5d,\\\x22f\\\x22:\\\x2207:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,0,0,0\x5d,\\\x22f\\\x22:\\\x2208:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,0,0,0\x5d,\\\x22f\\\x22:\\\x2208:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,0,0,0\x5d,\\\x22f\\\x22:\\\x2208:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,0,0,0\x5d,\\\x22f\\\x22:\\\x2208:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,0,0,0\x5d,\\\x22f\\\x22:\\\x2208:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b8,30,0,0\x5d,\\\x22f\\\x22:\\\x2208:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b10,0,0,0\x5d,\\\x22f\\\x22:\\\x2210:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b12,0,0,0\x5d,\\\x22f\\\x22:\\\x2212:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b12,0,0,0\x5d,\\\x22f\\\x22:\\\x2212:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b12,30,0,0\x5d,\\\x22f\\\x22:\\\x2212:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b15,15,0,0\x5d,\\\x22f\\\x22:\\\x2215:15:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b16,0,0,0\x5d,\\\x22f\\\x22:\\\x2216:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b16,0,0,0\x5d,\\\x22f\\\x22:\\\x2216:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b16,0,0,0\x5d,\\\x22f\\\x22:\\\x2216:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b16,0,0,0\x5d,\\\x22f\\\x22:\\\x2216:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b18,0,0,0\x5d,\\\x22f\\\x22:\\\x2218:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b18,0,0,0\x5d,\\\x22f\\\x22:\\\x2218:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b18,0,0,0\x5d,\\\x22f\\\x22:\\\x2218:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b18,0,0,0\x5d,\\\x22f\\\x22:\\\x2218:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b18,0,0,0\x5d,\\\x22f\\\x22:\\\x2218:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b21,0,0,0\x5d,\\\x22f\\\x22:\\\x2221:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b17,0,0,0\x5d,\\\x22f\\\x22:\\\x2217:00:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d,\x7b\\\x22c\\\x22:\x5b\x7b\\\x22v\\\x22:\x5b14,30,0,0\x5d,\\\x22f\\\x22:\\\x2214:30:00\\\x22\x7d\x5d\x7d\x5d,\\\x22parsedNumHeaders\\\x22:1\x7d\x22,\x220.6\x22\x5d,0,null,\x5bnull,null,14,\x5bnull,\x5b\x5b\x5bnull,0\x5d\x5d\x5d\x5d,\x5b\x5b\x22\x22,\x5b\x5d,null,\x5b\x5d\x5d,\x5bnull,\x5b\x5d,null,\x5b\x5d\x5d,\x5bnull,null,null,null,null,null,null,null,null,null,null,null,null,null,0\x5d,null,null,null,null,0,null,\x5b16777215\x5d\x5d,\x5b1,1\x5d,\x5b\x5b\x5b\x5b\x22\x22,\x5bnull,null,null,null,null,null,null,null,null,null,null,null,null,null,0\x5d,null,\x5b\x5d\x5d,null,null,\x5bnull,null,null,null,\x5b\x5d\x5d,\x5bnull,null,null,null,\x5b\x5d\x5d,null,null,null,null,null,null,null,null,null,null,null,\x5bnull,null,\x5bnull,null,null,null,null,\x5b\x5d\x5d\x5d,\x5bnull,null,\x5bnull,null,null,null,null,\x5b\x5d\x5d\x5d\x5d\x5d,\x5b\x5b\x5b\x22\x22,\x5b\x5d,null,\x5b\x5d\x5d,null,null,\x5bnull,null,null,null,\x5b-16777216\x5d\x5d,\x5bnull,null,null,null,\x5b\x5d\x5d,null,1,null,null,null,null,null,3,null,null,null,\x5bnull,null,\x5bnull,null,null,null,null,\x5b\x5d\x5d\x5d,\x5bnull,null,\x5bnull,null,null,null,null,\x5b\x5d\x5d\x5d,\x5b1,\x22hh\\\x22:\\\x22mm\x22\x5d\x5d\x5d,0,0,null,null,\x5b\x5b0,\x5bnull,null,\x5b4,2,null,null,null,\x5bnull,4\x5d\x5d,\x5b10,1\x5d,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,\x5b\x5d,null,null,null,null,null,null,null,\x5b\x5b\x5d,null,\x5b\x5d\x5d\x5d\x5d,\x5b1,\x5bnull,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,\x5b\x5d\x5d\x5d\x5d,\x5bnull,null,\x5b\x5d\x5d,\x5bnull,null,\x5b\x5d,null,null,null,null,\x5b\x5d\x5d\x5d,\x5b7,null,\x5b\x5d,\x5b\x5d\x5d,null,null,null,null,\x5bnull,null,\x5bnull,null,null,null,null,\x5b\x5d\x5d\x5d,null,\x5b2,null,null,\x5b\x5b\x5d,\x5b\x5d,\x5b\x5d\x5d,\x5b\x5d\x5d,null,\x5bnull,null,null,\x5bnull,null,null,\x5b\x5d,\x5b\x5d\x5d\x5d\x5d,null,null,null,null,\x5b\x5b\x5b0,0\x5d\x5d\x5d\x5d',
+                'fallbackUri': '\/spreadsheets\/d\/1-WbnQibqSfgRC1QITj2iic8QblGuPZUlM4KWTKx1W2Y\/embed\/oimg?newCharts\x3dfalse\x26oid\x3d693454208',
+                'chart': null,
+                'interactionState': ritz_tviz_charts.ChartsExportApi.newInteractionState()
+            };
+            drawRitzChart(chartData['chart'], 'pt_BR',
+                '\x7b\x22enableHighPrecisionTrendLines\x22:true,\x22enableOverflowLegendHover\x22:false,\x22enableChartColorStyle\x22:true,\x22enableChartCustomizableLineShapeStyleable\x22:true,\x22enableChartWebFonts\x22:false\x7d',
+                600.0, 371.0,
+                '\x5b6,\x22Arial\x22,\x5b\x5b1,\x5b2,0\x5d\x5d,\x5b2,\x5b2,16777215\x5d\x5d,\x5b3,\x5b2,4359668\x5d\x5d,\x5b4,\x5b2,15352629\x5d\x5d,\x5b5,\x5b2,16497668\x5d\x5d,\x5b6,\x5b2,3450963\x5d\x5d,\x5b7,\x5b2,16739585\x5d\x5d,\x5b8,\x5b2,4636102\x5d\x5d,\x5b9,\x5b2,1136076\x5d\x5d\x5d\x5d',
+                true);
+        }
+
+        function drawRitzChart(chartState, spreadsheetLocale, serializedChartFlags, width, height,
+            serializedWorkbookTheme, enableStandaloneCharts) {
+            if (enableStandaloneCharts) {
+                drawChartComponent(chartState, spreadsheetLocale, serializedChartFlags, width, height,
+                    serializedWorkbookTheme);
+                return;
+            }
+            var canvas = document.createElement('canvas');
+            var chartElement = document.getElementById(chartState.elementId);
+            width = width == 0 ? window.innerWidth : width;
+            height = height == 0 ? window.innerHeight : height;
+            canvas.width = width;
+            canvas.height = height;
+            canvas.id = 'chart_' + chartState.chartId;
+            chartState.chart = ritz_tviz_charts.ChartsExportApi.buildAndLayoutChartFromGvizWrapper(canvas.getContext(
+                '2d'), chartState.chartJson, width, height, spreadsheetLocale, serializedChartFlags);
+            if (chartState.chart && ritz_tviz_charts.ChartsExportApi.renderChart(canvas.getContext('2d'), chartState
+                    .chart, chartState.interactionState)) {
+                canvas.addEventListener('click', function (e) {
+                    handleMouseEvent(e, canvas, chartState, serializedChartFlags, spreadsheetLocale);
+                });
+                canvas.addEventListener('mousemove', function (e) {
+                    handleMouseEvent(e, canvas, chartState, serializedChartFlags, spreadsheetLocale);
+                });
+                canvas.addEventListener('mouseleave', function (e) {
+                    handleMouseEvent(e, canvas, chartState, serializedChartFlags, spreadsheetLocale);
+                });
+                chartElement.appendChild(canvas);
+            } else {
+                var img = document.createElement('img');
+                img.setAttribute('src', chartState.fallbackUri);
+                img.setAttribute('width', width);
+                img.setAttribute('height', height);
+                img.id = 'chart_' + chartState.chartId;
+                chartElement.appendChild(img);
+            }
+            chartState.tooltipRenderer = new docs.charts.Tooltip(new docs.zoom.Zoom(), chartElement);
+        }
+
+        function drawChartComponent(chartState, spreadsheetLocale, serializedChartFlags, width, height,
+            serializedWorkbookTheme) {
+            var chartElement = document.getElementById(chartState.elementId);
+            width = width == 0 ? window.innerWidth : width;
+            height = height == 0 ? window.innerHeight : height;
+            chartState.chartComponent = new waffle.charts.export.RitzExportChartComponent(spreadsheetLocale,
+                serializedChartFlags, new docs.zoom.Zoom());
+            chartState.chartComponent.render(chartElement);
+            chartState.chartComponent.setSizeFromPrimitives(width, height);
+            chartState.chartComponent.updateFromModel(ritz_tviz_charts.ChartsExportApi.createChartFromChartProperties(
+                chartState.serializedChartProperties, serializedWorkbookTheme));
+        }
+
+        function layoutChart(chartState, canvas) {
+            ritz_tviz_charts.ChartsExportApi.layoutChart(canvas.getContext('2d'), chartState.chart, chartState
+                .interactionState, canvas.width, canvas.height);
+        }
+
+        function renderChart(chartState, canvas) {
+            ritz_tviz_charts.ChartsExportApi.renderChart(canvas.getContext('2d'), chartState.chart, chartState
+                .interactionState);
+        }
+
+        function handleMouseEvent(e, canvas, chartState, serializedChartFlags, spreadsheetLocale) {
+            var x = e.clientX - canvas.getBoundingClientRect().left;
+            var y = e.clientY - canvas.getBoundingClientRect().top;
+            var oldState = chartState.interactionState;
+            chartState.interactionState = (e.type == 'click') ? ritz_tviz_charts.ChartsExportApi.onClick(chartState
+                .chart, oldState, x, y) : ritz_tviz_charts.ChartsExportApi.onMouseMove(chartState.chart, oldState,
+                x, y);
+            if (ritz_tviz_charts.ChartsExportApi.isLayoutNeeded(chartState.chart, oldState, chartState
+                .interactionState)) {
+                layoutChart(chartState, canvas);
+            }
+            renderChart(chartState, canvas);
+            if (chartState.tooltipRenderer) {
+                if (e.type == 'mouseleave') {
+                    chartState.tooltipRenderer.hide();
+                } else {
+                    ritz_tviz_charts.ChartsExportApi.refreshTooltip(chartState.chart, chartState.tooltipRenderer,
+                        chartState.interactionState, serializedChartFlags, spreadsheetLocale);
+                }
+            }
+        }
+
+        function onChartsExportApiLoad() {
+            initCharts();
+        }
+
+        function chartMessageFormat(str, args) {
+            return str.replace(/\{\{|\}\}|\{(\d+)\}/g, function (m, n) {
+                if (m == "{{") {
+                    return "{";
+                }
+                if (m == "}}") {
+                    return "}";
+                }
+                return args[n];
+            });
+        }
+        var __chartmessages = {};
+        __chartmessages['CALL_CHART_REQUIRES_MINIMUM_COLUMNS'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Requer pelo menos \x7b0\x7d colunas, mas há apenas \x7b1\x7d.', args);
+        };
+        __chartmessages['CALL_CHART_PIE_SLICE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Fatia da pizza \x7b0\x7d, \x7b1\x7d por cento.', args);
+        };
+        __chartmessages['CALL_CHART_ORG_CHART_EDGE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Ligação do pai\/mãe \x7b0\x7d até o filho\/filha \x7b1\x7d.', args);
+        };
+        __chartmessages['MSG_CHART_LEGEND_MORE'] = 'Legendar mais';
+        __chartmessages['CALL_CHART_CHART_SUBTITLE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Subtítulo: \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_HISTOGRAM_COUNT'] = '(contagem)';
+        __chartmessages['CALL_CHART_ERROR_BARS'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Barras de erros para a série \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_NO_DATA_DISPLAY'] = 'Sem dados';
+        __chartmessages['CALL_CHART_PIE_SLICE_LABEL'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Marcador da fatia de pizza \x7b0\x7d', args);
+        };
+        __chartmessages['CALL_CHART_STEPPED_LINE_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de linhas em degraus', args);
+        };
+        __chartmessages['CALL_CHART_ERROR_BAR_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Barra de erros para a série \x7b0\x7d item \x7b1\x7d', args);
+        };
+        __chartmessages['CALL_CHART_TREE_MAP_MISSING_PARENT'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Não encontrada linha pai com o marcador: \x7b0\x7d', args);
+        };
+        __chartmessages['CALL_CHART_POINT_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de pontos', args);
+        };
+        __chartmessages['MSG_CHART_HISTOGRAM_INVALID_BUCKET_SIZE'] =
+            'Tamanho de intervalo inválido, precisa ser maior que zero.';
+        __chartmessages['MSG_CHART_WATERFALL_CHART_TOTAL_UNLABELED'] = 'Subtotal';
+        __chartmessages['MSG_CHART_TABLE_CHART_CONTENT'] = 'Conteúdo do gráfico de tabela';
+        __chartmessages['CALL_CHART_WATERFALL_CHART_POSITIVE_LABELED'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Positivos (\x7b0\x7d)', args);
+        };
+        __chartmessages['CALL_CHART_LINE_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de linhas', args);
+        };
+        __chartmessages['CALL_CHART_CURVED_TREND_LINE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Linha de tendência curva para a série \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_TREE_MAP_MULTIPLE_ROOTS'] =
+        'Dois nós raiz foram encontrados. Apenas um é permitido.';
+        __chartmessages['CALL_CHART_CANDLESTICK_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de candlesticks, item \x7b1\x7d', args);
+        };
+        __chartmessages['MSG_CHART_PIE_CHART'] = 'Gráfico de pizza';
+        __chartmessages['CALL_CHART_BAR_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de barras, item \x7b1\x7d', args);
+        };
+        __chartmessages['CALL_CHART_RIGHT_VERTICAL_AXIS_TITLE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Título do eixo vertical direito: \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_ORG_CHART_CONTENT'] = 'Conteúdo do organograma';
+        __chartmessages['MSG_CHART_GRID_CHART_CONTENT'] = 'Conteúdo do gráfico de grade';
+        __chartmessages['MSG_CHART_GAUGE_CHART_CONTENT'] = 'Conteúdo do gráfico de medidor';
+        __chartmessages['MSG_CHART_LEGEND'] = 'Legenda';
+        __chartmessages['CALL_CHART_EMPHASIZED_PIE_SLICE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Fatia da pizza \x7b0\x7d destacada, \x7b1\x7d por cento.', args);
+        };
+        __chartmessages['MSG_CHART_PIE_CHART_CONTENT'] = 'Conteúdo do gráfico de pizza';
+        __chartmessages['CALL_CHART_GAUGE_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Item \x7b0\x7d da série de medidores', args);
+        };
+        __chartmessages['CALL_CHART_ANNOTATION_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Anotação para a série \x7b0\x7d item \x7b1\x7d', args);
+        };
+        __chartmessages['CALL_CHART_POINT_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de pontos, item \x7b1\x7d', args);
+        };
+        __chartmessages['CALL_CHART_AREA_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de áreas', args);
+        };
+        __chartmessages['CALL_CHART_COLUMN_MUST_BE_TEXT'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('A coluna \x7b0\x7d precisa conter texto.', args);
+        };
+        __chartmessages['CALL_CHART_ORG_CHART_NODE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Ponto \x7b0\x7d', args);
+        };
+        __chartmessages['CALL_CHART_TOTAL_DATA_LABEL_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Item \x7b0\x7d do marcador do total de dados.', args);
+        };
+        __chartmessages['MSG_CHART_RIGHT_VERTICAL_AXIS_TICK_MARKS'] = 'Marcações do eixo vertical direito';
+        __chartmessages['CALL_CHART_COLUMN_SERIES_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de colunas, item \x7b1\x7d', args);
+        };
+        __chartmessages['MSG_CHART_HORIZONTAL_TICK_LABELS'] = 'Etiquetas das marcações horizontais';
+        __chartmessages['CALL_CHART_LEGEND_ITEM'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Entrada da legenda \x7b0\x7d: \x7b1\x7d', args);
+        };
+        __chartmessages['CALL_CHART_COLUMN_MUST_BE_NUMERIC'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('A coluna \x7b0\x7d precisa ser numérica.', args);
+        };
+        __chartmessages['MSG_CHART_WATERFALL_CHART_POSITIVE_UNLABELED'] = 'Positivos';
+        __chartmessages['CALL_CHART_HISTOGRAM_COUNT_LABEL'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('\x7b0\x7d (contagem)', args);
+        };
+        __chartmessages['MSG_CHART_LOADING_DISPLAY'] = 'Carregando…';
+        __chartmessages['CALL_CHART_LINEAR_TREND_LINE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Linha de tendência linear para a série \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_HISTOGRAM_INVALID_BUCKET_PERCENTILE'] =
+            'Percentil de intervalo inválido, precisa estar entre 0% e 100%.';
+        __chartmessages['CALL_CHART_WATERFALL_CHART_TOTAL_LABELED'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Subtotal (\x7b0\x7d)', args);
+        };
+        __chartmessages['CALL_CHART_COLUMN_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de colunas', args);
+        };
+        __chartmessages['MSG_CHART_LEFT_VERTICAL_AXIS_TICK_MARKS'] = 'Marcações do eixo vertical esquerdo';
+        __chartmessages['CALL_CHART_CANDLESTICK_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de candlesticks', args);
+        };
+        __chartmessages['MSG_CHART_GEO_CHART_CONTENT'] = 'Conteúdo do gráfico de mapa';
+        __chartmessages['CALL_CHART_WATERFALL_CHART_NEGATIVE_LABELED'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Negativos (\x7b0\x7d)', args);
+        };
+        __chartmessages['MSG_CHART_INTERNAL_ERROR'] = 'Ocorreu um erro interno ao renderizar o gráfico.';
+        __chartmessages['CALL_CHART_ANNOTATION_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Anotações para a série \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_BOTTOM_HORIZONTAL_AXIS_TICK_MARKS'] = 'Marcações do eixo horizontal inferior';
+        __chartmessages['MSG_CHART_WATERFALL_CHART_NEGATIVE_UNLABELED'] = 'Negativos';
+        __chartmessages['CALL_CHART_STEPPED_AREA_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de áreas em degraus', args);
+        };
+        __chartmessages['CALL_CHART_BAR_SERIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Série \x7b0\x7d de barras', args);
+        };
+        __chartmessages['MSG_CHART_TREE_MAP_CHART_CONTENT'] = 'Conteúdo do gráfico de mapa de árvore';
+        __chartmessages['MSG_CHART_VERTICAL_TICK_LABELS'] = 'Etiquetas das marcações verticais';
+        __chartmessages['CALL_CHART_CHART_TITLE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Título: \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_HORIZONTAL_MAJOR_GRIDLINES'] = 'Linhas de grade principais horizontais';
+        __chartmessages['CALL_CHART_LEGEND_MORE_ENTRIES'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Mais \x7b0\x7d', args);
+        };
+        __chartmessages['CALL_CHART_TREE_MAP_DUPLICATE_NODE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Duas entradas encontradas com o mesmo marcador: \x7b0\x7d', args);
+        };
+        __chartmessages['CALL_CHART_LEFT_VERTICAL_AXIS_TITLE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Título do eixo vertical esquerdo: \x7b0\x7d', args);
+        };
+        __chartmessages['MSG_CHART_SCORECARD_CHART_CONTENT'] = 'Conteúdo do gráfico de visão geral';
+        __chartmessages['MSG_CHART_CHART_AREA'] = 'Área do gráfico';
+        __chartmessages['MSG_CHART_VERTICAL_MAJOR_GRIDLINES'] = 'Linhas de grade principais verticais';
+        __chartmessages['CALL_CHART_HORIZONTAL_AXIS_TITLE'] = function () {
+            var args = [];
+            for (i = 0; i < arguments.length; i++) {
+                args[i] = arguments[i];
+            }
+            return chartMessageFormat('Título do eixo horizontal: \x7b0\x7d', args);
+        };
+    </script>
+    <script type="text/javascript" nonce="4hZZrCN9bc5ZbfghctWawQ">
+        var CHARTS_EXPORT_URI = [];
+        CHARTS_EXPORT_URI.push('\/static\/spreadsheets2\/client\/js\/184777093-ChartsExportJ2cl_j2cl_core.js');
+        if (window.addEventListener) {
+            window.addEventListener('load',
+                function () {
+                    window.tvizScriptLoader.load();
+                }
+            );
+        }
+    </script>
+    <script type="text/javascript" src='/static/spreadsheets2/client/js/501132956-ChartsCombinedJ2clBootstrap.js'
+        nonce="4hZZrCN9bc5ZbfghctWawQ"></script>
+</body>
+
+</html>
