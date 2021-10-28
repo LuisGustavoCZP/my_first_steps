@@ -7,6 +7,7 @@
 }
 
 html{
+    user-select: none;
 }
 
 body {
@@ -41,9 +42,9 @@ h1{
     margin: 0px;
     text-align: end;
     padding: 2rem 2rem 2rem 15rem;
-    background-image: url("../images/budayingyang.png");
-    background-position: 0rem 3.5rem;
-    background-size: 10rem 10rem;
+    background-image: url("../images/lovelacelogo.png");
+    background-position: 0rem 1rem;
+    background-size: 15rem 15rem;
     background-repeat: no-repeat;
 }
 h4{
