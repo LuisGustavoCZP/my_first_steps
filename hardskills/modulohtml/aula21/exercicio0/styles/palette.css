@@ -1,4 +1,12 @@
-html{
+@font-face {
+    font-family: 'kenney_future_narrowregular';
+    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
+         url('../fonts/kenney_future_narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
     font-size: 10px;
     --cinza: lightgray;
     --preto: black;
@@ -9,4 +17,5 @@ html{
     --cor2t: rgba(74, 207, 189, 0.486);
     --cor3t: #884acf6b;
     --gradient1: -webkit-linear-gradient(var(--cor2), var(--cor2t), var(--cor2));
+    --mainFont: 'kenney_future_narrowregular';
 }

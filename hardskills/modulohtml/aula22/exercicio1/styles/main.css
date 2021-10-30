@@ -1,0 +1,70 @@
+html{
+    user-select: none;
+}
+
+body {
+    background:fixed var(--gradient1);
+
+    margin: 0px;
+    padding: 2%;
+}
+
+header {
+    text-align:center;
+    padding: 5px;
+    color:var(--cor2a);
+}
+
+h1 {font-size: 5rem; text-decoration: underline;}
+h2 {font-size: 3rem;}
+h3 {font-size: 1.5rem; text-align:center;}
+
+footer {
+    background-color: var(--cinza);
+    text-align:center;
+}
+
+main {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.quadro {
+    display: flex;
+    padding: 2rem;
+}
+
+.quadro.a{
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+}
+.quadro.b{
+    width: 300px;
+    height: 300px;
+    flex-wrap: wrap-reverse;
+}
+.quadro.r{
+    flex-direction: column;
+}
+
+.caixa {
+    display:flex;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-content: center;
+    font-size: 5rem;
+    background-color: var(--cor1b);
+    border: 3px solid var(--cor2b);
+    color: var(--cor2b);
+    width: 90px;
+    height: 90px;
+}
+
+.quadro > *:nth-child(2n+1) 
+{
+    background-color: var(--preto);
+}

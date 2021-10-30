@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'kenney_future_narrowregular';
+    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
+         url('../fonts/kenney_future_narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --cinza: lightgray;
+    --preto: hsl(80, 50%, 5%);;
+
+    --cor1a1: hsl(20, 50%, 40%);
+    --cor1a2: hsl(80, 50%, 40%);
+    --cor1a3: hsl(140, 50%, 40%);
+
+    --cor1b1: hsl(200, 50%, 80%);
+    --cor1b2: hsl(260, 50%, 80%);
+    --cor1b3: hsl(320, 50%, 80%);
+    
+    --gradient1: -webkit-linear-gradient(var(--cor1a1), var(--cor1a2), var(--cor1a3));
+    --mainFont: 'kenney_future_narrowregular';
+    
+    font-family: var(--mainFont, Arial, Helvetica, sans-serif);
+}
+
+body {
+    /*background:fixed var(--gradient1);*/
+    background-color: var(--cor1b2);
+
+}
+
+header {
+    background-color: var(--cor1b1);
+    color:var(--preto);
+}
+
+header > nav > a 
+{
+    background-color: var(--cor1b3);
+    border-color: var(--cor1a1);
+}

@@ -1,18 +1,10 @@
-@font-face {
-    font-family: 'kenney_future_narrowregular';
-    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
-         url('../fonts/kenney_future_narrow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 html{
     user-select: none;
 }
 
 body {
-    font-family: 'kenney_future_narrowregular';
     margin: 0px;
+    font-family: var(--mainFont, Arial, Helvetica, sans-serif);
 }
 header {
     background-color:var(--cor1);

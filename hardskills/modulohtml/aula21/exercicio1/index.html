@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 21 - Exercicio 1</title>
+        <style> 
+            @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
+            html {
+                --cor1: hsl(0, 58%, 55%);
+                --cor2: hsl(60, 58%, 55%);
+                --cor3: hsl(120, 58%, 55%);
+                --cor4: hsl(240, 58%, 55%);
+                --font1: 'Inconsolata', monospace;
+                font-family: var(--font1);
+            }
+            header 
+            {
+                user-select: none;
+                background-color: var(--cor1);
+                display:flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            header > span 
+            {
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            h2 {
+                margin: 5px; 
+                padding: 10px; 
+                background-color: var(--cor2);}
+            h2:hover {color:var(--cor3);}
+
+            main {
+                display:flex;
+                justify-content: center;
+                align-content: center;
+            }
+            
+            article {
+                display:flex;
+                flex-direction: column;
+                padding:20px;
+                
+                background-color: var(--cor3);
+            }
+
+            section {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 400px;
+                height: 400px;
+                background-color: var(--cor2);
+                border: 5px solid var(--cor1);
+            }
+
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Aula 21 - Exercicio 1</h1>
+            <span><h2>Opcao 1</h2><h2>Opcao 2</h2><h2>Opcao 3</h2></span>
+        </header>
+        <main>
+            
+            <article>
+                <section>
+                    <img src="budayingyang.png" />
+                </section>
+                <section>
+                    <img src="budayingyang.png" />
+                </section>
+            </article>
+            <article>
+                <section>
+                    <img src="budayingyang.png" />
+                </section>
+                <section>
+                    <img src="budayingyang.png" />
+                </section>
+            </article>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages>
+    <page>
+        <title>Desenvolvimento Web</title>
+        <menu></menu>
+        <context>pages/webdev/index.html</context>
+        <style>styles/style1.css</style>
+    </page>
+    <page>
+        <title>Desenvolvimento de Games</title>
+        <menu></menu>
+        <context>pages/gamedev/index.html</context>
+        <style>styles/style1.css</style>
+    </page>
+    <page>
+        <title>Quem eu sou</title>
+        <menu></menu>
+        <context>pages/myself/index.html</context>
+        <style>styles/style1.css</style>
+    </page>
+</pages>

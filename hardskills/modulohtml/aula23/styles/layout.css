@@ -1,0 +1,39 @@
+body {
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    user-select: none;
+    text-align:center;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+h1 {
+    margin: 0px;
+}
+
+h4 {
+    margin: 0px;
+}
+
+header > nav 
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+header > nav > a 
+{
+    border: 1px solid;
+    margin: 1px;
+    padding: 2px;
+}
+
+footer{
+    padding: 5px;
+    text-align: center;
+}
