@@ -101,6 +101,19 @@ td:nth-child(2n) {
     color: var(--cor1b3);
 }
 
+.skills-header {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.skills-header > td {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    color: var(--cinza);
+}
+
 #skillhtml > td > img:nth-last-child(-n + 1)
 {
     filter: grayscale(100%);
@@ -152,6 +165,46 @@ td:nth-child(2n) {
 }
 
 #skillnetwork > td > img:nth-last-child(-n + 4)
+{
+    filter: grayscale(100%);
+}
+
+#skillautoconhecimento > td > img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+#skillcooperatividade > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skillintelemocional > td > img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+#skillcinesica > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skilleditimages > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skilldesign > td > img:nth-last-child(-n + 3)
+{
+    filter: grayscale(100%);
+}
+
+#skillmodelagem > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skillanimacao > td > img:nth-last-child(-n + 2)
 {
     filter: grayscale(100%);
 }
