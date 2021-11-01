@@ -174,7 +174,7 @@ td:nth-child(2n) {
     filter: grayscale(100%);
 }
 
-#skillcooperatividade > td > img:nth-last-child(-n + 2)
+#skillcooperatividade > td > img:nth-last-child(-n + 1)
 {
     filter: grayscale(100%);
 }
