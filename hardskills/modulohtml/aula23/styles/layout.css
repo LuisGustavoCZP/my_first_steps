@@ -2,12 +2,13 @@ body {
     margin: 0px;
 }
 
-header {
+body > header {
     display: flex;
     user-select: none;
     text-align:center;
-    padding: 10px;
+    padding: 20px 20px 0px 20px;
     white-space: nowrap;
+    justify-content:space-between;
 }
 
 h1 {
@@ -15,25 +16,94 @@ h1 {
 }
 
 h4 {
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
 }
 
-header > nav 
+body > header > nav 
 {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+    align-content: flex-end;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
-header > nav > a 
+body > header > nav > button 
 {
-    border: 1px solid;
+    font-size: 24px;
+    border: 3px solid black;
     margin: 1px;
-    padding: 2px;
+    padding: 10px;
 }
 
-footer{
+main {
+    margin: 0% 5% 0% 5%;
+    
+}
+
+main > article > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: right;
+    background-image: url("../images/luisformal.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main > article > div > div {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px;
+    justify-content: center;
+    max-width:600px;
+}
+
+main > article > div > div > div {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main > article > div > div > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    text-align: left;
+}
+
+table {
+    margin: 0px;
+    justify-self: center;
+}
+
+div > span {
+    display: block;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+}
+
+td {
+    text-align:center;
+}
+
+td > img {
+    width: 30px;
+}
+
+footer {
     padding: 5px;
     text-align: center;
 }

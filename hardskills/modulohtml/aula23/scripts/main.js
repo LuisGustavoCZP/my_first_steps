@@ -1,14 +1,12 @@
 class SubPage 
 {
-    constructor (title, menu, context, style){
+    constructor (title, context, style){
         this.title = title;
-        this.menu = menu;
         this.context = context;
         this.style = style;
     }
 
     title="";
-    menu="";
     context="";
     style="";
 }
@@ -21,9 +19,11 @@ var pagelayout = document.getElementById("pagelayout");
 var subpageIndex = 0;
 var subpages = 
 [
-    new SubPage("Home", "", "pages/index.html", "styles/style1.css"),
+   
 ];
 
+ //new SubPage("Home", "pages/index.html", "styles/style1.css"),
+ 
 function OnLoadXML(data)
 {
     let pages = data.firstChild;
@@ -33,32 +33,42 @@ function OnLoadXML(data)
         subpages.push(page);
     }
 
-    SelectSubpage(subpages[subpageIndex]);
+    SelectSubpage(subpageIndex);
 }
 
 function ReadPage (page)
 {
-    return new SubPage(page.children[0].innerHTML, page.children[1].innerHTML, page.children[2].innerHTML, page.children[3].innerHTML);
+    return new SubPage(page.children[0].innerHTML, page.children[1].innerHTML, page.children[2].innerHTML);
 }
 
-function SelectSubpage(subpage)
+function SelectSubpage(index)
 {
-    if(!subpage.menu || subpage.menu == "") 
+    subpageIndex = index;
+    let page = subpages[index];
+    let t = menu.childElementCount;
+    for(j = 0; j < t; j++)
     {
-        let total = subpages.length;
-        for (i = 0; i < total; i++)
-        {
-            let opcao = document.createElement("a");
-            opcao.innerText = subpages[i].title;
-            menu.append(opcao);
-        }
-        return;
+        menu.firstChild.remove();
     }
 
-    LoadHTML(subpage.menu, x => 
+    let total = subpages.length;
+    for (i = 0; i < total; i++)
     {
-        if(menu.firstChild) menu.firstChild.remove();
-        menu.append(x);
+        if(i == subpageIndex) continue;
+        let opcao = document.createElement("button");
+        opcao.innerText = subpages[i].title;
+        let x = i;
+        opcao.onclick = evt => {
+            //console.log(i + " | " + x);
+            SelectSubpage(x);
+        };
+        menu.append(opcao);
+    }
+
+    LoadHTML(page.context, element => 
+    {
+        if(subpage.firstChild) subpage.firstChild.remove();
+        subpage.append(element);
     });
 }
 

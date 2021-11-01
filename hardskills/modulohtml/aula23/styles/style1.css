@@ -10,13 +10,13 @@
     --cinza: lightgray;
     --preto: hsl(80, 50%, 5%);;
 
-    --cor1a1: hsl(20, 50%, 40%);
-    --cor1a2: hsl(80, 50%, 40%);
-    --cor1a3: hsl(140, 50%, 40%);
+    --cor1a1: hsl(20, 30%, 40%);
+    --cor1a2: hsl(80, 30%, 40%);
+    --cor1a3: hsl(140, 30%, 40%);
 
-    --cor1b1: hsl(200, 50%, 80%);
-    --cor1b2: hsl(260, 50%, 80%);
-    --cor1b3: hsl(320, 50%, 80%);
+    --cor1b1: hsl(200, 80%, 80%);
+    --cor1b2: hsl(260, 80%, 80%);
+    --cor1b3: hsl(320, 80%, 80%);
     
     --gradient1: -webkit-linear-gradient(var(--cor1a1), var(--cor1a2), var(--cor1a3));
     --mainFont: 'kenney_future_narrowregular';
@@ -24,19 +24,134 @@
     font-family: var(--mainFont, Arial, Helvetica, sans-serif);
 }
 
+body > header > div > h1
+{
+    color:var(--cor1b1)
+}
+
+
+body > header > div > h4 :first-child
+{
+    color:var(--cor1b2)
+}
+
+body > header > div > h4 :last-child
+{
+    color:var(--cor1b3)
+}
+
 body {
     /*background:fixed var(--gradient1);*/
-    background-color: var(--cor1b2);
-
-}
-
-header {
     background-color: var(--cor1b1);
-    color:var(--preto);
+    color:var(--cinza);
 }
 
-header > nav > a 
+body > header {
+    background-color: var(--cor1a3);
+    
+}
+
+body > header > nav > button 
 {
-    background-color: var(--cor1b3);
+    background-color: var(--cor1b1);
     border-color: var(--cor1a1);
+    color: var(--preto);
+}
+
+body > header > nav > button:hover
+{
+    border-color: var(--cor1b3);
+}
+
+body > main {
+    background-color: var(--cor1a2);
+}
+
+body > footer {
+    background-color: var(--cor1a3);
+}
+
+strong
+{
+    color: var(--cor1b1);
+    text-shadow: var(--preto) 1px 1px 10px;
+}
+
+i
+{
+    color: var(--cor1b3);
+    text-shadow: var(--preto) 1px 1px 10px;
+}
+
+
+body > main > article > div > div {
+    background-color: var(--cor1a2);
+}
+
+
+main > article > div > div > div > h2 {
+    color: var(--cor1b3);
+    text-shadow: var(--preto) 1px 1px 10px;
+}
+
+td:nth-child(2n+1) {
+    color: var(--cor1b1);
+}
+td:nth-child(2n) {
+    color: var(--cor1b3);
+}
+
+#skillhtml > td > img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+#skillcss > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skilljs > td > img:nth-last-child(-n + 4)
+{
+    filter: grayscale(100%);
+}
+
+#skillservers > td > img:nth-last-child(-n + 4)
+{
+    filter: grayscale(100%);
+}
+
+#skillueditor > td > img:nth-last-child(-n + 0)
+{
+    filter: grayscale(100%);
+}
+
+#skillcsharp > td > img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+#skillshadergraph > td > img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+#skillanimator > td > img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+#skillscriptable > td > img:nth-last-child(-n + 0)
+{
+    filter: grayscale(100%);
+}
+
+#skilldots > td > img:nth-last-child(-n + 3)
+{
+    filter: grayscale(100%);
+}
+
+#skillnetwork > td > img:nth-last-child(-n + 4)
+{
+    filter: grayscale(100%);
 }
