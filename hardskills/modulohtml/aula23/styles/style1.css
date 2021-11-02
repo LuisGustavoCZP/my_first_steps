@@ -23,15 +23,15 @@
     --cor1a2b: hsl(80, 70%, 70%);
     --cor1a3b: hsl(155, 70%, 70%);
 
-    --cor1b1: hsl(5, 40%, 80%);
-    --cor1b2: hsl(80, 40%, 80%);
-    --cor1b3: hsl(155, 40%, 80%);
+    --cor1b1: hsl(5, 40%, 30%);
+    --cor1b2: hsl(80, 40%, 30%);
+    --cor1b3: hsl(155, 40%, 30%);
     
     --cor1b1a: hsla(5, 40%, 30%, .2);
     --cor1b2a: hsla(80, 40%, 30%, .2);
     --cor1b3a: hsla(155, 40%, 30%, .2);
     
-    --gradient1: linear-gradient(90deg, var(--cor1b2a) 0%, var(--cor1b2) 50%, var(--cor1b3a) 100%);
+    --gradient1: linear-gradient(90deg, var(--cor1b2a) 0%, var(--cor1a2b) 50%, var(--cor1b3a) 100%);
     --mainFont: 'kenney_future_narrowregular';
 
 }
@@ -182,13 +182,13 @@ footer {
 }
 
 strong{
-    color: var(--cor1a2);
+    color: var(--cor1a3);
     text-shadow: var(--preto) 1px 1px 1px;
 }
 
 i{
-    color: var(--cor1a3);
-    text-shadow: var(--preto) 1px 1px 1px;
+    color: var(--cor1b1);
+    text-shadow: var(--cinza) 1px 1px 1px;
 }
 
 #subpage {
