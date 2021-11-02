@@ -108,7 +108,7 @@ main {
 }
 
 #subpage > div > div > div > div {
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     
@@ -118,7 +118,6 @@ main {
 
 ul {
     text-align: left;
-    max-width:max-content;
     align-self: center;
     margin: 5px;
 }
