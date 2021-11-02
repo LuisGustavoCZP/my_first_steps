@@ -6,26 +6,34 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
 :root{
     --cinza: lightgray;
-    --preto: hsl(80, 50%, 5%);;
+    --cinzat: rgba(211, 211, 211, 0.5);
+
+    --preto: hsla(80, 50%, 5%);
+    --pretot: hsla(80, 50%, 5%, 0.5);
 
     --cor1a1: hsl(5, 100%, 50%);
     --cor1a2: hsl(80, 100%, 50%);
     --cor1a3: hsl(155, 100%, 50%);
 
-    --cor1b1: hsl(200, 40%, 80%);
-    --cor1b2: hsl(260, 40%, 80%);
-    --cor1b3: hsl(320, 40%, 80%);
+    --cor1a1b: hsl(5, 70%, 70%);
+    --cor1a2b: hsl(80, 70%, 70%);
+    --cor1a3b: hsl(155, 70%, 70%);
+
+    --cor1b1: hsl(5, 40%, 80%);
+    --cor1b2: hsl(80, 40%, 80%);
+    --cor1b3: hsl(155, 40%, 80%);
     
-    --cor1b1a: hsla(200, 40%, 80%, .4);
-    --cor1b2a: hsla(260, 40%, 80%, .4);
-    --cor1b3a: hsla(320, 40%, 80%, .4);
+    --cor1b1a: hsla(5, 40%, 30%, .2);
+    --cor1b2a: hsla(80, 40%, 30%, .2);
+    --cor1b3a: hsla(155, 40%, 30%, .2);
     
-    --gradient1: linear-gradient(90deg, var(--cor1b1a) 0%, var(--cor1b2a) 50%, var(--cor1b3a) 100%);
+    --gradient1: linear-gradient(90deg, var(--cor1b2a) 0%, var(--cor1b2) 50%, var(--cor1b3a) 100%);
     --mainFont: 'kenney_future_narrowregular';
 
-    
 }
 
 @keyframes --titleblink {
@@ -61,6 +69,39 @@
     }
 }
 
+@keyframes --wireblink {
+    0% {
+        border-color: var(--cor1a3);
+    }
+    30% {
+        border-color:white;
+    }
+    30.1% {
+        border-color: var(--preto);
+    }
+    40% {
+        border-color: var(--cor1a3);
+    }
+    40.1% {
+        border-color: var(--preto);
+    }
+    45% {
+        border-color: var(--cor1a3);
+    }
+    45.1% {
+        border-color: var(--preto);
+        filter: blur(100%);
+    }
+    60% {
+        border-color: var(--cor1a3);
+        filter: blur(0%);
+        
+    }
+    100% {
+        border-color: var(--cor1a3);
+    }
+}
+
 @keyframes --h4ablink {
     0% {
         color: var(--cor1a2);
@@ -79,38 +120,56 @@
     }
 }
 
-body > header > div > h1{
+body > header h1{
     animation: --titleblink 15s infinite;
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+body > header h4{
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+body > header > div {
+    background:fixed var(--gradient1);
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
-
-body > header > div > h4 :first-child{
+body > header h4 :first-child{
     animation: --h4ablink 15s infinite;
 }
 
-body > header > div > h4 :last-child{
+body > header h4 :last-child{
     color:var(--cor1a3);
     animation: --h4ablink 15s infinite;
 }
 
 body {
     /*background:fixed var(--gradient1);*/
-    background-color: var(--cor1b1);
+    
     color:var(--preto);
+    background-image: url("../images/luisformal.png");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 body > header {
-    background-color: var(--preto);
     font-family: var(--mainFont, Arial, Helvetica, sans-serif);
-    color: var(--cinza);
+    color: var(--preto);
 }
 
-#menu > button{
-    font-family: var(--mainFont, Arial, Helvetica, sans-serif);
-    background-color: var(--cor1b2);
+body > header > div > div {
+    background-color: var(--pretot);
+    border-radius: 15px;
+    animation: --wireblink 15s infinite;
+}
+
+#menu button{
+    font-family: 'Inconsolata', monospace;
+    background:fixed var(--gradient1);
     border-color: var(--cor1a3);
     border-radius: 15px;
-    color: var(--preto);
+    color: var(--cor1a2);
+    text-shadow: var(--preto) 1px 1px 1px;
+    box-shadow: var(--preto) 1px 1px 1px;
 }
 
 #menu > button:hover{
@@ -132,18 +191,18 @@ i{
 }
 
 #subpage {
-    background-color: var(--cor1b2);
+    background:fixed var(--gradient1);
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 #subpage > div > div {
-    background:fixed var(--gradient1);
     min-width: 400px;
 }
 
 #subpage h2 {
     color: var(--cor1a3);
     text-shadow: var(--preto) 1px 1px 1px;
-    width: max-content;
 }
 
 .skills-header {
@@ -155,6 +214,7 @@ i{
 .skills-header > td {
     display: flex;
     text-align: center;
+    justify-content: center;
     color: var(--cor1a2);
     text-shadow: var(--preto) 1px 1px 1px;
 }

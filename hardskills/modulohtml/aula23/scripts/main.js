@@ -22,8 +22,15 @@ var subpages =
    
 ];
 
- //new SubPage("Home", "pages/index.html", "styles/style1.css"),
- 
+var audios = [
+    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3",
+    "audios/",
+    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3",
+    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3"
+]
+
+//new SubPage("Home", "pages/index.html", "styles/style1.css"),
+
 function OnLoadXML(data)
 {
     let pages = data.firstChild;
