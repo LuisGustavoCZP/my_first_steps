@@ -176,8 +176,9 @@ body > header > div > div {
     border-color: var(--cor1b3);
 }
 
-body > footer {
-    background-color: var(--cor1a3);
+footer {
+    background-color: var(--pretot);
+    color:var(--cinza);
 }
 
 strong{
