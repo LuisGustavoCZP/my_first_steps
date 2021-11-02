@@ -108,7 +108,7 @@ main {
 }
 
 #subpage > div > div > div > div {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     

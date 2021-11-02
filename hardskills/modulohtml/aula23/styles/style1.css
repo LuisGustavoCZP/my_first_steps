@@ -15,8 +15,8 @@
     --preto: hsla(80, 50%, 5%);
     --pretot: hsla(80, 50%, 5%, 0.5);
 
-    --cor1a1: hsl(5, 100%, 50%);
-    --cor1a2: hsl(80, 100%, 50%);
+    --cor1a1: hsl(80, 100%, 50%);
+    --cor1a2: hsl(5, 100%, 50%);
     --cor1a3: hsl(155, 100%, 50%);
 
     --cor1a1b: hsl(5, 70%, 70%);
@@ -49,7 +49,7 @@
     40% {
         color: var(--cor1a1);
     }
-    40.1% {
+    /*40.1% {
         color: var(--preto);
     }
     45% {
@@ -63,7 +63,7 @@
         color: var(--cor1a1);
         filter: blur(0%);
         
-    }
+    }*/
     100% {
         color: var(--cor1a1);
     }
@@ -90,11 +90,9 @@
     }
     45.1% {
         border-color: var(--preto);
-        filter: blur(100%);
     }
     60% {
         border-color: var(--cor1a3);
-        filter: blur(0%);
         
     }
     100% {
@@ -104,7 +102,7 @@
 
 @keyframes --h4ablink {
     0% {
-        color: var(--cor1a2);
+        color: var(--cor1a3);
     }
     30% {
         color:white;
@@ -113,10 +111,23 @@
         color: var(--preto);
     }
     40% {
-        color: var(--cor1a2);
+        color: var(--cor1a3);
+    }
+    40.1% {
+        color: var(--preto);
+    }
+    45% {
+        color: var(--cor1a3);
+    }
+    45.1% {
+        color: var(--preto);
+    }
+    60% {
+        color: var(--cor1a3);
+        
     }
     100% {
-        color: var(--cor1a2);
+        color: var(--cor1a3);
     }
 }
 
@@ -167,13 +178,14 @@ body > header > div > div {
     background:fixed var(--gradient1);
     border-color: var(--cor1a3);
     border-radius: 15px;
-    color: var(--cor1a2);
+    color: var(--preto);
     text-shadow: var(--preto) 1px 1px 1px;
     box-shadow: var(--preto) 1px 1px 1px;
 }
 
 #menu > button:hover{
     border-color: var(--cor1b3);
+    color: var(--cor1a1);
 }
 
 footer {
@@ -182,8 +194,8 @@ footer {
 }
 
 strong{
-    color: var(--cor1a3);
-    text-shadow: var(--preto) 1px 1px 1px;
+    color: var(--cor1a3b);
+    text-shadow: var(--preto) 1px 1px 3px;
 }
 
 i{
