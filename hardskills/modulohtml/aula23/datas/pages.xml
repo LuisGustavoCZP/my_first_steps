@@ -20,9 +20,5 @@
         <context>myself.html</context>
         <style>styles/style1.css</style>
     </page>
-    <page>
-        <title>Contato</title>
-        <context>contact.html</context>
-        <style>styles/style1.css</style>
-    </page>
+   
 </pages>
