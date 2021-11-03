@@ -168,7 +168,7 @@ body > header {
     color: var(--preto);
 }
 
-body > header > div > div {
+#titlebox {
     background-color: var(--pretot);
     border-radius: 15px;
     animation: --wireblink 15s infinite;

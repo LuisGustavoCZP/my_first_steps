@@ -7,13 +7,13 @@ body > header {
     flex-direction: column;
     user-select: none;
     text-align:stretch;
-    padding: 10px 10px 0px 10px;
-    justify-content:center;
-    align-items: center;
+    justify-content:stretch;
+    
+    margin: 5% 5% 0% 5%;
 }
 
 h1 {
-    margin: 15px 15px 15px 15px;
+    margin: 15px 10px 10px 10px;
 }
 
 h4 {
@@ -29,31 +29,45 @@ body > header > div {
     display: flex;
     user-select: none;
     text-align:center;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-between;
     max-height: fit-content;
     border-radius: 15px;
-    padding: 0px 15px 0px 15px;
+    
+    padding: 0px 0px 0px 0px;
 }
 
-body > header > div > div {
+body > header > div > span {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 480px;
+    height: 300px;
+}
+
+#titlebox {
     display: flex;
     flex-direction: column;
-    height: max-content;
+    flex-wrap: wrap;
     padding: 5px;
+    flex-grow: 1;
     border: 3px solid white;
+    justify-content: center;
+    align-items: center;
 }
 
 body > header > div > img {
     display: flex;
-    max-height: min-content;
     object-fit: contain;
     max-height: 300px;
 }
 
 #menu {
     display: flex;
-    flex-direction: column;
-    flex-wrap:nowrap;
+    flex-direction: row;
+    flex-wrap:wrap;
     align-content: flex-end;
     justify-content: stretch;
 }
@@ -69,16 +83,17 @@ body > header > div > img {
 
 main {
     display: flex;
-    padding: 0% 5% 0% 5%;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     
+    padding: 0% 5% 0% 5%;
 }
 
 #subpage 
 {
-    
-    min-width: fit-content;
+    display: flex;
+    flex-grow: 1;
+    justify-content:center;
 }
 
 #subpage > div {
