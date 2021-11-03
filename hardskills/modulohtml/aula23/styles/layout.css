@@ -123,10 +123,9 @@ ul {
 }
 
 table {
-    
+    display: flex;
     margin: 0px;
-    justify-self:stretch;
-    min-width:max-content;
+    justify-self:center;
 }
 
 div > span {
@@ -148,4 +147,8 @@ td > img {
 footer {
     padding: 5px;
     text-align: center;
+}
+
+a > img {
+    max-width: 50px;
 }

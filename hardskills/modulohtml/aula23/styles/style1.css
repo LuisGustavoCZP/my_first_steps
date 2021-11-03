@@ -194,13 +194,13 @@ footer {
 }
 
 strong{
-    color: var(--cor1a3b);
-    text-shadow: var(--preto) 1px 1px 3px;
+    color: var(--preto);
+    text-shadow: var(--cor1a1) 1px 1px 3px;
 }
 
 i{
-    color: var(--cor1b1);
-    text-shadow: var(--cinza) 1px 1px 1px;
+    color: var(--preto);
+    text-shadow: var(--cor1b2) 1px 1px 10px;
 }
 
 #subpage {
