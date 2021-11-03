@@ -208,13 +208,14 @@ i{
 }
 
 #subpage > div > div {
-    min-width: 400px;
+    /*min-width: 400px;*/
 }
 
 #subpage h2 {
     color: var(--cor1a3);
     text-shadow: var(--preto) 1px 1px 1px;
 }
+
 
 .skills-header {
     display: flex;
@@ -230,96 +231,33 @@ i{
     text-shadow: var(--preto) 1px 1px 1px;
 }
 
-#skillhtml > td > img:nth-last-child(-n + 1){
+
+
+.star0 img:nth-last-child(-n + 5){
     filter: grayscale(100%);
 }
 
-#skillcss > td > img:nth-last-child(-n + 2)
+.star1 img:nth-last-child(-n + 4)
 {
     filter: grayscale(100%);
 }
 
-#skilljs > td > img:nth-last-child(-n + 4)
+.star2 img:nth-last-child(-n + 3)
 {
     filter: grayscale(100%);
 }
 
-#skillservers > td > img:nth-last-child(-n + 4)
+.star3 img:nth-last-child(-n + 2)
 {
     filter: grayscale(100%);
 }
 
-#skillueditor > td > img:nth-last-child(-n + 0)
+.star4 img:nth-last-child(-n + 1)
 {
     filter: grayscale(100%);
 }
 
-#skillcsharp > td > img:nth-last-child(-n + 1)
-{
-    filter: grayscale(100%);
-}
-
-#skillshadergraph > td > img:nth-last-child(-n + 2)
-{
-    filter: grayscale(100%);
-}
-
-#skillanimator > td > img:nth-last-child(-n + 1)
-{
-    filter: grayscale(100%);
-}
-
-#skillscriptable > td > img:nth-last-child(-n + 0)
-{
-    filter: grayscale(100%);
-}
-
-#skilldots > td > img:nth-last-child(-n + 3)
-{
-    filter: grayscale(100%);
-}
-
-#skillnetwork > td > img:nth-last-child(-n + 4)
-{
-    filter: grayscale(100%);
-}
-
-#skillautoconhecimento > td > img:nth-last-child(-n + 1)
-{
-    filter: grayscale(100%);
-}
-
-#skillcooperatividade > td > img:nth-last-child(-n + 1)
-{
-    filter: grayscale(100%);
-}
-
-#skillintelemocional > td > img:nth-last-child(-n + 1)
-{
-    filter: grayscale(100%);
-}
-
-#skillcinesica > td > img:nth-last-child(-n + 2)
-{
-    filter: grayscale(100%);
-}
-
-#skilleditimages > td > img:nth-last-child(-n + 2)
-{
-    filter: grayscale(100%);
-}
-
-#skilldesign > td > img:nth-last-child(-n + 3)
-{
-    filter: grayscale(100%);
-}
-
-#skillmodelagem > td > img:nth-last-child(-n + 2)
-{
-    filter: grayscale(100%);
-}
-
-#skillanimacao > td > img:nth-last-child(-n + 2)
+.star5 img:nth-last-child(-n + 0)
 {
     filter: grayscale(100%);
 }
