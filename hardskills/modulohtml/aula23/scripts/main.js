@@ -1,20 +1,23 @@
 class SubPage 
 {
-    constructor (title, context, style){
+    constructor (title, context, style, photo){
         this.title = title;
         this.context = context;
         this.style = style;
+        this.photo = photo;
     }
 
     title="";
     context="";
     style="";
+    photo="";
 }
 
 var menu = document.getElementById("menu");
 var subpage = document.getElementById("subpage");
 var pagestyle = document.getElementById("pagestyle");
 var pagelayout = document.getElementById("pagelayout");
+var photo = document.getElementById("photo");
 
 var subpageIndex = 0;
 var subpages = 
@@ -23,10 +26,10 @@ var subpages =
 ];
 
 var audios = [
-    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3",
-    "audios/",
-    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3",
-    "audios/y2meta.com - Foster The People - Pumped Up Kicks (Official Video) (128 kbps).mp3"
+    "audios/fosterthepeople-imagination.mp3",
+    "audios/fosterthepeople-pumpedupkicks.mp3",
+    "audios/thefatrat-arcadia.ogg",
+    "audios/thefatrat-riell-hidingintheblue.mp3"
 ]
 
 //new SubPage("Home", "pages/index.html", "styles/style1.css"),
@@ -45,7 +48,7 @@ function OnLoadXML(data)
 
 function ReadPage (page)
 {
-    return new SubPage(page.children[0].innerHTML, page.children[1].innerHTML, page.children[2].innerHTML);
+    return new SubPage(page.children[0].innerHTML, page.children[1].innerHTML, page.children[2].innerHTML, page.children[3].innerHTML);
 }
 
 function SelectSubpage(index)
@@ -71,6 +74,8 @@ function SelectSubpage(index)
         };
         menu.append(opcao);
     }
+
+    photo.src = page.photo;
 
     LoadHTML(page.context, element => 
     {

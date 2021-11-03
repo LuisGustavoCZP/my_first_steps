@@ -4,21 +4,25 @@
         <title>Home</title>
         <context>home.html</context>
         <style>styles/style1.css</style>
+        <photo>images/photos/luisformal1.png</photo>
     </page>
     <page>
         <title>Profissional Web</title>
         <context>webdev.html</context>
         <style>styles/style1.css</style>
+        <photo>images/photos/luisformal1.png</photo>
     </page>
     <page>
         <title>Hobby de Games</title>
         <context>gamedev.html</context>
         <style>styles/style1.css</style>
+        <photo>images/photos/luisinformal1.png</photo>
     </page>
     <page>
         <title>Quem eu sou</title>
         <context>myself.html</context>
         <style>styles/style1.css</style>
+        <photo>images/photos/luisinformal1.png</photo>
     </page>
    
 </pages>

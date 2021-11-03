@@ -33,7 +33,7 @@ body > header > div {
     align-items: center;
     max-height: fit-content;
     border-radius: 15px;
-    padding: 15px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
 }
 
 body > header > div > div {
