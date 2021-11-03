@@ -136,6 +136,7 @@ body > header h1{
     text-shadow: var(--preto) 1px 1px 1px;
 }
 body > header h4{
+    white-space: nowrap;
     text-shadow: var(--preto) 1px 1px 1px;
 }
 body > header > div {
