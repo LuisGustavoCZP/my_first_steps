@@ -193,14 +193,6 @@ footer {
     color:var(--cinza);
 }
 
-strong{
-    text-shadow: var(--cor1a1) 1px 1px 3px;
-}
-
-i{
-    text-shadow: var(--cor1b2) 1px 1px 10px;
-}
-
 #subpage {
     background:fixed var(--gradient1);
     border: 3px solid black;
@@ -216,22 +208,20 @@ i{
     text-shadow: var(--preto) 1px 1px 1px;
 }
 
-
-.skills-header {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-}
-
-.skills-header > td {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: var(--cor1a2);
+.list {
+    color: var(--cinza);
     text-shadow: var(--preto) 1px 1px 1px;
 }
 
+.list > * {
+    background-color: var(--pretot);
+    padding: 5px;
+    margin: 5px;
+}
 
+.list > span > span {
+    filter: drop-shadow(1px 1px 2px var(--preto));
+}
 
 .star0 img:nth-last-child(-n + 5){
     filter: grayscale(100%);
