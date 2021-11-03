@@ -217,7 +217,6 @@ footer {
     background-color: var(--pretot);
     padding: 5px;
     margin: 5px;
-    white-space: nowrap;
 }
 
 .list > span > span {
@@ -251,4 +250,14 @@ footer {
 .star5 img:nth-last-child(-n + 0)
 {
     filter: grayscale(100%);
+}
+
+strong {
+    
+    white-space: nowrap;
+}
+
+i {
+    
+    white-space: nowrap;
 }
