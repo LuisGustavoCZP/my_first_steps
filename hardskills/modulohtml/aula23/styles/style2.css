@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'kenney_future_narrowregular';
+    src: url('../fonts/kenney_future_narrow.woff2') format('woff2'),
+         url('../fonts/kenney_future_narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
+:root{
+    --cinza: lightgray;
+    --cinzat: rgba(211, 211, 211, 0.5);
+
+    --preto: hsla(80, 50%, 5%);
+    --pretot: hsla(80, 50%, 5%, 0.5);
+
+    --cor1a1: hsl(110, 100%, 50%);
+    --cor1a2: hsl(230, 100%, 50%);
+    --cor1a3: hsl(350, 100%, 50%);
+
+    --cor1a1b: hsl(110, 70%, 70%);
+    --cor1a2b: hsl(230, 70%, 70%);
+    --cor1a3b: hsl(350, 70%, 70%);
+
+    --cor1b1: hsl(110, 40%, 30%);
+    --cor1b2: hsl(230, 40%, 30%);
+    --cor1b3: hsl(350, 40%, 30%);
+    
+    --cor1b1a: hsla(110, 40%, 30%, .2);
+    --cor1b2a: hsla(230, 40%, 30%, .2);
+    --cor1b3a: hsla(350, 40%, 30%, .2);
+    
+    --gradient1: linear-gradient(90deg, var(--cor1b2a) 0%, var(--cor1a2b) 50%, var(--cor1b3a) 100%);
+    --mainFont: 'kenney_future_narrowregular';
+
+}
+
+@keyframes --titleblink {
+    0% {
+        color: var(--cor1a1);
+    }
+    30% {
+        color:white;
+    }
+    30.1% {
+        color: var(--preto);
+    }
+    40% {
+        color: var(--cor1a1);
+    }
+    /*40.1% {
+        color: var(--preto);
+    }
+    45% {
+        color: var(--cor1a1);
+    }
+    45.1% {
+        color: var(--preto);
+        filter: blur(100%);
+    }
+    60% {
+        color: var(--cor1a1);
+        filter: blur(0%);
+        
+    }*/
+    100% {
+        color: var(--cor1a1);
+    }
+}
+
+@keyframes --wireblink {
+    0% {
+        border-color: var(--cor1a3);
+    }
+    30% {
+        border-color:white;
+    }
+    30.1% {
+        border-color: var(--preto);
+    }
+    40% {
+        border-color: var(--cor1a3);
+    }
+    40.1% {
+        border-color: var(--preto);
+    }
+    45% {
+        border-color: var(--cor1a3);
+    }
+    45.1% {
+        border-color: var(--preto);
+    }
+    60% {
+        border-color: var(--cor1a3);
+        
+    }
+    100% {
+        border-color: var(--cor1a3);
+    }
+}
+
+@keyframes --h4ablink {
+    0% {
+        color: var(--cor1a3);
+    }
+    30% {
+        color:white;
+    }
+    30.1% {
+        color: var(--preto);
+    }
+    40% {
+        color: var(--cor1a3);
+    }
+    40.1% {
+        color: var(--preto);
+    }
+    45% {
+        color: var(--cor1a3);
+    }
+    45.1% {
+        color: var(--preto);
+    }
+    60% {
+        color: var(--cor1a3);
+        
+    }
+    100% {
+        color: var(--cor1a3);
+    }
+}
+
+body > header h1{
+    animation: --titleblink 15s infinite;
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+body > header h4{
+    white-space: nowrap;
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+body > header > div {
+    background:fixed var(--gradient1);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+body > header h4 :first-child{
+    animation: --h4ablink 15s infinite;
+}
+
+body > header h4 :last-child{
+    color:var(--cor1a3);
+    animation: --h4ablink 15s infinite;
+}
+
+body {
+    /*background:fixed var(--gradient1);*/
+    
+    color:var(--preto);
+    background-image: url("../images/luisformal.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+body > header {
+    font-family: var(--mainFont, Arial, Helvetica, sans-serif);
+    color: var(--preto);
+}
+
+body > header > div > div {
+    background-color: var(--pretot);
+    border-radius: 15px;
+    animation: --wireblink 15s infinite;
+}
+
+#menu button{
+    font-family: 'Inconsolata', monospace;
+    background:fixed var(--gradient1);
+    border-color: var(--cor1a3);
+    border-radius: 15px;
+    color: var(--preto);
+    text-shadow: var(--preto) 1px 1px 1px;
+    box-shadow: var(--preto) 1px 1px 1px;
+}
+
+#menu > button:hover{
+    border-color: var(--cor1b3);
+    color: var(--cor1a1);
+}
+
+footer {
+    background-color: var(--pretot);
+    color:var(--cinza);
+}
+
+#subpage {
+    background:fixed var(--gradient1);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#subpage > div > div {
+    /*min-width: 400px;*/
+}
+
+#subpage h2 {
+    color: var(--cor1a3);
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+
+.list {
+    color: var(--cinza);
+    text-shadow: var(--preto) 1px 1px 1px;
+}
+
+.list > * {
+    background-color: var(--pretot);
+    padding: 5px;
+    margin: 5px;
+}
+
+.list > span > span {
+    filter: drop-shadow(1px 1px 2px var(--preto));
+}
+
+.star0 img:nth-last-child(-n + 5){
+    filter: grayscale(100%);
+}
+
+.star1 img:nth-last-child(-n + 4)
+{
+    filter: grayscale(100%);
+}
+
+.star2 img:nth-last-child(-n + 3)
+{
+    filter: grayscale(100%);
+}
+
+.star3 img:nth-last-child(-n + 2)
+{
+    filter: grayscale(100%);
+}
+
+.star4 img:nth-last-child(-n + 1)
+{
+    filter: grayscale(100%);
+}
+
+.star5 img:nth-last-child(-n + 0)
+{
+    filter: grayscale(100%);
+}
+
+strong {
+    
+    white-space: nowrap;
+}
+
+i {
+    
+}

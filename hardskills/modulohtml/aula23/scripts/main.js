@@ -18,16 +18,19 @@ var subpage = document.getElementById("subpage");
 var pagestyle = document.getElementById("pagestyle");
 var pagelayout = document.getElementById("pagelayout");
 var photo = document.getElementById("photo");
+var audio = document.getElementById("audio");
+
 
 var subpageIndex = 0;
+
 var subpages = 
 [
    
 ];
 
 var audios = [
-    "audios/fosterthepeople-imagination.mp3",
     "audios/fosterthepeople-pumpedupkicks.mp3",
+    "audios/fosterthepeople-imagination.mp3",
     "audios/thefatrat-arcadia.ogg",
     "audios/thefatrat-riell-hidingintheblue.mp3"
 ]
@@ -74,9 +77,10 @@ function SelectSubpage(index)
         };
         menu.append(opcao);
     }
-
+    pagestyle.href = page.style;
     photo.src = page.photo;
-
+    audio.src = audios[index];
+    audio.volume = 0.01;
     LoadHTML(page.context, element => 
     {
         if(subpage.firstChild) subpage.firstChild.remove();
@@ -85,4 +89,5 @@ function SelectSubpage(index)
 }
 
 LoadXML("datas/pages.xml", OnLoadXML);
+
 //menu.append();

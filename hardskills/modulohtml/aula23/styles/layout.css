@@ -71,12 +71,14 @@ main {
     display: flex;
     padding: 0% 5% 0% 5%;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    
 }
 
-#subpage {
+#subpage 
+{
     
-    max-width: fit-content;
+    min-width: fit-content;
 }
 
 #subpage > div {
@@ -95,7 +97,7 @@ main {
     flex-grow: 1;
     text-align: center;
     padding: 10px;
-    justify-content: right;
+    justify-content: stretch;
 }
 
 #subpage > div > div > div {

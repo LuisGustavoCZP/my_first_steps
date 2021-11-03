@@ -15,13 +15,13 @@
     <page>
         <title>Hobby de Games</title>
         <context>gamedev.html</context>
-        <style>styles/style1.css</style>
+        <style>styles/style2.css</style>
         <photo>images/photos/luisinformal1.png</photo>
     </page>
     <page>
         <title>Quem eu sou</title>
         <context>myself.html</context>
-        <style>styles/style1.css</style>
+        <style>styles/style2.css</style>
         <photo>images/photos/luisinformal1.png</photo>
     </page>
    
