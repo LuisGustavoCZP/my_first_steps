@@ -1,0 +1,128 @@
+body {
+    margin:0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header > span {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
+#photo {
+    width: 40%;
+}
+
+#titlebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+#refs img {
+    width: 40px;
+}
+
+main {
+
+}
+
+#subpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    flex-wrap: wrap;
+}
+
+#incial {
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--cinzat);
+    border-radius: 15px;
+    width: 50%;
+}
+
+#repositorio {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--cinzat);
+    border-radius: 15px;
+    flex-grow: 1;
+}
+
+#repositorio img {
+    width: 60px;
+}
+
+.grade {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 30%;
+}
+
+.grade > * {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+    padding: 10px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    align-content: stretch;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.item {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:center;
+    margin: auto;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.item img {
+    height: 40px;
+}
+
+.item > span:nth-child(1){
+    display: flex;
+    align-items:center;
+}
+
+.item > span:nth-child(1) > *{
+    margin: 0;
+}
+
+.item > span:nth-child(2){
+    height: 40px;
+    display: flex;
+    align-items:center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}

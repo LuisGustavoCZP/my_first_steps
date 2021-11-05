@@ -18,7 +18,7 @@ var subpage = document.getElementById("subpage");
 var pagestyle = document.getElementById("pagestyle");
 var pagelayout = document.getElementById("pagelayout");
 var photo = document.getElementById("photo");
-var audio = document.getElementById("audio");
+//var audio = document.getElementById("audio");
 
 
 var subpageIndex = 0;
@@ -79,8 +79,8 @@ function SelectSubpage(index)
     }
     pagestyle.href = page.style;
     photo.src = page.photo;
-    audio.src = audios[index];
-    audio.volume = 0.01;
+    //audio.src = audios[index];
+    //audio.volume = 0.01;
     LoadHTML(page.context, element => 
     {
         if(subpage.firstChild) subpage.firstChild.remove();

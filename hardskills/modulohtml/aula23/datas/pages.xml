@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pages>
     <page>
-        <title>Home</title>
-        <context>home.html</context>
-        <style>styles/style1.css</style>
-        <photo>images/photos/luisformal1.png</photo>
-    </page>
-    <page>
         <title>Profissional Web</title>
         <context>webdev.html</context>
         <style>styles/style1.css</style>

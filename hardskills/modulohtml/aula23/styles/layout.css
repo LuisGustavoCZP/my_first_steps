@@ -144,9 +144,6 @@ main {
 }
 
 .grade {
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;*/
     display: flex;
     align-items: stretch;
     justify-content: stretch;
@@ -182,6 +179,9 @@ div > span {
 footer {
     padding: 5px;
     text-align: center;
+}
+span > a {
+    padding: 5px;
 }
 
 a img {
