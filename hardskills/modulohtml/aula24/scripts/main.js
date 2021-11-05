@@ -15,11 +15,9 @@ class Skill
     quality="";
 }
 
-var menu = document.getElementById("menu");
 var subpage = document.getElementById("subpage");
 var pagestyle = document.getElementById("pagestyle");
 var pagelayout = document.getElementById("pagelayout");
-var photo = document.getElementById("photo");
 
 function OnLoadXML(data)
 {

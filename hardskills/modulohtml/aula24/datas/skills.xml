@@ -105,4 +105,46 @@
         <type>images/icons/emote-star.png</type>
         <quality>3</quality>
     </skill>
+    <skill>
+        <category>unlike</category>
+        <name>Televisão</name>
+        <icon></icon>
+        <type>images/icons/emote-cross.png</type>
+        <quality>2</quality>
+    </skill>
+    <skill>
+        <category>unlike</category>
+        <name>Redes Sociais</name>
+        <icon></icon>
+        <type>images/icons/emote-cross.png</type>
+        <quality>3</quality>
+    </skill>
+    <skill>
+        <category>unlike</category>
+        <name>Frutos do Mar</name>
+        <icon></icon>
+        <type>images/icons/emote-cross.png</type>
+        <quality>5</quality>
+    </skill>
+    <skill>
+        <category>like</category>
+        <name>Programação</name>
+        <icon></icon>
+        <type>images/icons/emote-heart.png</type>
+        <quality>5</quality>
+    </skill>
+    <skill>
+        <category>like</category>
+        <name>Músicas</name>
+        <icon></icon>
+        <type>images/icons/emote-heart.png</type>
+        <quality>4</quality>
+    </skill>
+    <skill>
+        <category>like</category>
+        <name>Games</name>
+        <icon></icon>
+        <type>images/icons/emote-heart.png</type>
+        <quality>4</quality>
+    </skill>
 </skills>

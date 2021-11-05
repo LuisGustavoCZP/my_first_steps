@@ -164,7 +164,7 @@ body {
 }
 
 body > header {
-    font-family: var(--mainFont, Arial, Helvetica, sans-serif);
+    font-family: 'Inconsolata', monospace;
     color: var(--preto);
 }
 
@@ -175,7 +175,7 @@ body > header {
 }
 
 #menu button{
-    font-family: 'Inconsolata', monospace;
+    
     background:fixed var(--gradient1);
     border-color: var(--cor1a3);
     border-radius: 15px;
@@ -195,7 +195,7 @@ footer {
 }
 
 #subpage {
-    background:fixed var(--gradient1);
+    background-color: var(--cor1b2);
     border: 3px solid black;
     border-radius: 5px;
 }
@@ -252,8 +252,4 @@ footer {
 strong {
     
     white-space: nowrap;
-}
-
-i {
-    
 }
