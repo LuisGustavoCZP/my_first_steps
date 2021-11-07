@@ -157,7 +157,7 @@ main {
 
     flex-grow: 1;
     background-image: url("../images/photos/background.webp");
-    background-size:auto;
+    background-size:cover;
     background-repeat: no-repeat;
     font-family: var(--font_0);
     font-weight: lighter;
