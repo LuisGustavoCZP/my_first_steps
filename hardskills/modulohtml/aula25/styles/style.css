@@ -36,7 +36,8 @@
     --color_33: rgb(253,190,52);
     --color_34: rgb(169,127,35);
     --color_35: rgb(84,63,17);
-
+    --buttoncolor: var(--color_8);
+    --buttonglow: var(--color_15);
     --font_0: 'Anton', sans-serif;
     --font_8: 'rawetc', sans-serif;
 }
@@ -80,8 +81,8 @@ body {
 
 #menu {
     display: flex;
-    margin-left: 79px;
-    margin-right: 79px;
+    margin-left: 80px;
+    margin-right: 80px;
     flex-direction: row;
 }
 
@@ -105,13 +106,14 @@ body {
 
 #menu > nav > ul > li {
     margin: 0px;
-    padding: 0px 0px 0px 50px;
+    padding: 0px 0px 0px 70px;
     display: flex;
     list-style: none;
     align-items: center;
+    cursor: pointer;
 }
 
-header {
+header > a {
     display: flex;
     padding-left: 15px;
     padding-top: 18px;
@@ -119,6 +121,7 @@ header {
     font-family: var(--font_0);
     font-weight: normal;
     flex-direction: row;
+    cursor: pointer;
 }
 
 header h1 {
@@ -131,22 +134,22 @@ header h5 {
     font-weight: lighter;
 }
 
-header > div {
+header > a > div {
     display: flex;
     flex-direction: column;
     padding: 5px 10px 10px 5px;
     justify-content: space-between;
 }
 
-header > div > span {
+header > a > div > span {
     margin: 0px;
     display: flex;
     border-top: 8px solid var(--color_15);
 }
 
 main {
-    margin-left: 79px;
-    margin-right: 79px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 #logophoto {
@@ -168,7 +171,6 @@ main {
     justify-content: center;
     align-items: center;
     color: var(--color_8);
-    
 }
 
 #logophoto > div > div {
@@ -197,17 +199,196 @@ main {
     padding-bottom: 35px;
 }
 
-#logophoto a {
+.botao {
     margin: 0px;
     padding: 8px 25px 8px 25px ;
     font-family: var(--font_8);
     font-weight:lighter;
     line-height: 1.1em;
     font-size: 14px;
-    border: 1px solid white;
+    border: 1px solid var(--buttoncolor);
+    color: var(--buttoncolor);
+    cursor: pointer;
 }
 
-#logophoto a:hover {
-    color:var(--color_15);
+.botao:hover {
+    color:var(--buttonglow);
+    background-color: var(--buttoncolor);
+}
+
+#mostruario {
+    font-family: var(--font_0);
+    
+}
+
+#mostruario ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    min-height: 580px;
+}
+
+#mostruario > span {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    flex-grow: 1;
+    --buttoncolor: var(--color_15);
+    --buttonglow: var(--color_8);
+    justify-content:center;
+}
+
+#mostruario h2 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    letter-spacing: 0.25em;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+#mostruario ul li {
+    display: block;
+    margin: 0px;
+    list-style: none;
+    padding: 10px;
+
+}
+
+.produto {
+    cursor: pointer;
+    
+}
+
+.produto img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mostrador {
+    width: fit-content;
+    height: fit-content;
+    
+    text-align: center;
+    padding-top: 45px;
+    overflow: hidden;
+}
+
+.mostrador > img {
+    display: block;
+}
+
+.mostrador > div  {
+    display: none;
+}
+
+.produto:hover .mostrador > div {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.produto:hover .mostrador > img {
+    display: none;
+}
+
+@keyframes --desctranslate {
+    0% {
+        top: 50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    overflow: hidden;
+}
+
+.desc > button {
+    background-color: unset;
+    border: 0px;
+    position: relative;
+    font-family: var(--font_8);
+    font-size: 14px;
+    font-weight: lighter;
+    height: 23px;
+    animation: --desctranslate .5s;
+}
+
+.produto:hover .desc > button {
+    display: block;
+}
+
+.produto .desc > button {
+    display: none;
+}
+
+.info {
+    text-align: center;
+    
+    font-family: var(--font_8);
+    
+}
+
+.info h4 {
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.info h5 {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 1;
+}
+
+#social {
+    background-color: var(--color_12);
+    padding-left: 80px;
+    padding-right: 80px;
+    
+    padding-bottom: 44px;
+}
+
+#social h2 {
+    
+    font-family: var(--font_0);
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    letter-spacing: 0.15em;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+#social > div {
     background-color: var(--color_8);
+    height: 561px;
+}
+
+footer {
+    background-color: var(--color_15);
+}
+
+footer > div {
+    height: 150px;
+    
+    margin: 62px 0px 64px 0px;
+}
+
+footer > section {
+    height: 83px;
+    
+    background-color: var(--color_14);
 }
