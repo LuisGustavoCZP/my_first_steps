@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 120 13" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-3">
+    <style>
+        
+        .mediumTxt {
+            font-family: 'Anton', sans-serif;
+            font-weight: lighten;
+            font-size: 18px;
+            letter-spacing: 0.025em;
+        }
+        .smallTxt {
+            font-family: 'Anton', sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+        }
+    </style>
+    <g data-hook="movable" transform="translate(110 3)">
+        <circle class="ex_uq" cx="0" cy="0" r="10"></circle>
+        <text x=".0" y="1" dy=".30em" text-anchor="middle" fill="white" class="smallTxt" data-hook="items-count">0</text>
+    </g>
+    <text x="0" y="-3" dy="100%" fill="black" class="mediumTxt" data-hook="free-text">CARRINHO</text>
+</svg>

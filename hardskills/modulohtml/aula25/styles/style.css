@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.gstatic.com/s/anton/v11/1Ptgg87LROyAm3Kz-C8CSKlv.woff2');
+
+:root{
+    --color_0: rgb(255,255,255);
+    --color_27: rgb(141,216,216);
+    --color_1: rgb(255,255,255);
+    --color_2: rgb(0,0,0);
+    --color_3: rgb(237,28,36);
+    --color_4: rgb(0,136,203);
+    --color_5: rgb(255,203,5);
+    --color_6: rgb(114,114,114);
+    --color_7: rgb(176,176,176);
+    --color_8: rgb(255,255,255);
+    --color_9: rgb(114,114,114);
+    --color_10: rgb(176,176,176);
+    --color_11: rgb(255,255,255);
+    --color_12: rgb(250,250,250);
+    --color_13: rgb(166,162,162);
+    --color_14: rgb(46,45,45);
+    --color_15: rgb(24,24,24);
+    --color_16: rgb(180,180,230);
+    --color_17: rgb(138,139,204);
+    --color_18: rgb(62,64,179);
+    --color_19: rgb(41,43,119);
+    --color_20: rgb(21,21,60);
+    --color_21: rgb(252,194,198);
+    --color_22: rgb(248,164,169);
+    --color_23: rgb(245,78,88);
+    --color_28: rgb(61,196,196);
+    --color_29: rgb(41,131,131);
+    --color_30: rgb(20,65,65);
+    --color_31: rgb(254,233,187);
+    --color_32: rgb(254,222,153);
+    --color_24: rgb(163,52,59);
+    --color_33: rgb(253,190,52);
+    --color_34: rgb(169,127,35);
+    --color_35: rgb(84,63,17);
+
+    --font_0: 'Anton', sans-serif;
+    --font_8: 'rawetc', sans-serif;
+}
+
+.smallTxt {
+    font-family: var(--font_0);
+    font-weight: normal;
+    font-size: 13px;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-content: stretch;
+    justify-content: stretch;
+}
+
+#flutuante{
+    
+    background-color: var(--color_8);
+    display: flex;
+    flex-direction: column;
+    position:sticky;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+#flutuante > h4 {
+    margin: 0;
+    padding: 7px;
+    background-color: var(--color_15);
+    color: var(--color_13);
+    text-align: center;
+    letter-spacing: 0.25em;
+    font-family: var(--font_0);
+    font-weight: normal;
+}
+
+#menu {
+    display: flex;
+    margin-left: 79px;
+    margin-right: 79px;
+    flex-direction: row;
+}
+
+#menu > nav {
+    display: flex;
+    padding: 18px 0px 18px 0px;
+    
+    justify-content:end;
+    flex-grow: 1;
+}
+
+#menu > nav > ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    flex-grow: 1;
+}
+
+
+#menu > nav > ul > li {
+    margin: 0px;
+    padding: 0px 0px 0px 50px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    padding-left: 15px;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    font-family: var(--font_0);
+    font-weight: normal;
+    flex-direction: row;
+}
+
+header h1 {
+    font-weight: lighter;
+    margin: 0%;
+    padding: 0px;
+}
+header h5 {
+    margin: 0%;
+    font-weight: lighter;
+}
+
+header > div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px 10px 5px;
+    justify-content: space-between;
+}
+
+header > div > span {
+    margin: 0px;
+    display: flex;
+    border-top: 8px solid var(--color_15);
+}
+
+main {
+    margin-left: 79px;
+    margin-right: 79px;
+}
+
+#logophoto {
+    display: flex;
+
+    flex-grow: 1;
+    background-image: url("../images/photos/background.webp");
+    background-size:auto;
+    background-repeat: no-repeat;
+    font-family: var(--font_0);
+    font-weight: lighter;
+    height: 660px;
+}
+
+#logophoto > div {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.15);
+    justify-content: center;
+    align-items: center;
+    color: var(--color_8);
+    
+}
+
+#logophoto > div > div {
+    /*display: flex;
+    flex-direction: column;*/
+    max-width: 401px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logophoto h2 {
+    margin: 0px;
+    line-height: 1.1em;
+    font-size: 78px;
+    font-weight: lighter;  
+    padding-bottom: 20px;
+}
+
+
+#logophoto h4 {
+    margin: 0px;
+    font-family: var(--font_8);
+    font-weight:lighter;
+    line-height: 1.1em;
+    font-size: 15px;
+    padding-bottom: 35px;
+}
+
+#logophoto a {
+    margin: 0px;
+    padding: 8px 25px 8px 25px ;
+    font-family: var(--font_8);
+    font-weight:lighter;
+    line-height: 1.1em;
+    font-size: 14px;
+    border: 1px solid white;
+}
+
+#logophoto a:hover {
+    color:var(--color_15);
+    background-color: var(--color_8);
+}
