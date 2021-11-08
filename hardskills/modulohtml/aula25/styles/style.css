@@ -399,6 +399,9 @@ main {
     background-color: var(--color_0);
     list-style-type: none;
     padding: 0px;
+    margin: auto;
+    justify-content: stretch;
+    align-items: stretch;
 }
 
 .grade {
@@ -409,6 +412,7 @@ main {
     row-gap: 0px;
     column-gap: 0px;
     justify-content: stretch;
+    align-items: stretch;
 }
 
 #grade1 :nth-child(4) {
@@ -491,13 +495,61 @@ footer {
 #submenu {
     display: flex;
     color: var(--color_0);
-    margin: 62px calc((100% - 1050px) * 0.5) 64px calc((100% - 1050px) * 0.5);
+    margin: 62px 15% 64px 15%;
     flex-grow: 1;
     justify-content: space-between;
 }
 
 #submenu nav {
     display: flex;
+}
+
+#submenu div {
+    display: flex;
+    flex-direction: column;
+}
+
+#submenu div > span {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+#submenu div > span img {
+    padding: 10px;
+}
+
+#contactmail {
+    border: 0px;
+    background-color: unset;
+    border-bottom: 1px solid white;
+    margin: 0px 5px 0px 5px;
+    padding: 10px;
+    font-family: var(--font_8);
+    font-size: 15px;
+    max-width: 300px;
+    width: 300px;
+}
+
+#contactmail::placeholder {
+    color: var(--color_0);
+}
+
+#contactmail:hover {
+    border-bottom: 3px solid white;
+    
+}
+
+#contactmail:focus {
+    outline: none;
+}
+
+#contactmail:invalid {
+    border-bottom: 3px solid red;
+    
 }
 
 #submenu ul {
@@ -510,7 +562,7 @@ footer {
 }
 
 #submenu a {
-    letter-spacing: -0.03em;
+    letter-spacing: .1em;
     font-size: 15px;
     font-weight: lighter;
     cursor: pointer;
@@ -525,7 +577,7 @@ footer {
 }
 
 footer h6 {
-    margin: 18px 0px 23px calc((100% - 980px) * 0.5);
+    margin: 18px 17.5% 23px 17.5%;
     letter-spacing: -0.03em;
     font-size: 12px;
     width: fit-content;
