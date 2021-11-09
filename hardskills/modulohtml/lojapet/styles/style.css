@@ -316,21 +316,84 @@ header h3 {
     height: 401px;
 }
 
-#mosaico1 > li {
+.mosaico {
+    margin: 70px 120px 70px 120px;
+}
+
+.mosaico > li {
     background-color: rgb(var(--color_12));
     font: var(--fnt,var(--font_1));
     line-height: 45px;
     width: 1fr;
     height: 1fr;
-    background-clip: content-box;
+    background-clip:border-box;
     background-size: cover;
     background-repeat: no-repeat;
+    color: rgb(var(--branco));
 }
 
-#mosaico1 > li > div {
-    background-color: rgba(var(--color_23), .8);
+.mosaico > li > div { 
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content:flex-end;
     width: 100%;
     height: 100%;
+}
+
+.mosaico > li > div > * {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.mosaico > li h3 {
+    display: flex;
+    flex-direction: column;
+    font: var(--font_2);
+    margin: 0px;
+}
+
+.mosaico > li h4 {
+    display: flex;
+    flex-direction: column;
+    font: var(--font_8);
+    margin: 0px;
+}
+
+.overcolor {
+    background-color: rgba(var(--color_23), .8);
+    font: var(--font_4);
+}
+
+.overcolor > div > span {
+    display: block;
+    width: 2.5em;
+    height: 2px;
+    background-color: rgb(var(--branco));
+}
+
+.defaultbotao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 20px;
+    background-color: rgb(var(--color_18));
+    font: var(--fnt,var(--font_5));
+    color: rgb(var(--branco));
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+.mosaico .defaultbotao {
+    margin-top: 30px;
+}
+
+.defaultbotao.big {
+    margin: auto;
+    width: 160px;
 }
 
 #mosaico1 > li:nth-child(1){
@@ -438,20 +501,113 @@ span#hr {
 }
 
 #previaloja li {
-    background-color: rgb(var(--color_12));
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: stretch;
+    align-items: center;
+    border: 1px solid rgb(var(--color_12));
     font: var(--fnt,var(--font_1));
     line-height: 45px;
     width: 1fr;
     height: 1fr;
+    padding: 15px;
 }
 
-#previaloja > li:nth-child(1){
+.loja .item {
+
+}
+/*#previaloja > li:nth-child(1){
     background-image: url("https://static.wixstatic.com/media/82fcd3_65895508ea904ecb85468599bf550e60~mv2_d_6741_2683_s_4_2.jpg/v1/fill/w_699,h_420,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_65895508ea904ecb85468599bf550e60~mv2_d_6741_2683_s_4_2.webp");
 }
 
 
 #previaloja > li:nth-child(2){
     background-image: url("https://static.wixstatic.com/media/82fcd3_b0859172cf504ad3b7dfcdad97f6e9a3~mv2_d_4256_2832_s_4_2.jpg/v1/fill/w_360,h_420,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_b0859172cf504ad3b7dfcdad97f6e9a3~mv2_d_4256_2832_s_4_2.webp");
+} */
+
+.loja > .item > .item-photo {
+    background-color: rgb(var(--color_12));
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: cover;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.loja > .item:nth-child(1) > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/82fcd3_6e02cbc1d0aa495d86c6058a64a07fb8~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_6e02cbc1d0aa495d86c6058a64a07fb8~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(1):hover > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/84770f_6264810d5d5149f5843345861de980dc~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/84770f_6264810d5d5149f5843345861de980dc~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(2) > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/82fcd3_3009489a3404406daaf463ae7528a346~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_3009489a3404406daaf463ae7528a346~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(2):hover > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/84770f_27102e864f2544e2b22efc83a096eede~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/84770f_27102e864f2544e2b22efc83a096eede~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(3) > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/82fcd3_53b45a3597d34ef48b288c386a81b3a0~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_53b45a3597d34ef48b288c386a81b3a0~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(4) > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/82fcd3_b343307dabb04d058cbd374fc2ce3f3d~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_b343307dabb04d058cbd374fc2ce3f3d~mv2_d_1920_1920_s_2.webp");
+}
+
+.loja > .item:nth-child(5) > .item-photo {
+    background-image: url("https://static.wixstatic.com/media/82fcd3_270fc58ffa4f4ecb9e6b91ee2958f619~mv2_d_1920_1920_s_2.jpg/v1/fill/w_140,h_140,al_c,q_80,usm_0.66_1.00_0.01/82fcd3_270fc58ffa4f4ecb9e6b91ee2958f619~mv2_d_1920_1920_s_2.webp");
+}
+
+
+.loja > .item > .item-quanty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.loja > .item > .item-quanty button {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(var(--preto));
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+.loja > .item > .item-quanty input {
+    text-align: center;
+}
+
+.loja > .item > .item-quanty button:nth-child(1) {
+    -webkit-mask: url(../images/svgs/sub.svg) no-repeat center;
+    mask: url(../images/svgs/sub.svg) no-repeat center;
+}
+
+.loja > .item > .item-quanty button:nth-child(3) {
+    -webkit-mask: url(../images/svgs/plus.svg) no-repeat center;
+    mask: url(../images/svgs/plus.svg) no-repeat center;
+}
+
+.loja > .item > button {
+    margin: 15px;
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px;
+    background-color: rgb(var(--preto));
+    color: rgb(var(--branco));
+    border: none;
+    font: normal normal normal 16px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    line-height: 1.5;
+    text-align: center;
 }
 
 #parcerias {
@@ -586,12 +742,4 @@ footer > div {
     mask-clip: contain;
     mask-size: 100%;
     -webkit-mask-size: 100%;
-}
-
-#mosaico1 h3 {
-    margin: 0px;
-}
-
-#mosaico1 h4 {
-    margin: 0px;
 }
