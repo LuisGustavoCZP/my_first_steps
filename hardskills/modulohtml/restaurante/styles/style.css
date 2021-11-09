@@ -1,0 +1,98 @@
+.svgimg {    
+    background-color: rgb(var(--color_18));
+
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#splash {
+    width: fit-content;
+    height: fit-content;
+    
+    text-align: center;
+    margin: 5px;
+}
+
+#splash .svgimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 111px;
+    height: 111px;
+    
+    -webkit-mask: url(../images/svgs/splash.svg) no-repeat center;
+    mask: url(../images/svgs/splash.svg) no-repeat center;
+}
+
+#splash h4 {
+    font: var(--font_5);
+    color: rgb(var(--color_11));
+    margin: 0;
+    line-height: 1em;
+    text-align: center;
+}
+
+#logo {
+    width: fit-content;
+    height: fit-content;
+    
+    text-align: center;
+    margin: 5px;
+}
+
+#logo > h1 {
+    font: var(--font_0);
+    color: rgb(var(--color_18));
+    line-height: 0.6em;
+    margin: 0;
+    margin: 25px;
+}
+
+#logo > h4 {
+    color: rgb(var(--color_18));
+    font: var(--font_5);
+    margin: 0;
+}
+
+#logo > span > h4 {
+    margin: 0;
+}
+
+#logo .svgimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    color: rgb(var(--color_11));
+    font: var(--font_5);
+    letter-spacing: 0.7em;
+    text-align: center;
+
+    padding: 0px 20px;
+
+    -webkit-mask: url(../images/svgs/banner.svg) no-repeat center;
+    mask: url(../images/svgs/banner.svg) no-repeat center;
+
+    width: 264px;
+    height: fit-content;
+}
+
+.banner {
+    width: 321px;
+    height: 321px;
+    background-image: url("https://static.wixstatic.com/media/84770f_a5718356cc224d12991a738dfa3b06d7.png/v1/fill/w_321,h_321,al_c,q_85,usm_0.66_1.00_0.01/84770f_a5718356cc224d12991a738dfa3b06d7.webp");
+}
+
+.banner > h4 {
+    font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;
+    letter-spacing: 0.3em;
+    line-height: 0.6em;
+    font-size: 30px;
+}
+
+.banner > h4:nth-child(1) {
+    font-family: bodoni-w01-poster,bodoni-poster-w10,fantasy;
+}
+
