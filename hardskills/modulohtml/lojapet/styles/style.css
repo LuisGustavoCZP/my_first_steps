@@ -266,7 +266,15 @@ header h3 {
 }
 
 .slimside2 {
-    margin: 70px 40px 70px 40px;
+    margin: 70px 70px 70px 70px;
+}
+
+.slimside ul {
+    padding: unset;
+}
+
+.slimside2 ul {
+    padding: unset;
 }
 
 #beneficios {
@@ -382,7 +390,6 @@ header h3 {
 span#hr {
     display: block;
     min-height: 10px;
-    border-bottom: 1.5px solid rgb(var(--color_13));
 }
 
 .sectiontitle {
@@ -399,9 +406,13 @@ span#hr {
     font: var(--font_3);
     margin-bottom: 55px;
 }
+
 #previaloja{
+    padding-top: 30px;
+    border-top: 1.5px solid rgb(var(--color_13));
     text-align: center;
 }
+
 #previaloja > ul {
     margin-top: 10px;
     margin-bottom: 40px;
@@ -434,6 +445,7 @@ span#hr {
     background-color: rgb(var(--color_12));
     display: block;
     height: fit-content;
+    padding-bottom: 20px;
 }
 
 #parcerias > div {
@@ -449,9 +461,9 @@ span#hr {
     margin-bottom: 40px;
     list-style: none;
     display: grid;
-    justify-content: stretch;
+    justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 3%; row-gap: 3%;
+    gap: 3%;
     height: 246px;
 }
 
