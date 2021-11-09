@@ -1,3 +1,28 @@
+body{
+    margin:0;
+}
+
+.topbar {
+    background-color: rgb(var(--color_11));
+    display: flex;
+    height: 77px;
+    position: sticky;
+    justify-content: space-between;
+    top: 0px;
+    z-index: 5;
+    padding-left: 10%;
+}
+
+#initial > div {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgba(var(--color_11), .8);
+    height: 224px;
+    justify-content: center;
+    margin-left: 13%;
+    margin-right: 13%;
+}
+
 .svgimg {    
     background-color: rgb(var(--color_18));
 
@@ -7,9 +32,11 @@
 }
 
 #splash {
+    display: flex;
     width: fit-content;
     height: fit-content;
-    
+    position:relative;
+    top:50%;
     text-align: center;
     margin: 5px;
 }
@@ -32,6 +59,57 @@
     margin: 0;
     line-height: 1em;
     text-align: center;
+}
+
+#social {
+    position: relative;
+    top: 70%;
+    width: 37px;
+    height: 185px;
+    background-color: rgb(var(--bg));
+}
+
+#initial {
+    display: flex;
+    flex-grow: 1;
+    background-image: url("https://static.wixstatic.com/media/84770f_ebf77f61cebb4a3ba2df322d174dc769.jpg/v1/fill/w_980,h_686,al_c,q_85,usm_0.66_1.00_0.01/84770f_ebf77f61cebb4a3ba2df322d174dc769.webp");
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 686px;
+}
+
+#initial > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logolateral {
+    margin-top: 60px;
+    padding: 10px;
+    color: rgb(var(--color_18));
+    border-top: 1px solid rgb(var(--color_18));
+    border-bottom: 1px solid rgb(var(--color_18));
+}
+
+.logolateral > h4 {
+    margin: 0px;
+    line-height: 1.2em;
+    font-size: 17px;
+    
+    font: var(--font_7);
+}
+
+
+.logolateral:first-child {
+    text-align: right;
+}
+
+
+.logolateral:last-child {
+    text-align: left;
 }
 
 #logo {
@@ -80,19 +158,81 @@
 }
 
 .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
     width: 321px;
     height: 321px;
-    background-image: url("https://static.wixstatic.com/media/84770f_a5718356cc224d12991a738dfa3b06d7.png/v1/fill/w_321,h_321,al_c,q_85,usm_0.66_1.00_0.01/84770f_a5718356cc224d12991a738dfa3b06d7.webp");
+    background-size: cover;
 }
 
 .banner > h4 {
+    margin: 0;
+}
+
+#banner1 {
+    background-image: url("https://static.wixstatic.com/media/84770f_a5718356cc224d12991a738dfa3b06d7.png/v1/fill/w_321,h_321,al_c,q_85,usm_0.66_1.00_0.01/84770f_a5718356cc224d12991a738dfa3b06d7.webp");
+}
+
+#banner1 > h4 {
     font-family: helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;
     letter-spacing: 0.3em;
-    line-height: 0.6em;
+    color: rgb(var(--color_18));
     font-size: 30px;
+    text-shadow: #ffffff 3px 3px 0px, rgb(0 0 0 / 20%) 6px 6px 0px;
 }
 
-.banner > h4:nth-child(1) {
+#banner1 > h4:nth-child(1) {
     font-family: bodoni-w01-poster,bodoni-poster-w10,fantasy;
+    text-shadow:none;
+    color: rgb(var(--color_11));
+    letter-spacing: -0.05em;
 }
 
+#banner2 {
+    background-image: url("https://static.wixstatic.com/media/84770f_0d32a522caea440ea73af1b6f62be51c.png/v1/fill/w_333,h_333,al_c,lg_1,q_85/84770f_0d32a522caea440ea73af1b6f62be51c.webp");
+}
+
+#banner2 > h4 {
+    font: var(--font_4);
+    letter-spacing: normal;
+    line-height: normal;
+    color: rgb(var(--color_11));
+    font-size: 59px;
+}
+
+#banner2 > h4:nth-child(1) {
+    font-family: belinda-w00-regular,script;
+    color: rgb(var(--color_23));
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    font-size: 29px;
+}
+
+#banner3 {
+    background-image: url("https://static.wixstatic.com/media/84770f_792bd6836b114c1eb4d101f1e40e6a2c.png/v1/fill/w_315,h_315,al_c,q_85/84770f_792bd6836b114c1eb4d101f1e40e6a2c.webp");
+}
+
+#banner3 > h4 {
+    font: var(--font_4);
+    letter-spacing: normal;
+    line-height: normal;
+    color: rgb(var(--color_11));
+    font-size: 44px;
+}
+
+#banner3 > h4:nth-child(1) {
+    font-family: belinda-w00-regular,script;
+    color: rgb(var(--color_11));
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    font-size: 29px;
+}
+
+.banners {
+    display: flex;
+    flex-direction: row;
+}

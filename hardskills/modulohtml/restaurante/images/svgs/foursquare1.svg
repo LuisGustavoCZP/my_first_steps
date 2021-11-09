@@ -1,0 +1,16 @@
+<svg version="1.1" width="31" height="31" class="_2XbKI _1K4Wl _1_O7b  X8cCv _3oeLy _1IRia _3ajG7  kAoO0 _2kVrO _1f63k">
+    <g>
+        <rect width="100%" height="100%" data-hook="bgFill" class="_2HZc1"></rect>
+        <svg width="31" height="31" x="0" y="0" viewBox="0 0 65 65">
+            <g data-hook="textFill">
+                <path transform="translate(-1, -1)" class="_3eJ0f" d="M43.5,17.4H24.9a3.1,3.1,0,0,0-3.3,3.1V49.6a2,2,0,0,0,1.1,2,2.1,2.1,0,0,0,2.2-.5L34,40.9l.4-.2h5.6c2.4,0,2.8-1.7,3-2.7s2.5-12.6,3.3-16.3-.1-4.4-2.9-4.4Zm-.4,20.7c.2-.8,2.5-12.6,3.3-16.3L43.1,38.1Zm-.7-15.7-.8,4a1.1,1.1,0,0,1-1,.8H33.4a1.5,1.5,0,0,0-1.5,1.4v.9a1.5,1.5,0,0,0,1.5,1.5h6.2a1,1,0,0,1,.9,1.1l-.8,4.1a1,1,0,0,1-1,.8h-5c-1,0-1.3,0-1.9.8L25.6,45h-.1V22.3a1.2,1.2,0,0,1,1.1-1.1H41.5a1,1,0,0,1,.9,1.2Z"></path>
+            </g>
+        </svg>
+    </g>
+    <svg width="31" height="31" viewBox="0 0 310 310">
+        <circle cx="155" cy="155" r="149.83333333333334" stroke-width="10.333333333333332" data-hook="circleBorder" class="_3cCKK"></circle>
+    </svg>
+    <svg width="31" height="31" viewBox="0 0 310 310">
+        <rect x="5.166666666666666" y="5.166666666666666" width="299.6666666666667" height="299.6666666666667" data-hook="squareBorder" class="_29nDK" stroke-width="10.333333333333332"></rect>
+    </svg>
+</svg>
