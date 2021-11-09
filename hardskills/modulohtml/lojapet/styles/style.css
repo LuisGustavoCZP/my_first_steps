@@ -7,6 +7,7 @@ body {
     position:sticky;
     top:0px;
     background-color:rgb(var(--branco));
+    z-index: 2;
 }
 
 .topsection {
@@ -14,6 +15,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 #contact {
@@ -288,11 +290,21 @@ header h3 {
 
 
 #beneficios > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(var(--color_12));
     font: var(--fnt,var(--font_1));
     line-height: 45px;
     width: 1fr;
     height: 1fr;
+}
+
+#beneficios > li > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #mosaico1 {
@@ -405,6 +417,7 @@ span#hr {
     font-size: 40px;
     font: var(--font_3);
     margin-bottom: 55px;
+    margin-top: 55px;
 }
 
 #previaloja{
@@ -457,22 +470,52 @@ span#hr {
 }
 
 #parcerias > ul {
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin: auto;
     list-style: none;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 246px;
+    padding: 10px;
 }
 
 #parcerias li {
-    background-color: rgb(var(--color_13));
+    margin: auto;
     font: var(--fnt,var(--font_1));
-    line-height: 45px;
-    width: 1fr;
-    height: 1fr;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#parcerias li:nth-child(1){
+    background-image: url("https://static.wixstatic.com/media/82fcd3_d1a50a604e7746409627375577693ebd~mv2.png/v1/crop/x_16,y_14,w_275,h_130/fill/w_194,h_92,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_d1a50a604e7746409627375577693ebd~mv2.webp");
+    width: 194px;
+    height: 92px;
+}
+
+#parcerias li:nth-child(2){
+    background-image: url("https://static.wixstatic.com/media/82fcd3_7f2a74423be748dca8cab8d905b857b0~mv2.png/v1/crop/x_33,y_13,w_237,h_131/fill/w_193,h_107,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_7f2a74423be748dca8cab8d905b857b0~mv2.webp");
+    width: 193px;
+    height: 107px;
+}
+
+#parcerias li:nth-child(3){
+    background-image: url("https://static.wixstatic.com/media/82fcd3_5d50420463db42c9924cb2c11a194935~mv2.png/v1/crop/x_42,y_14,w_200,h_131/fill/w_189,h_124,al_c,q_85,usm_0.66_1.00_0.01/82fcd3_5d50420463db42c9924cb2c11a194935~mv2.webp");
+    width: 189px;
+    height: 124px;
+}
+
+#parcerias li:nth-child(4){
+    background-image: url("https://static.wixstatic.com/media/82fcd3_9c64adc8c55e4de695315a7a25c41f15~mv2.png/v1/crop/x_64,y_1,w_170,h_156/fill/w_187,h_172,al_c,lg_1,q_85/82fcd3_9c64adc8c55e4de695315a7a25c41f15~mv2.webp");
+    width: 187px;
+    height: 172px;
+}
+
+#parcerias li:nth-child(5){
+    background-image: url("https://static.wixstatic.com/media/82fcd3_ae955c036e724d64b58f25347ca6daa0~mv2.png/v1/crop/x_60,y_0,w_184,h_158/fill/w_185,h_159,al_c,lg_1,q_85/82fcd3_ae955c036e724d64b58f25347ca6daa0~mv2.webp");
+    width: 185px;
+    height: 159px;
 }
 
 footer{
@@ -486,4 +529,69 @@ footer > section {
 
 footer > div {
     height: 175px;
+}
+
+#beneficios h4{
+    margin: 0px;
+}
+
+#beneficios h5{
+    margin: 0px;
+    line-height: normal;
+}
+
+#caminhaoicon {
+    display: block;
+    width: 72px;
+    height: 36px;
+    background-color: rgb(var(--color_18));
+    -webkit-mask: url(../images/svgs/caminhao.svg) no-repeat center;
+    mask: url(../images/svgs/caminhao.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#localizacaoicon {
+    display: block;
+    width: 35px;
+    height: 45.71px;
+    background-color: rgb(var(--color_18));
+    -webkit-mask: url(../images/svgs/location.svg) no-repeat center;
+    mask: url(../images/svgs/location.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#cartaoicon {
+    display: block;
+    width: 48.88px;
+    height: 30px;
+    background-color: rgb(var(--color_18));
+    -webkit-mask: url(../images/svgs/card.svg) no-repeat center;
+    mask: url(../images/svgs/card.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#cadeadoicon {
+    display: block;
+    width: 37px;
+    height: 45px;
+    background-color: rgb(var(--color_18));
+    -webkit-mask: url(../images/svgs/lock.svg) no-repeat center;
+    mask: url(../images/svgs/lock.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#mosaico1 h3 {
+    margin: 0px;
+}
+
+#mosaico1 h4 {
+    margin: 0px;
 }
