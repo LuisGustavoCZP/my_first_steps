@@ -1,0 +1,182 @@
+body {
+    margin: 0px;
+    font-size: 10px;
+}
+
+.topsection {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact {
+    padding: 0% 2.5% 0% 4%;
+    background-color: rgb(var(--color_28));
+    letter-spacing: 0.1em;
+    color: rgb(var(--branco));
+    font: var(--font_7);
+    height: 50px;
+}
+
+#contact h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+#contact ul {
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+}
+
+#contact li {
+    display:flex;
+    max-height: 20px;
+    padding: 0px 10px 0px 0px;
+}
+
+#contact li span {
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 5px;
+}
+
+#whatslogo {
+    background-color: rgb(var(--branco));
+    -webkit-mask: url(../images/svgs/whatsapp.svg) no-repeat center;
+    mask: url(../images/svgs/whatsapp.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#asklogo {
+    background-color: rgb(var(--branco));
+    -webkit-mask: url(../images/svgs/ask.svg) no-repeat center;
+    mask: url(../images/svgs/ask.svg) no-repeat center;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#contact a {
+    font-weight: bold;
+    color: rgb(var(--branco));
+    text-decoration: none;
+}
+
+#menubox {
+    display:flex;
+    flex-direction:column;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-grow: 1;
+    width: 100%;
+    padding: 0%;
+}
+
+#menubox > div {
+    display:flex;
+    flex-grow: 1;
+    border-bottom: 1.5px solid rgb(var(--color_13));
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#menubox > div > span {
+    display:flex;
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+}
+
+header {
+    display:flex;
+    flex-direction: row;
+    margin: 20px 20px 15px 40px;
+}
+
+header > span:not(#petlogo) {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    /*height: fit-content;
+    width: fit-content;*/
+    padding-left: 15px;
+}
+
+header h1 {
+    font: var(--font_3);
+    color: rgb(var(--color_18));
+    margin: 0px;
+    line-height: 0.9em;
+    font-weight: 500;
+    letter-spacing: normal;
+}
+
+header h3 {
+    font: var(--font_8);
+    margin: 0px;
+    margin-left: .2em;
+    letter-spacing: .075em;
+}
+
+#petlogo {
+    height: 53px;
+    width: 53px;
+    background-color: rgb(var(--color_18));
+    -webkit-mask: url(../images/svgs/pet.svg) no-repeat center;
+    mask: url(../images/svgs/pet.svg) no-repeat center;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#search {
+    display:flex;
+    justify-content:space-between;
+    width: 280px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 30px;
+
+    background-color: rgb(var(--color_12));
+    overflow: hidden;
+}
+
+#search > input {
+    /*width: 100%;*/
+    background-color: unset;
+    margin: 1px 15px 1px 15px;
+    border: none;
+}
+
+#search > input:focus {
+    outline: none;
+}
+ 
+#search > div {
+    width: 56px;
+    height: 40px;
+    background-color: rgb(var(--color_18));
+ }
+
+#search button {
+    background-color: rgb(var(--branco));
+    -webkit-mask: url(../images/svgs/search.svg) no-repeat center;
+    mask: url(../images/svgs/search.svg) no-repeat center;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+ }
+
+#phone {
+    display:flex;
+    flex-grow: 1;
+    border-bottom: 1.5px solid rgb(var(--color_13));
+    justify-content: space-between;
+    width: 191px;
+    height: 93px;
+    background-color: rgb(var(--color_18));
+}
