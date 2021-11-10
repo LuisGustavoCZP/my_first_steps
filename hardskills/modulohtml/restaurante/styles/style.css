@@ -87,6 +87,29 @@ body{
     margin-top: 10px;
 }
 
+.socialsvg {    
+    background-color: rgb(var(--color_11));
+    mask-clip: border-box;
+    mask-size: 100%;
+    -webkit-background-clip: border-box;
+    
+}
+
+.icon1 {
+    -webkit-mask: url(../images/svgs/foursquare1.svg) no-repeat center;
+    mask: url(../images/svgs/foursquare1.svg) no-repeat center;
+}
+
+.icon2 {
+    -webkit-mask: url(../images/svgs/instagram.svg) no-repeat center;
+    mask: url(../images/svgs/instagram.svg) no-repeat center;
+}
+
+.icon3 {
+    -webkit-mask: url(../images/svgs/twitter.svg) no-repeat center;
+    mask: url(../images/svgs/twitter.svg) no-repeat center;
+}
+
 .topbar {
     background-color: rgb(var(--color_11));
     display: flex;
@@ -124,7 +147,7 @@ body{
 }
 
 .topbar > nav li:hover {
-    border-top: 2px solid rgb(239,65,53);
+    border-top: 4px solid rgb(239,65,53);
 }
 
 .topbar > nav li:active {
@@ -185,6 +208,22 @@ body{
     width: 37px;
     height: 185px;
     background-color: rgb(var(--bg));
+}
+
+#social > div {
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#social > div > div {
+    display: flex;
+    height: 31px;
+    width: 31px;
+    -webkit-mask-origin: border-box;
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-size: 100%;
 }
 
 #initial {
@@ -265,6 +304,7 @@ body{
 }
 
 #logo {
+    user-select: none;
     width: fit-content;
     height: fit-content;
     
@@ -339,6 +379,7 @@ body{
 }
 
 .banner {
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -513,6 +554,24 @@ body{
     width: 266px;
 }
 
+#mosaico > div:nth-child(1) a {
+    margin: 50px;
+    padding: .5em 2em;
+    text-decoration: none;
+    font: normal normal normal 17px/1.4em dinneuzeitgroteskltw01-_812426,sans-serif;
+    color: rgb(var(--color_18));
+    border: 3px solid rgb(var(--color_18));
+    --animation: --linkfadeout;
+    animation: var(--animation) .5s;
+}
+
+#mosaico > div:nth-child(1) a:hover {
+    color: rgb(var(--color_11));
+    border: 3px solid rgb(var(--color_18));
+    background-color: rgb(var(--color_18));
+    --animation: --linkfadein;
+}
+
 #mosaico > div:nth-child(2) h3{
     margin: 0;
     text-align: center;
@@ -601,16 +660,93 @@ body{
 #location > div:nth-child(2) {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     color: rgb(var(--color_11));
     background-color: rgb(var(--color_23));
+    padding: 30px;
+}
+
+#location > div:nth-child(2) h3 {
+    margin: 0;
+    line-height: 1.2em;
+    color: rgb(var(--color_11));
+    text-align: center;
+    font-size: 21px;
+    letter-spacing: normal;
+    font: var(--font_5);
+}
+
+#location > div:nth-child(2) > div {
+    flex-direction: column;
 }
 
 #location form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    margin-top: 30px;
     width: 492px;
-    height: 279px;
+    height:297px;
+}
+
+#location form > *:not(span) {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 20px;
+    color: var(--color_23);
+    font: normal normal normal 15px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
+    box-shadow: none;
+    border: 2px solid rgb(var(--color_11));
+}
+
+#location form > *:not(span):hover {
+    border: 2px solid rgb(var(--color_28));
+}
+
+::placeholder{
+    color: rgb(var(--color_23));
+    opacity: 1;
+}
+
+#location form > span {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#location form button {
+    user-select: none;
+    margin-top: 5px;
+    width:142px;
+    height:35px;
+    font: normal normal normal 15px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
+    transition: var(--trans2,color .4s ease 0s);
+    border: none;
+    background-color: rgb(var(--color_18));
+    color: rgb(var(--color_8));
+    font-weight: lighter;
+    cursor: pointer;
+    --animation: --buttonfadeout;
+    animation: var(--animation) .5s;
+}
+
+#location form button:hover {
+    --animation: --buttonfadein;
+    background-color: rgba(var(--color_18), 0);
+}
+
+#location form > textarea{
+    display: flex;
+    flex-grow: 1;
+    resize: none;
+}
+
+#location iframe {
+    margin-top: 30px;
 }
 
 footer {

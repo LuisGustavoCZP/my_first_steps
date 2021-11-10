@@ -46,3 +46,43 @@
     --font_8: normal normal normal 15px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
     --font_9: normal normal normal 13px/1.4em georgia,palatino,'book antiqua','palatino linotype',serif;
 }
+
+@keyframes --linkfadein {
+    0% {
+        color: rgb(var(--color_18));
+        background-color: rgba(var(--color_18), 0);
+    }
+    100%{
+        color: rgb(var(--color_11));
+        background-color: rgba(var(--color_18), 1);
+    }
+}
+
+@keyframes --linkfadeout {
+    0% {
+        color: rgb(var(--color_11));
+        background-color: rgba(var(--color_18), 1);
+    }
+    100%{
+        color: rgb(var(--color_18));
+        background-color: rgba(var(--color_18), 0);
+    }
+}
+
+@keyframes --buttonfadein {
+    0% {
+        background-color: rgba(var(--color_18), 1);
+    }
+    100%{
+        background-color: rgba(var(--color_18), 0);
+    }
+}
+
+@keyframes --buttonfadeout {
+    0% {
+        background-color: rgba(var(--color_18), 0);
+    }
+    100%{
+        background-color: rgba(var(--color_18), 1);
+    }
+}

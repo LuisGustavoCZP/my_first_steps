@@ -24,7 +24,11 @@
                 </ul>
             </nav>
             <div id="social">
-
+                <div class="growbox">
+                    <div class="socialsvg icon1"></div>
+                    <div class="socialsvg icon2"></div>
+                    <div class="socialsvg icon3"></div>
+                </div>
             </div>
         </header>
         <main>
@@ -112,6 +116,7 @@
                             <h3>BURGER MAIS PROCURADO</h3>
                             <i>O Chama</i>
                             <p>Sou um parágrafo. Clique aqui para editar e adicionar o seu próprio texto.</p>
+                            <a href="" target="_self">MENU</a>
                         </div>
                         <img src="https://static.wixstatic.com/media/b907f3_5a54a7e18df34b8f8e431952a51bf8ff.png/v1/fill/w_495,h_495,al_c,q_85,usm_0.66_1.00_0.01/b907f3_5a54a7e18df34b8f8e431952a51bf8ff.webp" />
                     </div>
@@ -160,13 +165,27 @@
                     </span>
                 </div>
                 <div>
-                    <form action="">
-
-                    </form>
-                    <iframe width="469" height="228" id="gmap_canvas" src="https://maps.google.com/maps?q=AV.%20BERNARDINO%20DE%20CAMPOS,%2098%20-%20S%C3%83O%20PAULO,%20SP%2012345-678&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="growbox">
+                        <h3>COMPARTILHE SUAS IDEIAS E</h3>
+                        <h3>OPNIÕES. FALE CONOSCO AQUI:</h3>
+                        <form action="">
+                            <input type="text" name="nome" id="nome" placeholder="Nome" maxlength="100" inputmode="latin-name">
+                            <input type="email" name="email" id="email" placeholder="Email" pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250">
+                            <input type="tel" name="phone" id="phone" placeholder="Telefone" maxlength="50">
+                            <textarea id="msg" placeholder="Digite sua mensagem aqui..." aria-setsize="100px"></textarea>
+                            <span>
+                                <button aria-disabled="false" data-testid="buttonElement" id="enviar">Enviar</button>
+                            </span>
+                        </form>
+                    </div>
+                    <div class="growbox">
+                        <h3>HORÁRIOS:   SEG.– SEX.  12:00 – 23:00</h3>
+                        <h3>SÁB. – DOM. 12:00 – 00:00</h3>
+                        <iframe width="469" height="228" id="gmap_canvas" src="https://maps.google.com/maps?q=AV.%20BERNARDINO%20DE%20CAMPOS,%2098%20-%20S%C3%83O%20PAULO,%20SP%2012345-678&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
                 </div>
             </section>
         </main>
-        <footer>© 2023 por Burger Gourmet. Orgulhosamente criado com Wix.com</footer>
+        <footer>© 2023 por Burger Gourmet. Orgulhosamente criado com Luix.com</footer>
     </body>
 </html>
