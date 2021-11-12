@@ -22,7 +22,6 @@ header > span {
     border-radius: 50%;
     padding: 3%;
     overflow: hidden;
-    background-color: var(--cor1b2);
 }
 
 #photo > img {
@@ -47,7 +46,6 @@ header > span {
 #titlebox > span {
     display: flex;
     flex-direction: row;
-    color: white;
 }
 
 #titlebox > span > * {
@@ -104,7 +102,6 @@ main h2 {
     
     margin: 10px;
     padding: 20px;
-    background-color: var(--cinzat);
     border-radius: 15px;
 }
 
@@ -177,18 +174,10 @@ main h2 {
 }
 
 #repositorio a {
-    color: var(--cor1b2);
     font-size:large;
     font-weight:bolder;
 }
 
-#repositorio a:visited {
-    color: var(--cor1b1);
-}
-
-#repositorio a:hover {
-    color: var(--cor1a2);
-}
 
 #repositorio img {
     width: 60px;

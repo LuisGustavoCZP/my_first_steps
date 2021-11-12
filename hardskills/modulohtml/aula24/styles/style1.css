@@ -131,6 +131,14 @@
     }
 }
 
+#photo {
+    
+}
+
+#titlebox > span {
+    color: white;
+}
+
 #titlebox h1{
     animation: --titleblink 15s infinite;
     text-shadow: var(--preto) 1px 1px 1px;
@@ -140,9 +148,10 @@
     text-shadow: var(--preto) 1px 1px 1px;
 }
 #titlebox {
-    /*background:fixed var(--preto);
+    /*background:fixed var(--cor1b3);
     border: 3px solid black;
-    border-radius: 5px;*/
+    border-radius: 15%;*/
+    padding: 5%;
 }
 
 #titlebox  h4 :first-child{
@@ -155,8 +164,10 @@
 }
 
 body {
+    padding: 10px;
+    background-color: var(--cor1a1b);
     /*background:fixed var(--gradient1);*/
-    background-color: var(--preto);
+    /*background-color: var(--preto);*/
     color:var(--white);
     /*background-image: url("../images/luisformal.png");
     background-repeat: no-repeat;
@@ -169,7 +180,7 @@ body > header {
 }
 
 #titlebox {
-    background-color: var(--pretot);
+    /*background-color: var(--pretot);*/
     border-radius: 15px;
     animation: --wireblink 15s infinite;
 }
@@ -195,9 +206,15 @@ footer {
 }
 
 #subpage {
-    background-color: var(--cor1b2);
+    background-color: var(--cor1b3);
     border: 3px solid black;
-    border-radius: 5px;
+    border-radius: 15% 15% 0px 0px;
+    overflow: hidden;
+    padding: 5%;
+}
+
+#subpage > div > * {
+    background-color: var(--cinzat);
 }
 
 #subpage h2 {
@@ -252,4 +269,16 @@ footer {
 strong {
     
     white-space: nowrap;
+}
+
+#repositorio a {
+    color: var(--cor1b2);
+}
+
+#repositorio a:visited {
+    color: var(--cor1b1);
+}
+
+#repositorio a:hover {
+    color: var(--cor1a2);
 }
