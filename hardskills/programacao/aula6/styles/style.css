@@ -16,8 +16,13 @@
     box-sizing: border-box;
 }
 
+header {
+    
+    background-color:rgb(161, 221, 181);
+}
+
 h1 {
-    margin: 1%;
+    padding: 1%;
     text-align: center;
     font-size: 5em;
     
@@ -46,15 +51,9 @@ ul {
 #mim {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     background-color:rgb(161, 221, 181);
     padding: 2%;
-}
-
-#mim {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
 }
 
 p {
@@ -67,6 +66,7 @@ p {
     justify-content:center;
     align-items: center;
     margin: 5%;
+    color: rgb(47, 87, 60);
 }
 
 #exemples {
