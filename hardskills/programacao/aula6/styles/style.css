@@ -1,0 +1,36 @@
+:root {
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#mim {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+#mim {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
