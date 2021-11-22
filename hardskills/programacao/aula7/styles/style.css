@@ -43,7 +43,6 @@ h2 {
 }
 
 h4 {
-    padding: 6px;
 }
 
 aside img {
@@ -56,6 +55,11 @@ aside img {
 
 aside h2 {
     background-color: var(--textcolor);
+}
+
+aside h4 {
+    
+    padding: 6px;
 }
 
 body > div {
@@ -117,12 +121,26 @@ main > section button {
     padding: 5px 15px;
     font-family: 'Inconsolata', monospace;
     font-weight:bold;
+    background-color: var(--backcolor);
+    color: var(--textcolor);
 }
 
 main > section button:hover {
 
-    background-color: var(--backcolor);
-    color: var(--textcolor);
+    background-color: var(--textcolor);
+    color: var(--backcolor);
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about img {
+    display: flex;
+    object-fit: contain;
+    max-height: 100px;
 }
 
 footer {

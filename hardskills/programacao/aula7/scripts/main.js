@@ -21,6 +21,7 @@ const mentions = [
 ];
 
 const iframewidth=560, iframeheight=315, iframetitle="YouTube video player", iframeallow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+const favoriteArtistTitle = "Favorite Artist Jean Tassy";
 var artistIndex = 0, mentionsIndex = 0;
 
 function CreateIframe (link) {
@@ -43,7 +44,10 @@ function ChangeArtistMusic (button, positive)
     } else if(artistIndex < 0) {
         artistIndex = musics.length -1;
     }
-    artistMusic.src = musics[artistIndex].link; 
+
+    let m = musics[artistIndex];
+    artistMusic.src = m.link;
+    artistMusicName.innerText = m.name;
 }
 
 function ChangeMentionsMusic (button, positive) 
@@ -68,9 +72,9 @@ function AddButtons (parent, func)
     buttonnext.onclick = x => {func(buttonnext, true)};
 }
 
-document.querySelector("title").innerText = "Favorite Artist";
+document.querySelector("title").innerText = favoriteArtistTitle;
 
-document.querySelector("h1").innerText = "Favorite Artist";
+document.querySelector("h1").innerText = favoriteArtistTitle;
 document.querySelector("aside h2").innerText = "About Me";
 let infos = document.querySelectorAll("aside h4");
 infos[0].innerText = "Luis Gustavo C. Z. Pereira";
@@ -80,14 +84,23 @@ document.querySelector("aside img").src="images/luis.jpg";
 
 //document.querySelector("#me > .name").innerText = "About Me";
 
-let artistMusic = CreateIframe(musics[artistIndex].link);
-document.querySelector("#artist h2").innerText = "Jean Tassy";
+let m1 = musics[artistIndex];
+let artistMusic = CreateIframe(m1.link);
+let artistMusicName = document.querySelector("#artist h2");
+artistMusicName.innerText = m1.name;
 document.querySelector("#artist ul").append(artistMusic);
 AddButtons("#artist", ChangeArtistMusic);
 
 let mentionsMusic = CreateIframe(mentions[mentionsIndex].link);
-document.querySelector("#mentions h2").innerText = "Menções Honrosas";
+document.querySelector("#mentions h2").innerText = "Honored Mentions";
 document.querySelector("#mentions ul").append(mentionsMusic);
 AddButtons("#mentions", ChangeMentionsMusic);
 
+document.querySelector("#about h3").innerText = "Name: Jean Tassy";
+document.querySelector("#about h4").innerText = "Genre: Hip-hop/Rap/Pop";
+let linkconsulta = document.querySelector("#about a");
+linkconsulta.innerText = "Contato Oficial";
+linkconsulta.href = "https://twitter.com/jeantassy_?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor";
+linkconsulta.target = "_blank";
+document.querySelector("#about img").src="images/jeantassy.jpg";
 document.querySelector("footer").innerText = "All rights reserved to Luis Gustavo C. Z. Pereira";
