@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+    --backcolor: black;
+    --textcolor: white;
+    font-family: 'Inconsolata', monospace;
+    flex-grow: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+aside {
+    min-width: 25%;
+    max-width: 30%;
+    background-color: var(--backcolor);
+    color: var(--textcolor);
+    padding: 10px;
+}
+
+h1{
+    padding: 20px;
+    background-color: var(--backcolor);
+    color: var(--textcolor);
+}
+
+h2 {
+    color: var(--backcolor);
+    padding: 10px;
+}
+
+h4 {
+    padding: 6px;
+}
+
+aside img {
+    display: flex;
+    flex-grow: 1;
+    object-fit: cover;
+    padding: 10px;
+    width: 100%;
+}
+
+aside h2 {
+    background-color: var(--textcolor);
+}
+
+body > div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body > div > div {
+    margin-left:10px;
+}
+
+main {
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    column-gap: 10px;
+    width: 100%;
+}
+
+iframe {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+    min-height: 300px;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px 0px;
+    background-color: var(--backcolor);
+}
+
+main > section > span {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 5px;
+    justify-content: space-between;
+    background-color: var(--textcolor);
+}
+
+main > section > span > span {
+    display: flex;
+    padding: 0px 5px;
+}
+
+main > section button {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 5px 0px;
+    padding: 5px 15px;
+    font-family: 'Inconsolata', monospace;
+    font-weight:bold;
+}
+
+main > section button:hover {
+
+    background-color: var(--backcolor);
+    color: var(--textcolor);
+}
+
+footer {
+    background-color: var(--backcolor);
+    color: var(--textcolor);
+    text-align: end;
+    padding: 5px 10px;
+}
