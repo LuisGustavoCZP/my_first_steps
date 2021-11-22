@@ -143,6 +143,16 @@ main > section button:hover {
     max-height: 100px;
 }
 
+#about > div {
+    background-color: var(--backcolor);
+    color: var(--textcolor);
+    padding: 15px;
+}
+
+#about h4 {
+    margin-bottom:15px;
+}
+
 footer {
     background-color: var(--backcolor);
     color: var(--textcolor);

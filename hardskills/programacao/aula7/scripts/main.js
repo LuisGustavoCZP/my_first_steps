@@ -102,5 +102,7 @@ let linkconsulta = document.querySelector("#about a");
 linkconsulta.innerText = "Contato Oficial";
 linkconsulta.href = "https://twitter.com/jeantassy_?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor";
 linkconsulta.target = "_blank";
-document.querySelector("#about img").src="images/jeantassy.jpg";
+let imgs = document.querySelectorAll("#about img");
+imgs[0].src="images/jeantassy2.jpg";
+imgs[1].src="images/jeantassy1.jpg";
 document.querySelector("footer").innerText = "All rights reserved to Luis Gustavo C. Z. Pereira";
