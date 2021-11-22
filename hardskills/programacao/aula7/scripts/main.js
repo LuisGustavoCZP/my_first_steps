@@ -68,6 +68,8 @@ function AddButtons (parent, func)
     buttonnext.onclick = x => {func(buttonnext, true)};
 }
 
+document.querySelector("title").innerText = "Favorite Artist";
+
 document.querySelector("h1").innerText = "Favorite Artist";
 document.querySelector("aside h2").innerText = "About Me";
 let infos = document.querySelectorAll("aside h4");
