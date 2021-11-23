@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: "monster";
+    src: url("../fonts/MeltedMonster.ttf");
+}
+
+:root {
+    --red: #77160c;
+    --black: #191919;
+    --white: whitesmoke;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "monster";
+    font-size: 5em;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 100vh;
+
+}
+
+body > div {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    display: flex;
+    min-width: 200px;
+    align-items: flex-start;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1 {
+    color: var(--red);
+}
+
+h2 {
+    color: var(--red);
+}
+
+li {
+    margin-left: 2em;
+}
+
+header img {
+    width: 200px;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+}
+
+main section img {
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+main section > div {
+    width: 400px;
+    margin: 50px 50px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+#habitat img {
+    width: 50%;
+}
+
+#howto img {
+    width: 20%;
+}
+
+#ataques {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: calc(100%);
+    
+}
+
+#ataques img {
+    width: 90%;
+    
+    object-fit: contain;
+}
+
+#ataques > div {
+    width:calc(100% - 50px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+aside img {
+    width: 100%;
+    object-fit: contain;
+}
