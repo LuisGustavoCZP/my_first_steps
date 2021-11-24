@@ -82,6 +82,7 @@ main {
     width: 50%;
     height: 60%;
     padding: 10px;
+    text-align: center;
 }
 
 #avaliacao {
@@ -90,6 +91,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 
 #avaliacao > div {
