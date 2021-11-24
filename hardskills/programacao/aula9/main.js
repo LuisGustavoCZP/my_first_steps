@@ -84,7 +84,17 @@ var inputs = [
                 break;
             case "Ofidioglossia":
                 t2 += "que possui o dom de: " + i2 + " para " + i3;
-                t3 = "Como você é um trouxa com algum dom, apreciamos sua avaliação!"
+                switch (i3) {
+                    case "Apenas cobras":
+                        t3 = "Como você é só um trouxa fraco, guardaremos mas não vamos ler sua avaliação!"
+                        break;
+                    case "Apenas lagartos":
+                        t3 = "Como você é só um trouxa fraco, guardaremos mas não vamos ler sua avaliação!"
+                        break;
+                    case "Ambos":
+                        t3 = "Como você é um trouxa com algum dom, apreciamos sua avaliação!"
+                        break;
+                }
                 break;
             default:
                 break;
