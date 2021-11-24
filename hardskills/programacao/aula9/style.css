@@ -125,8 +125,10 @@ footer {
 
 .fadein {
     animation: --fadein 1s;
+    color: rgba(0, 0, 0, 1);
 }
 
 .fadeout {
     animation: --fadeout 1s;
+    color: rgba(0, 0, 0, 0);
 }
