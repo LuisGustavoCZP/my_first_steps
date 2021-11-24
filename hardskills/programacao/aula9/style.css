@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital@0;1&family=Estonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+@keyframes --fadein {
+    0% {
+        color: rgba(0,0,0,0);
+    }
+    50% {
+        color: rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        color: rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes --fadeout {
+    0% {
+        color: rgba(0, 0, 0, 1);
+    }
+    50% {
+        color: rgba(255, 9, 1, 0.5);
+    }
+    100% {
+        color: rgba(0,0,0,0);
+    }
+}
+
+:root {
+    --brancot: rgba(245, 245, 245, 0.342);
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-image: url("images/olivaras_externa.jpg");
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--brancot);
+    text-align: center; 
+    width: 100%;
+}
+
+h1 {
+    padding-top: .4em;
+    font-family: 'Estonia', cursive;
+    font-size: 8em;
+    line-height: .8em;
+}
+
+h2, h3 {
+    /*font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Caveat', cursive;*/
+    font-family: 'Tangerine', cursive;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    background-color: var(--brancot);
+    width: 50%;
+    height: 60%;
+    padding: 10px;
+}
+
+#avaliacao {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#avaliacao > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+#avaliacao span {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+input, label {
+    margin: 5px;
+    padding: 5px;
+}
+
+footer {
+    padding: 5px;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    text-align: center; 
+    background-color: var(--brancot);
+    justify-content: center;
+    width: 100%;
+}
+
+.fadein {
+    animation: --fadein 1s;
+}
+
+.fadeout {
+    animation: --fadeout 1s;
+}
