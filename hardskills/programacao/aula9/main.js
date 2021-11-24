@@ -21,7 +21,7 @@ var inputs = [
         
         let container = document.createElement("div");
         CreateLabelInput(container, "Clarevidência", "radio", "text-buy", "input1");
-        CreateLabelInput(container, "Ofidioglossia ", "radio", "text-buy", "input2");
+        CreateLabelInput(container, "Ofidioglossia", "radio", "text-buy", "input2");
         CreateLabelInput(container, "Nenhum", "radio", "text-buy", "input3");
         avaliacao.append(container);
     },
