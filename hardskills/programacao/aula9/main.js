@@ -29,28 +29,29 @@ var avaliacao = document.getElementById("avaliacao");
 function onChangeInput(e) {
     e.target.disabled = true;
     inputSaves.push(e.target.value);
-    avaliacao.classList.remove("fadein");
+    
     avaliacao.classList.add("fadeout");
-    setTimeout(DeleteLast(), 2)
+    setTimeout(()=>{DeleteLast()}, 1000);
 }
 
 function DeleteLast() {
+    avaliacao.classList.remove("fadeout");
     for (i = avaliacao.childElementCount-1; i >= 0; i--){
         let el = avaliacao.children[i];
         el.remove();
     }
-
+    
     inputs[++textIndex]();
     for (i = 0; i < avaliacao.childElementCount; i++){
         avaliacao.children[i].disabled = true;
     }
 
-    avaliacao.classList.remove("fadeout");
     avaliacao.classList.add("fadein");
-    setTimeout(CreateNew(), 2)
+    setTimeout(()=>{CreateNew()}, 1000);
 }
 
 function CreateNew() {
+    avaliacao.classList.remove("fadein");
     for (i = 0; i < avaliacao.childElementCount; i++){
         avaliacao.children[i].disabled = false;
     }
