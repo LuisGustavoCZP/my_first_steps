@@ -25,7 +25,7 @@ function operatiorResult (operator, valuea, valueb) {
             return result;
         case "%25": // %
             if(valueb == 0) return 0;
-            return valuea - Math.floor(valuea / valueb);
+            return valuea - (Math.floor(valuea / valueb)*valueb);
         default:
             return 0;
     }
@@ -36,8 +36,8 @@ function loadResults (e) {
     let resultLine = window.location.search.replace("?", "");
     let results = resultLine.split("&");
     let resulta = results[0].replace("valuea=", "");
-    let resultb = results[1].replace("valueb=", "");
-    let operator = results[2].replace("operator=", "");
+    let resultb = results[2].replace("valueb=", "");
+    let operator = results[1].replace("operator=", "");
     let valuea = parseInt(resulta);
     let valueb = parseInt(resultb);
     valueaInput.value = valuea;
