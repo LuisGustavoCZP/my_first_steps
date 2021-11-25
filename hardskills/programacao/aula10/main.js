@@ -32,8 +32,10 @@ function operatiorResult (operator, valuea, valueb) {
 }
 
 function loadResults (e) {
-    console.log(window.location.search);
-    let resultLine = window.location.search.replace("?", "");
+    let resultLine = window.location.search;
+    if(resultLine == "") return;
+
+    resultLine = resultLine.replace("?", "");
     let results = resultLine.split("&");
     let resulta = results[0].replace("valuea=", "");
     let resultb = results[1].replace("valueb=", "");
