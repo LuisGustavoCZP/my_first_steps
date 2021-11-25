@@ -1,0 +1,62 @@
+var formElement = document.forms["calculator"];
+var resultBox = document.getElementById("resultBox");
+let valueaInput = document.getElementById("valuea");
+let valuebInput = document.getElementById("valueb");
+formElement.onsubmit = validateForm;
+window.onload = loadResults;
+
+function operatiorResult (operator, valuea, valueb) {
+    switch (operator) {
+        case "%2B": //+
+            return valuea + valueb;
+        case "-":
+            return valuea - valueb;
+        case "*":
+            return valuea * valueb;
+        case "%2F": // /
+            return valuea / valueb;
+        case "%5E": // ^
+            let result = 0;
+            for (i = 0; i < valuea; i++) {
+                result = valuea * valuea;
+            }
+            return result;
+        case "%25": // %
+            return Math.floor(valuea / valueb);
+        default:
+            return 0;
+    }
+}
+
+function loadResults (e) {
+    console.log(window.location.search);
+    let resultLine = window.location.search.replace("?", "");
+    let results = resultLine.split("&");
+    let resulta = results[0].replace("valuea=", "");
+    let resultb = results[1].replace("valueb=", "");
+    let operator = results[2].replace("operator=", "");
+    let valuea = parseInt(resulta);
+    let valueb = parseInt(resultb);
+    valueaInput.value = valuea;
+    valuebInput.value = valueb;
+    let result = operatiorResult(operator, valuea, valueb);
+    resultLine = resulta + " " + operator + " " + resultb;
+    console.log(resultLine + " = " + result);
+    
+    resultBox.innerText = result;
+}
+
+function validateForm () 
+{
+    let valida = formElement["valuea"] != "" && formElement["valuea"] != undefined;
+    let validb = formElement["valueb"] != "" && formElement["valueb"] != undefined;
+    if(valida && validb) {
+        return true;
+    } else if(validb) {
+        resultBox.innerText = "Você precisa adicionar um valor ao primeiro campo";
+    } else {
+        resultBox.innerText = "Você precisa adicionar um valor ao segundo campo";
+    }
+
+    return false;
+}
