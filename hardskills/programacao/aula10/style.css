@@ -1,10 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("fonts/Technology.ttf");
+@font-face {
+    font-family: "Technology";
+    src: url("fonts/Technology.ttf");
+}
 * {
     margin: 0;
     padding: 0;
+}
+
+:root {
+    font-size: 2vh;
+    font-family: 'Orbitron', sans-serif;
+    --preto: #191919;
+    --branco: whitesmoke;
+    --black: black;
+    --white: white;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: var(--branco);
+    padding: 10px;
+}
+
+main > div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+main > div > h3 
+{
+    font-size: 3rem;
+}
+
+main > div > h4
+{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-grow: 1;
+    font-size: 4rem;
+    font-family: 'Technology', sans-serif;
+    justify-content: flex-end;
+    background-color: var(--white);
 }
 
 form {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+form > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+form > span {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 5px;
+    font-family: 'Technology', sans-serif;
+}
+
+input[type=submit] {
+    padding: 25%;
+    font-size: 5rem;
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+
+input[type=submit]:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+input[type=number] {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    font-size: 4rem;
+    background-color: var(--white);
+    max-width: calc(50% - 14px);
+}
+
+header {
+    color: var(--branco);
+}
+
+footer {
+    color: var(--branco);
 }
