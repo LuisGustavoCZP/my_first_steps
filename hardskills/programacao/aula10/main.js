@@ -45,8 +45,8 @@ function loadResults (e) {
     let result = operatiorResult(operator, valuea, valueb);
     resultLine = resulta + " " + operator + " " + resultb;
     console.log(resultLine + " = " + result);
-    
-    resultBox.innerText = result;
+    result = result.toPrecision(8);
+    resultBox.innerText = result.replace(".0000000", "");
 }
 
 function validateForm () 
