@@ -14,14 +14,17 @@ function operatiorResult (operator, valuea, valueb) {
         case "*":
             return valuea * valueb;
         case "%2F": // /
+            if(valueb == 0) return 0;
             return valuea / valueb;
         case "%5E": // ^
-            let result = 0;
-            for (i = 0; i < valuea; i++) {
-                result = valuea * valuea;
+            let result = valuea;
+            if(valueb == 0) return 1;
+            for (i = 1; i < valueb; i++) {
+                result *= valuea;
             }
             return result;
         case "%25": // %
+            if(valueb == 0) return 0;
             return Math.floor(valuea / valueb);
         default:
             return 0;
