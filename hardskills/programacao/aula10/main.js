@@ -25,7 +25,7 @@ function operatiorResult (operator, valuea, valueb) {
             return result;
         case "%25": // %
             if(valueb == 0) return 0;
-            return Math.floor(valuea / valueb);
+            return valuea - Math.floor(valuea / valueb);
         default:
             return 0;
     }
