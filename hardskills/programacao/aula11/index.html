@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Hamburgueria</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Luis' Burguer</h1>
+            <h3>Aqui matamos sua fome!</h3>
+        </header>
+        <main>
+            <form name="hamburgueria">
+                <section id="pao"></section>
+                <section id="hamburguer"></section>
+                <section id="salada"></section>
+                <section id="queijo">
+                    <!--<input type="number" id="burguernum" name="burguernum" required />-->
+                </section>
+                <section>
+                    <div class="grow-box">
+                        <input type="submit" value="Submit" />
+                        <input type="button" value="Cancel" onclick="OnCancel()" />
+                    </div>
+                </section>
+                <section id="result">
+                    <span>
+                        <h2>R$</h2>
+                        <h2 id="resultCost">0.00</h2>
+                    </span>
+                </section>
+            </form>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>
