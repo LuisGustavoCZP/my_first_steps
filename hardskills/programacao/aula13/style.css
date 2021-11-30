@@ -34,6 +34,7 @@ main > div {
     background-color: whitesmoke;
     width: calc(100%);
     height: calc(100%);
+    border-radius: 15px;
 }
 
 #menu {
@@ -60,6 +61,34 @@ main > div {
     border-radius: 15px;
     font-size: 3em;
     width: 100%;
+    margin: 0 15px;
+}
+
+#menu > span > label {
+    background-color: #191919;
+    color: whitesmoke;
+}
+
+input[type=checkbox]
+{
+    --size: 4;
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(var(--size)); /* IE */
+    -moz-transform: scale(var(--size)); /* FF */
+    -webkit-transform: scale(var(--size)); /* Safari and Chrome */
+    -o-transform: scale(var(--size)); /* Opera */
+    transform: scale(var(--size));
+    padding: 10px;
+}
+
+#menu > button {
+    background-color: #191919;
+    color: whitesmoke;
+    text-align: center;
+    padding: 15px;
+    margin: 0 15px;
+    border-radius: 15px;
+    font-size: 3em;
 }
 
 #result {
@@ -85,11 +114,4 @@ main > div {
     color: whitesmoke;
 }
 
-#menu > button {
-    background-color: #191919;
-    color: whitesmoke;
-    text-align: center;
-    padding: 15px;
-    border-radius: 15px;
-    font-size: 3em;
-}
+
