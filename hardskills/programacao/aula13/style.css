@@ -62,14 +62,25 @@ main > div {
     width: 100%;
 }
 
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 #result > * {
     display: flex;
     flex-shrink: 1;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
     padding: 15px;
     border-radius: 15px;
     font-size: 3em;
-    width: 100%;
+    width: 90%;
     background-color: #191919;
     color: whitesmoke;
 }
