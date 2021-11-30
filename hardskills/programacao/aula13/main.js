@@ -148,7 +148,7 @@ function ShowColocacao (wins, racecars)
     {
         const winner = wins[i];
         const el = document.createElement("h4");
-        el.innerText = (i+1) + "º: " + racecars[winner.id].name;
+        el.innerText = (i+1) + "º: " + racecars[winner.id].name + " ("+ winner.win +" Laps)";
         pel.append(el);
     }
     containerEl.append(pel);
