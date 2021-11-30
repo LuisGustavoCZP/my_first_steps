@@ -62,6 +62,8 @@ function CriarInput (title, type, value, onchange) {
     input.id = id;
     input.type = type;
     input.value = value;
+    input.min = 0;
+    input.max = 10000;
     input.onchange = onchange
     menuEl.append(input);
 
