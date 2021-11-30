@@ -8,7 +8,23 @@ var inputrepeat;
 
 function CriarInputRepeticoes () {
     inputrepeat = document.createElement("input");
-    inputrepeat.
+    inputrepeat.id = "input-repeticoes";
+    inputrepeat.type="number";
+}
+
+function CriarButtonStart (text) {
+    let buttonEl = document.createElement("button");
+    buttonEl.id = "input-submit";
+    buttonEl.innerText = text;
+    buttonEl.onclick = x=>{};
+    return buttonEl;
+}
+
+function CreateText (text, type)
+{
+    let textEl = document.createElement(type);
+    textEl.innerText = text;
+    return textEl;
 }
 
 //#region Sistema A 
@@ -45,11 +61,6 @@ function EscreverQuadroA () {
 
     return repeticoes > 0;
 }
-
-function CreateText (text, type)
-{
-    
-}
 //#endregion
 
 //#region Sistema A
@@ -57,8 +68,7 @@ function EscreverQuadroB () {
     let dif = 0;
     while (repeticoes > 0 && dif < 11)
     {
-        quadroescrita.innerText += " " + frase;
-        dif = quadroDif ();
+        quadroescrita.append(CreateText(frase, "h3"));
         repeticoes--;
         dif++;
     }
@@ -66,5 +76,4 @@ function EscreverQuadroB () {
 }
 //#endregion
 
-EscreverQuadro ();
-console.log(LerQuadro ());
+EscreverQuadroB ();
