@@ -17,19 +17,27 @@ function CriarQuadro (id) {
 }
 
 function CriarInputRepeticoes () {
+    let id = "input-repeticoes";
+    let span = document.createElement("span");
+    let label = document.createElement("label");
+    label.innerText = "Repeticoes"
+    label.htmlFor = id;
+    span.append(label);
     repeticoes = 12;
     let inputrepeat = document.createElement("input");
+    inputrepeat.id = id;
     inputrepeat.type="number";
     inputrepeat.value = repeticoes;
     inputrepeat.onchange = MudarRepeticoes;
-    return inputrepeat;
+    span.append(inputrepeat);
+    return span;
 }
 
 function CriarInputRange (min, max) {
     let id = "input-range-"+min+"-"+max;
     let span = document.createElement("span");
     let label = document.createElement("label");
-    label.innerText = "Speed"
+    label.innerText = "Velocidade"
     label.htmlFor = id;
     span.append(label);
     let inputrepeat = document.createElement("input");
