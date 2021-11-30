@@ -144,6 +144,11 @@ function ShowColocacao (wins, racecars)
 {
     const pel = document.createElement("div");
     pel.id = "result";
+
+    const wel = document.createElement("h3");
+    wel.innerText = "O Vencedor é: " + racecars[wins[0].id].name + "!";
+    pel.append(wel);
+
     for(let i = 0; i < wins.length; i++)
     {
         const winner = wins[i];
@@ -151,6 +156,7 @@ function ShowColocacao (wins, racecars)
         el.innerText = (i+1) + "º: " + racecars[winner.id].name + " ("+ winner.win +" Laps)";
         pel.append(el);
     }
+
     containerEl.append(pel);
 }
 
