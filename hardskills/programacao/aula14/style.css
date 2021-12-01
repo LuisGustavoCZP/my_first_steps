@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #191919;
+    height: 100vh;
+    align-items: center;
+}
+
+main {
+    background-color: whitesmoke;
+    padding: 50px;
+    height: max-content;
+}
+
+h1 {
+    color: whitesmoke;
+    padding: 25px;
+}
+
+h2 {
+    text-align: center;
+}
+
+main > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
+
+main > div > * {
+    width: 100%;
+    text-align: center;
+    background-color: #464646;
+    color: whitesmoke;
+}
+
+#inputs > * {
+    background-color: whitesmoke;
+    color: #464646;
+}
