@@ -74,7 +74,11 @@ function CriarMenuCustom (parent) {
     const menuEl = document.createElement("div");
     menuEl.id="menu";
     
-    menuEl.append(CriarInput("Nº de voltas: ", "number", customVoltas, x => {customVoltas = parseInt(x.target.value);}));
+    menuEl.append(CriarInput("Nº de voltas: ", "number", customVoltas, x => 
+    {
+       const v = parseInt(x.target.value);
+       customVoltas = v > 0 && v < 1000 ? v : customVoltas;
+    }));
     menuEl.append(CriarInput("Random Cars: ", "checkbox", customRandom, x => {customRandom = x.target.checked;}));
     
     const itemEl = document.createElement("button");
