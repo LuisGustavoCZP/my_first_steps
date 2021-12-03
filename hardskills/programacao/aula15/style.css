@@ -23,8 +23,8 @@ body > div {
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vh;
+    height: 100vmin;
+    width: 100vmin;
 }
 
 ul {
@@ -111,14 +111,14 @@ li > div {
 
 li > div.o {
     background-color: hsl(240, 61%, 44%);
-    -webkit-mask: url(images/icono.png) no-repeat center;
-    mask: url(images/icono.png) no-repeat center;
+    -webkit-mask-image: url(images/icono.png);
+    mask-image: url(images/icono.png);
 }
 
 li > div.x {
     background-color: hsl(0, 61%, 44%);
-    -webkit-mask: url(images/iconx.png) no-repeat center;
-    mask: url(images/iconx.png) no-repeat center;
+    -webkit-mask-image: url(images/iconx.png);
+    mask-image: url(images/iconx.png);
 }
 
 li > div.marcado.win {
