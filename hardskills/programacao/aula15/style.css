@@ -21,6 +21,8 @@ body {
 body > div {
     display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vh;
 }
@@ -30,8 +32,8 @@ ul {
     list-style: none;
     column-gap: 1px;
     row-gap: 1px;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 li {
@@ -55,7 +57,7 @@ main, header {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: #19191996;
+    background-color: hsla(0, 0%, 10%, 0.5);
     z-index: 200;
 }
 
@@ -79,7 +81,13 @@ h3 {
 }
 
 h2 {
+    display: flex;
+    background-color: #191919;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     color: whitesmoke;
+    padding: 35px;
     font-size: 5em;
 }
 
@@ -95,18 +103,26 @@ h1 {
 li > div {
     width: 100%;
     height: 100%;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: cover;
+    -webkit-mask-clip: content-box;
 }
 
 li > div.o {
-    background-color: blue;
+    background-color: hsl(240, 61%, 44%);
     -webkit-mask: url(images/o.png) no-repeat center;
     mask: url(images/o.png) no-repeat center;
 }
 
 li > div.x {
-    background-color: red;
+    background-color: hsl(0, 61%, 44%);
     -webkit-mask: url(images/x.png) no-repeat center;
     mask: url(images/x.png) no-repeat center;
+}
+
+li > div.marcado.win {
+    background-color: blueviolet;
 }
 
 span.empty {
@@ -122,9 +138,3 @@ span.x {
     color: red;
 }
 
-
-.svgimg {
-    mask-clip: contain;
-    mask-size: 100%;
-    -webkit-mask-size: 100%;
-}

@@ -29,6 +29,8 @@ function CheckWinner1 ()
         for (let j = 0; j < s; j++)
         {
             const tileh = tilemap[i][j];
+            if(tileh.element.classList.contains("win")) tileh.element.classList.remove("win");
+
             if (i == j)
             {
                 //console.log("Check D1 (" + i + ":" + j + ") = " + d1player + " != " + tileh.value);
@@ -39,8 +41,12 @@ function CheckWinner1 ()
             if (i + j == s-1)
             {
                 //console.log("Check D2 (" + i + ":" + j + ") = " + d2player + " != " + tileh.value);
-                if(i == 0) d2player = tileh.value;
-                else if(tileh.value != d2player) d2player = -1;
+                
+                if(i == 0) {
+                    d2player = tileh.value;
+                } else if(tileh.value != d2player) {
+                    d2player = -1;
+                }
             }
             
             if (j == 0) hplayer = tileh.value;
@@ -53,23 +59,43 @@ function CheckWinner1 ()
 
         if(hplayer != -1) 
         {
-            console.log("H " + i + " = " + hplayer);
+            //console.log("H " + i + " = " + hplayer);
+            for(let j = 0; j < s; j++)
+            {
+                const tile = tilemap[i][j];
+                tile.element.classList.add("win");
+            }
             return hplayer;
         } else
         if(vplayer != -1) 
         {
-            console.log("V " + i + " = " + vplayer);
+            //console.log("V " + i + " = " + vplayer);
+            for(let j = 0; j < s; j++)
+            {
+                const tile = tilemap[j][i];
+                tile.element.classList.add("win");
+            }
             return vplayer;
         }
     }
     if(d1player != -1) 
     {
         //console.log("D1 " + " = " + d1player);
+        for(let j = 0; j < s; j++)
+        {
+            const tile = tilemap[j][j];
+            tile.element.classList.add("win");
+        }
         return d1player;
     } else
     if(d2player != -1) 
     {
         //console.log("D2 " + " = " + d2player);
+        for(let j = 0; j < s; j++)
+        {
+            const tile = tilemap[j][(s-1)-j];
+            tile.element.classList.add("win");
+        }
         return d2player;
     }
     return -1;
@@ -177,8 +203,8 @@ function CreateTiles (n)
             const liel = document.createElement("li");
             const sub = document.createElement("div");
             const tile = new Tile(i, j, -1, sub);
+            sub.onclick = x=>{OnClickTile(tile)};
             tilerow.push(tile);
-            liel.onclick = x=>{OnClickTile(tile)};
             liel.append(sub);
             ulel.append(liel);
         }
