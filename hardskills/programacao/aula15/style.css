@@ -111,14 +111,14 @@ li > div {
 
 li > div.o {
     background-color: hsl(240, 61%, 44%);
-    -webkit-mask: url(images/o.png) no-repeat center;
-    mask: url(images/o.png) no-repeat center;
+    -webkit-mask: url(images/icono.png) no-repeat center;
+    mask: url(images/icono.png) no-repeat center;
 }
 
 li > div.x {
     background-color: hsl(0, 61%, 44%);
-    -webkit-mask: url(images/x.png) no-repeat center;
-    mask: url(images/x.png) no-repeat center;
+    -webkit-mask: url(images/iconx.png) no-repeat center;
+    mask: url(images/iconx.png) no-repeat center;
 }
 
 li > div.marcado.win {
