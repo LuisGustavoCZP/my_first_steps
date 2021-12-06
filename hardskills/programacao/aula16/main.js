@@ -1,50 +1,66 @@
-function CarType(name, imgs) {
-    this.name = name;
-    this.imgs = imgs;
-}
-
 const cartypes = [
-    new CarType("Popular", ["images/cars/car_blue_1.png"]),
-    new CarType("Sport", ["images/cars/car_green_5.png"]),
-    new CarType("Popular", ["images/cars/car_yellow_2.png"]),
+    {
+        name:"Popular", 
+        imgs:["images/cars/car_blue_1.png"],
+    },
+    {
+        name:"Sport", 
+        imgs:["images/cars/car_green_5.png"],
+    },
+    {
+        name:"Super Sport", 
+        imgs:["images/cars/car_yellow_2.png"],
+    },
 ];
 
-function Car(type, speed, skidMin, skidMax) {
-    this.type = type;
-    this.speed = speed + (Math.random()*20-10);
-    this.skidMin = skidMin;
-    this.skidVar = skidMax - skidMin;
-
-    this.randomSpeed = () => {return (this.speed + (Math.random()*70-35))*(this.skidMin+(Math.random()*this.skidVar))};
-}
-
-function Player(name, cars) {
-    this.name = name;
-    this.cars = cars;
-}
-
-function CarPath () {
-
-} 
-
-var cars = 
-[
-    new Car([0, 0], 155, .03, .04),
-    new Car([1, 0], 170, .02, .03),
-    new Car([2, 0] , 185, .01, .0175),
+const carprefabs = [
+    {
+        type:0,
+        chance:.6,
+        speedMin: {min:110, max:130},
+        speedMax: {min:180, max:200},
+        skid: {min:.03, max:.04}
+    },
+    {
+        type:1,
+        chance:.35,
+        speedMin: {min:125, max:145},
+        speedMax: {min:195, max:215},
+        skid: {min:.02, max:.03}
+    },
+    {
+        type:2,
+        chance:.05,
+        speedMin: {min:140, max:160},
+        speedMax: {min:210, max:230},
+        skid: {min:.01, max:.0175}
+    },
 ];
 
-var players = [    
-    new Player("Pedro", []),
-    new Player("Juca", []),
-    new Player("Edna", []),
+var players = [
+    {name: "Pedro", cars:[]},
+    {name: "Juca", cars:[]},
+    {name: "Edna", cars:[]},
 ];
 
-function RandomCar () {
+function CreateCar (p) {
     const r = Math.random();
-    if(r < .6) return 0;
-    else if(r < .95) return 1;
-    else return 2;
+    let n = 0;
+    for(let i = 0; i < carprefabs.length; i++)
+    {
+        if(r > carprefabs[i].chance){
+            n = i;
+            break;
+        }
+    }
+    const carprefab = carprefabs[n];
+    var pCar = {
+        type: carprefab.type,
+        speedMin: carprefab.speedMin.min + (Math.random() * (carprefab.speedMin.max - carprefab.speedMin.min)),
+        speedMax: carprefab.speedMax.min + (Math.random() * (carprefab.speedMax.max - carprefab.speedMax.min)),
+        skid: carprefab.skid.min + (Math.random() * (carprefab.skid.max - carprefab.skid.min)),
+    };
+    players[p].cars.push(pCar);
 }
 
 var customTurns = 5;
@@ -55,15 +71,17 @@ const winnerText = document.getElementById("winner");
 
 function OnChangeCustomTurn (evt){
     customTurns = parseInt(evt.target.value);
-    console.log(customTurns);
+    //console.log(customTurns);
 }
 
-function Back() {
+function Back() 
+{
     main.style.display = "none";
     windowStart.style.display = "flex";
 }
 
-function CreateGame (n) {
+function CreateGame (n) 
+{
     main.style.display = "flex";
     const table = [{id: 0, wins:0}, {id: 1, wins:0}, {id: 2, wins:0}];
     for(let i =0 ; i < n; i++)
@@ -72,7 +90,8 @@ function CreateGame (n) {
         let winnerSpeed = 0;
         for(let j = 0; j < players.length; j++) 
         {
-            const speed = players[j].cars[0].randomSpeed();
+            const car = players[j].cars[0];
+            const speed = (car.speedMin + ((car.speedMax - car.speedMin)*Math.random())) * car.skid;
             if(winner == -1 || winnerSpeed < speed)
             {
                 winner = j;
@@ -80,7 +99,7 @@ function CreateGame (n) {
             }
         }
         table[winner].wins++;
-        console.log(winner);
+        //console.log(winner);
     }
     table.sort((a,b) => b.wins - a.wins)
     winnerText.innerText = players[table[0].id].name;
@@ -92,9 +111,7 @@ function Start (n)
 
     for (let i = 0; i < players.length; i++)
     {
-        players[i].cars = [];
-        players[i].cars.push(cars[RandomCar()]);
-        
+        CreateCar(i);
     }
 
     CreateGame (n);
