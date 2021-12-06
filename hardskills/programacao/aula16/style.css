@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > div {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vmin;
+    width: 100vmin;
+}
+
+ul {
+    display: grid;
+    list-style: none;
+    column-gap: 1px;
+    row-gap: 1px;
+    width: 90%;
+    height: 90%;
+}
+
+li {
+    display: flex;
+    position: relative;
+    flex-grow: 0;
+    background-color: white;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+main, header {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 10%, 0.5);
+    z-index: 200;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+}
+
+header nav > * {
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+header > h3 {
+    display: flex;
+    position: absolute;
+    color: black;
+    font-size:1fr;
+    line-height: 1em;
+}
+
+header > h2 {
+    display: flex;
+    background-color: #191919;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    padding: 35px;
+    font-size: 5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.marcado {
+    cursor:not-allowed;
+    text-align: center;
+}
+
+li > div {
+    width: 100%;
+    height: 100%;
+    mask-clip: contain;
+    mask-size: 100%;
+    -webkit-mask-size: cover;
+    -webkit-mask-clip: content-box;
+}
+
+li > div.o {
+    background-color: hsl(240, 61%, 44%);
+    -webkit-mask-image: url(images/icono.png);
+    mask-image: url(images/icono.png);
+}
+
+li > div.x {
+    background-color: hsl(0, 61%, 44%);
+    -webkit-mask-image: url(images/iconx.png);
+    mask-image: url(images/iconx.png);
+}
+
+li > div.marcado.win {
+    background-color: blueviolet;
+}
+
+span.empty {
+    color: white;
+}
+
+span.o {
+    color: blue;
+    
+}
+
+span.x {
+    color: red;
+}
+
+main > canvas {
+    width: 50%;
+    height: 50%;
+}
+
+main nav {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+main nav > button {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+main nav > h3 {
+    padding: 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+main h2 {
+    color: white;
+}
