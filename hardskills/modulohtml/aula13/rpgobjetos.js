@@ -127,13 +127,3 @@ class Character extends DynamicObjeto
 {
 
 }
-
-class Tile extends PhysicObjeto
-{
-    constructor (sprite, positionX, positionY, size, rotation, isTrigger)
-    {
-        super(sprite, positionX, positionY, size, rotation, isTrigger);
-        this.colliding = false;
-        this.collisions = [];
-    }
-}

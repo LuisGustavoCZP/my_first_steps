@@ -15,7 +15,7 @@
             var canvas = document.querySelector("canvas");
             var ctx = canvas.getContext("2d");
             
-            let defaultFrame = new SpriteFrame(16,16,1);
+            const defaultFrame = new SpriteFrame(16,16,1);
             var gameObjetos = 
             [
                 new DynamicObjeto(new AnimatedSprite(defaultFrame, "sprites/tilemap_packed.png", 23), 0, 0, 64, 0, false, 2, 1),
@@ -27,13 +27,7 @@
                 //new PhysicObjeto(new GOSprite(defaultFrame, "sprites/tilemap_packed.png", 0), 0, 0, 64, 0, true),
             ]
             var rpgmanager = new RPGManager (canvas, ctx, gameObjetos, tiles);
-            
-            function gameloop ()
-            {
-                window.requestAnimationFrame(gameloop, canvas);
-                rpgmanager.gameloop();
-            }
-
+     
             function mouseClick (e){
                 //let gameObjeto = gameObjetos[jogador];
                 let iat = rpgmanager.iaTargets;
@@ -45,7 +39,12 @@
                 tgt.positionX = e.clientX-(rpgmanager.canvas.width/2)+offsetX;
                 tgt.positionY = e.clientY-(rpgmanager.canvas.height/2)+offsetY;
             }
-
+            
+            function gameloop ()
+            {
+                window.requestAnimationFrame(gameloop, canvas);
+                rpgmanager.gameloop();
+            }
             gameloop();
 
             window.addEventListener("click", mouseClick, false);
