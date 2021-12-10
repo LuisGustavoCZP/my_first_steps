@@ -148,6 +148,11 @@ for (let i = 0; i < players.length; i++){
 
 function LevelUp(player)
 {
+    if(player.level >= 10) {
+        player.element.children[1].children[1].children[1].innerText = player.points;
+        return;
+    }
+
     if(player.points < 450) {
         player.element.children[1].children[1].children[1].innerText = player.points;
         return;
