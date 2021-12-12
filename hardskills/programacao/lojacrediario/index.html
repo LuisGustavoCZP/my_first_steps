@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <section id="registro">
+                <h2>Registrar Cliente</h2>
+                <form>
+                    <label for="compra-cliente">Cliente</label>
+                    <input type="text" name="" id="compra-cliente" placeholder="Nome Completo" />
+
+                    <label for="compra-vencimento">Vencimento</label>
+                    <input type="date" name="" id="compra-vencimento" />
+
+                    <label for="compra-valor">Compra</label>
+                    <input type="number" name="" id="compra-valor" placeholder="Valor (R$)" />
+                </form>
+                <span>
+                    <button onclick="RegistrarCompra ()">Registrar</button>
+                    <button onclick="CalcularJuros ()">Calcular</button>
+                </span>
+                <span id="log"></span>
+            </section>
+            <section id="compras">
+                <ul>
+
+                </ul>
+            </section>
+            <section id="juros" class="hidden">
+                <ul>
+
+                </ul>
+            </section>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
