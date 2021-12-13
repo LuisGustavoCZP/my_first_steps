@@ -25,6 +25,7 @@ const dataHoje = new Date();
 function DataHoje () {
     return dataHoje.getFullYear() + "-" + (dataHoje.getMonth()+1) + "-" + dataHoje.getDate();
 }
+
 inputs[1].value = DataHoje ();
 const mora = 2 / 100, juroDia = 0.1 / 100;
 
@@ -95,17 +96,14 @@ function CalcularJuros ()
         }
         if(anos > 0) atraso += (anos*365);
         //console.log("d" + dias + " m" + meses + " a" + anos + " | " + atraso);
-        if(atraso > 0)
-        {
-            const tjuros = mora + (atraso * juroDia);
-            return {
-                compra: el,
-                juros: {
-                    total: tjuros,
-                    valor: el.valor * tjuros,
-                }
-            };
-        }
+        const tjuros = atraso > 0 ? mora + (atraso * juroDia) : 0;
+        return {
+            compra: el,
+            juros: {
+                total: tjuros,
+                valor: el.valor * tjuros,
+            }
+        };
     });
     DesenharJuros(tabela);
 }
