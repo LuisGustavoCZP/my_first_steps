@@ -67,22 +67,35 @@ main {
 }
 
 .tabela > ul {
+    display: flex;
     overflow-y: scroll;
     height: 100%;
     width: 100%;
     padding: 5px;
     background-color: #191919;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
 }
 
 .tabela li {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     margin: 5px;
     color: whitesmoke;
     background-color: #494949;
+    /*width: fit-content;*/
+    flex-grow: 1;
+    height: fit-content;
+}
+
+.tabela li.grupo {
+    flex-direction: column;
+    color: #494949;
+    background-color: whitesmoke;
+
 }
 
 .tabela li > div {

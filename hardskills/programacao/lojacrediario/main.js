@@ -22,11 +22,15 @@ const diasMes =
     31, 30, 31
 ];
 
+function Money(num) {
+    return num.toLocaleString("pt-br", { style: 'currency', currency: 'BRL' });
+}
+
 function BoxCompra (compra) 
 {
     return "<span>" +
                     "<h5>" + compra.vencimento.dia + "/" + compra.vencimento.mes + "/" + compra.vencimento.ano + "</h5>" +
-                    "<h4>" + compra.valor + "</h4>" +
+                    "<h4>" + Money(parseInt(compra.valor)) + "</h4>" +
            "</span>";
 }
 
@@ -34,7 +38,7 @@ function QuadCompra (compra)
 {
     return "<li>" +
                 "<h3>" + compra.cliente + "</h3>" +
-                BoxCompra(compra) +
+                "<div>" + BoxCompra(compra)  + "</div>" +
            "</li>"
     ;
 }
@@ -45,9 +49,9 @@ function BoxJuros (juros)
                 BoxCompra(juros.compra) +
                 "<span>" +
                             "<h5>" + (juros.juros.total*100).toFixed(2) + "%</h5>" +
-                            "<h4>" + juros.juros.valor.toFixed(2) + "</h4>" +
+                            "<h4>" + Money(juros.juros.valor) + "</h4>" +
                 "</span>" +
-                "<h3>" + (parseFloat(juros.compra.valor) + parseFloat(juros.juros.valor)).toFixed(2) + "</h3>" + 
+                "<h3>" + Money(parseFloat(juros.compra.valor) + parseFloat(juros.juros.valor)) + "</h3>" + 
             "</div>"
     ;
 }
@@ -56,19 +60,19 @@ function QuadJuros (juros)
 {
     return "<li>" +
                 "<h3>" + juros.compra.cliente + "</h3>" +
-                BoxJuros(juros);
+                BoxJuros(juros) +
            "</li>"
     ;
 }
 
 function GrupeJuros (title, array) 
 {
-    return "<li>" +
+    return "<li class='grupo'>" +
                 "<h3>" + title + "</h3>" +
                 "<ul>" + array.reduce((p, x) => 
                 { 
                     //console.log(p); 
-                    return p += "<li>" + BoxJuros(x) + "</li>";
+                    return p += QuadJuros(x);//"<li>" + BoxJuros(x) + "</li>";
                 }, "") +
                 "</ul>" +
            "</li>"
