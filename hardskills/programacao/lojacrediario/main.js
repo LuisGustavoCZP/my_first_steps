@@ -185,7 +185,7 @@ async function AgruparClientes()
         container.innerHTML += GrupeJuros(element, carray[element]);
     }
     //console.log(carray);
-    ClientLog("Agrupado por Vencimento", true);
+    ClientLog("Agrupado por Cliente", true);
 }
 
 async function AgruparVencimento()
