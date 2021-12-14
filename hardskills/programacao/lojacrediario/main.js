@@ -13,6 +13,7 @@ function ClientLog (text, bool) {
 }
 
 const compras = [];
+let tabela = [];
 const diasMes = 
 [
     31, 28, 31,
@@ -21,7 +22,61 @@ const diasMes =
     31, 30, 31
 ];
 
+function BoxCompra (compra) 
+{
+    return "<span>" +
+                    "<h5>" + compra.vencimento.dia + "/" + compra.vencimento.mes + "/" + compra.vencimento.ano + "</h5>" +
+                    "<h4>" + compra.valor + "</h4>" +
+           "</span>";
+}
+
+function QuadCompra (compra) 
+{
+    return "<li>" +
+                "<h3>" + compra.cliente + "</h3>" +
+                BoxCompra(compra) +
+           "</li>"
+    ;
+}
+
+function BoxJuros (juros) 
+{
+    return "<div>" +
+                BoxCompra(juros.compra) +
+                "<span>" +
+                            "<h5>" + (juros.juros.total*100).toFixed(2) + "%</h5>" +
+                            "<h4>" + juros.juros.valor.toFixed(2) + "</h4>" +
+                "</span>" +
+                "<h3>" + (parseFloat(juros.compra.valor) + parseFloat(juros.juros.valor)).toFixed(2) + "</h3>" + 
+            "</div>"
+    ;
+}
+
+function QuadJuros (juros) 
+{
+    return "<li>" +
+                "<h3>" + juros.compra.cliente + "</h3>" +
+                BoxJuros(juros);
+           "</li>"
+    ;
+}
+
+function GrupeJuros (title, array) 
+{
+    return "<li>" +
+                "<h3>" + title + "</h3>" +
+                "<ul>" + array.reduce((p, x) => 
+                { 
+                    //console.log(p); 
+                    return p += "<li>" + BoxJuros(x) + "</li>";
+                }, "") +
+                "</ul>" +
+           "</li>"
+    ;
+}
+
 const dataHoje = new Date();
+
 function DataHoje () {
     return dataHoje.getFullYear() + "-" + (dataHoje.getMonth()+1) + "-" + dataHoje.getDate();
 }
@@ -43,9 +98,6 @@ function RegistrarCompra ()
         vencimento: ParseData(inputs[1].value), 
         valor:inputs[2].value 
     };
-
-    const datraso = (compra.vencimento.ano - dataHoje.getFullYear())*360 + (compra.vencimento.mes - dataHoje.getMonth())*30 + (compra.vencimento.dia - dataHoje.getDate());
-    console.log(datraso);
 
     if(compra.cliente == "") 
     {
@@ -75,27 +127,18 @@ function RegistrarCompra ()
     DesenharCompra (compra);
 }
 
+let dataVenc = new Date();
 function CalcularJuros () 
 {
-    const tabela = compras.map(el => 
+    tabela = compras.map(el => 
     {
-        //console.log(el);
         let atraso = 0;
-        const adias = dataHoje.getDate(), 
-        ameses = dataHoje.getMonth()+1,
-        aanos = dataHoje.getFullYear();
         const venc = el.vencimento;
-        //console.log(venc);
-        //console.log("d" + adias + " m" + ameses + " a" + aanos + " | " + atraso);
-        const dias = adias - venc.dia, 
-        meses = ameses - venc.mes,
-        anos = aanos - venc.ano;
-        if(dias > 0) atraso += dias;
-        for(let i = 0; i < meses; i++){
-            atraso += diasMes[i];
-        }
-        if(anos > 0) atraso += (anos*365);
-        //console.log("d" + dias + " m" + meses + " a" + anos + " | " + atraso);
+        dataVenc.setFullYear(venc.ano);
+        dataVenc.setMonth(venc.mes-1);
+        dataVenc.setDate(venc.dia);
+        let ts = parseInt((dataHoje - dataVenc));
+        atraso += ts / (1000 * 60 * 60 * 24);
         const tjuros = atraso > 0 ? mora + (atraso * juroDia) : 0;
         return {
             compra: el,
@@ -105,10 +148,64 @@ function CalcularJuros ()
             }
         };
     });
+
+    ClientLog("Calculando juros...", false);
     DesenharJuros(tabela);
 }
 
-function DesenharJuros (tabela)
+function CreateHashset (array, keyfunc)
+{
+    return array.reduce((acc, el) => 
+    {
+        let narray;
+        if(!acc.hasOwnProperty(keyfunc(el))){
+            narray = [];
+            acc[keyfunc(el)] = narray; 
+            acc.length++;
+        } else {
+            narray = acc[keyfunc(el)];
+        }
+        narray.push(el);
+
+        return acc;
+    }, []);
+}
+
+async function AgruparClientes()
+{
+    const container = jurosBox.children[0];
+    
+    const carray = CreateHashset(tabela, x => {return x.compra.cliente;});
+    container.innerHTML = "";
+
+    for(element in carray) 
+    {
+        if(element == undefined) continue;
+        //console.log(carray[element]);
+        container.innerHTML += GrupeJuros(element, carray[element]);
+    }
+    //console.log(carray);
+    ClientLog("Agrupado por Vencimento", true);
+}
+
+async function AgruparVencimento()
+{
+    const container = jurosBox.children[0];
+
+    const carray = CreateHashset(tabela, x => {return x.compra.vencimento.dia + "/" + x.compra.vencimento.mes + "/" + x.compra.vencimento.ano;});
+    container.innerHTML = "";
+
+    for(element in carray) 
+    {
+        if(element == undefined) continue;
+        //console.log(carray[element]);
+        container.innerHTML += GrupeJuros(element, carray[element]);
+    }
+    ClientLog("Agrupado por Vencimento", true);
+    //console.log(carray);
+}
+
+async function DesenharJuros (tab)
 {
     jurosBox.children[0].remove();
     const container = document.createElement("ul");
@@ -116,54 +213,16 @@ function DesenharJuros (tabela)
 
     comprasBox.classList.add("hidden");
     jurosBox.classList.remove("hidden");
-    //const container = jurosBox.children[0];
-    tabela.forEach(element => 
+    tab.forEach(element => 
     {
-        const juroBox = document.createElement("li");
-    
-        const nameText = document.createElement("h3");
-        nameText.textContent = element.compra.cliente;
-        juroBox.append(nameText);
-        
-        const subBox = document.createElement("div");
-        
-        const vencText = document.createElement("h5");
-        vencText.textContent = (element.juros.total*100).toFixed(2) + "%";
-        subBox.append(vencText);
-        
-        const valorText = document.createElement("h4");
-        const d = parseFloat(element.compra.valor) + parseFloat(element.juros.valor);
-        //console.log(d);
-        valorText.textContent = "R$" + d.toFixed(2);
-        subBox.append(valorText);
-        
-        juroBox.append(subBox);
-
-        container.append(juroBox);
+        container.innerHTML += QuadJuros(element);
     });
+    ClientLog("Juros calculado", true);
 }
 
-function DesenharCompra (compra)
+async function DesenharCompra (compra)
 {
     comprasBox.classList.remove("hidden");
     jurosBox.classList.add("hidden");
-    const compraBox = document.createElement("li");
-    
-    const nameText = document.createElement("h3");
-    nameText.textContent = compra.cliente;
-    compraBox.append(nameText);
-    
-    const subBox = document.createElement("div");
-    
-    const vencText = document.createElement("h5");
-    vencText.textContent = compra.vencimento.dia + "/" + compra.vencimento.mes + "/" + compra.vencimento.ano;
-    subBox.append(vencText);
-    
-    const valorText = document.createElement("h4");
-    valorText.textContent = "R$" + compra.valor;
-    subBox.append(valorText);
-    
-    compraBox.append(subBox);
-
-    comprasBox.children[0].appendChild(compraBox);
+    comprasBox.children[0].innerHTML += QuadCompra(compra);
 }
