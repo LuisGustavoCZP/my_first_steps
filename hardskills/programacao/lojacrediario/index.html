@@ -5,8 +5,22 @@
     </head>
     <body>
         <main>
-            <section id="registro">
-                <h2>Registrar Cliente</h2>
+            <section id="cheat" class="header hidden">
+                <h2><button onclick="SwitchMode ()"></button>Test Engine</h2>
+                <form>
+                    <label for="cheat-entrada">Entrada</label>
+                    <textarea type="text" name="" id="cheat-entrada" inputmode="latin" placeholder="JSON data text"></textarea>
+
+                    <label for="cheat-saida">Saida</label>
+                    <textarea type="text" name="" id="cheat-saida" inputmode="latin" readonly></textarea>
+                </form>
+                <span>
+                    <button onclick="SalvarCompras ()">Salvar</button>
+                    <button onclick="CarregarCompras ()">Carregar</button>
+                </span>
+            </section>
+            <section id="registro" class="header">
+                <h2><button onclick="SwitchMode ()"></button>Registrar Cliente</h2>
                 <form>
                     <label for="compra-cliente">Cliente</label>
                     <input type="text" name="" id="compra-cliente" placeholder="Nome Completo" />
@@ -19,18 +33,18 @@
                 </form>
                 <span>
                     <button onclick="RegistrarCompra ()">Registrar</button>
-                    <button onclick="CalcularJuros ()">Calcular</button>
+                    <button onclick="CalcularDivida ()">Calcular</button>
                     <button onclick="AgruparClientes ()">Cliente</button>
                     <button onclick="AgruparVencimento ()">Data</button>
                 </span>
-                <span id="log"></span>
             </section>
+            <span id="log"></span>
             <section id="compras" class="tabela">
                 <ul>
 
                 </ul>
             </section>
-            <section id="juros" class="tabela hidden">
+            <section id="dividas" class="tabela hidden">
                 <ul>
 
                 </ul>

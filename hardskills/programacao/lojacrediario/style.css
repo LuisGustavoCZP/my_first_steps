@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    width: 100vw;
+    /*width: 100vw;*/
     height: 100vh;
 }
 
@@ -14,27 +14,34 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
-    
+    flex-grow: 1;
     background-color: #191919;
 }
 
-#registro {
+.header {
     display: flex;
     flex-direction: column;
-    padding: 10px;
     background-color: #494949;
     color: whitesmoke;
-    width: 100%;
+    
 }
 
-#registro > h2 {
+.header > h2 {
     text-align: center;
     padding: 10px;
     width: 100%;
+    user-select: none;
 }
 
-#registro > form {
+.header > h2 > button {
+    cursor:pointer;
+}
+
+.header > h2 > button:hover {
+    background-color: #494949;
+}
+
+.header > form {
     display: grid;
     padding: 10px;
     grid-template-columns: .3fr .7fr;
@@ -42,22 +49,26 @@ main {
     width: 100%;
 }
 
-#registro > form > * {
+.header > form > * {
     display: flex;
     padding: 10px;
-    width: 100%;
-    height: 100%;
+    width: calc(100%);
+    height: calc(100%);
 }
 
-#registro > span:first-of-type {
+.header > form textarea {
+    resize: none;
+}
+
+.header > span:first-of-type {
     display: flex;
-    width: 100%;
+    width: calc(100%);
     padding: 10px;
 }
 
-#registro > span > button {
+.header > span > button {
     padding: 10px;
-    width: 100%;
+    width: calc(100%);
 }
 
 .tabela {
@@ -68,7 +79,7 @@ main {
 
 .tabela > ul {
     display: flex;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     height: 100%;
     width: 100%;
     padding: 5px;
@@ -79,16 +90,17 @@ main {
 
 .tabela li {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     margin: 5px;
     color: whitesmoke;
     background-color: #494949;
-    /*width: fit-content;*/
-    flex-grow: 1;
-    height: fit-content;
+    min-width: fit-content;
+    max-width: calc(100%);
+    /*flex-grow: 1;*/
+    max-height: fit-content;
 }
 
 .tabela li.grupo {
@@ -105,6 +117,7 @@ main {
     align-items: center;
     color: whitesmoke;
     background-color: #494949;
+    max-height: min-content;
 }
 
 .tabela li > div > h3 {
@@ -205,6 +218,8 @@ main {
     vertical-align: middle;
     text-align: center;
     justify-content: center;
+    background-color: #494949;
+    padding: 5px;
 }
 
 .error {

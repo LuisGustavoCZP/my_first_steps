@@ -1,5 +1,8 @@
+const registroBox = document.getElementById("registro");
+const cheatBox = document.getElementById("cheat");
 const comprasBox = document.getElementById("compras");
-const jurosBox = document.getElementById("juros");
+const dividaBox = document.getElementById("dividas");
+
 const inputs = [
     document.getElementById("compra-cliente"),
     document.getElementById("compra-vencimento"),
@@ -12,8 +15,30 @@ function ClientLog (text, bool) {
     logOutput.classList.toggle("sucess", bool);
 }
 
+const cheatSaida = document.getElementById("cheat-saida");
+const cheatEntrada = document.getElementById("cheat-entrada");
+let cheatmode = false;
+function SwitchMode () {
+    cheatmode = !cheatmode;
+    registroBox.classList.toggle("hidden");
+    cheatBox.classList.toggle("hidden");
+}
+
+async function CarregarCompras () {
+    const loaded = JSON.parse(cheatEntrada.value);
+    loaded.forEach(x => {compras.push(x); DesenharCompra (x);});
+}
+
+async function SalvarCompras () {
+    /*let jsontext = compras.reduce((txt, el) => 
+    {
+        jsontext += ;
+    });*/
+    cheatSaida.textContent = JSON.stringify(compras);
+}
+
 const compras = [];
-let tabela = [];
+let dividas = [];
 const diasMes = 
 [
     31, 28, 31,
@@ -43,38 +68,40 @@ function QuadCompra (compra)
     ;
 }
 
-function BoxJuros (juros) 
+function BoxDivida (divida) 
 {
     return "<div>" +
-                BoxCompra(juros.compra) +
+                BoxCompra(divida.compra) +
                 "<span>" +
-                            "<h5>" + (juros.juros.total*100).toFixed(2) + "%</h5>" +
-                            "<h4>" + Money(juros.juros.valor) + "</h4>" +
+                            "<h5>" + (divida.divida.total*100).toFixed(2) + "%</h5>" +
+                            "<h4>" + Money(divida.divida.valor) + "</h4>" +
                 "</span>" +
-                "<h3>" + Money(parseFloat(juros.compra.valor) + parseFloat(juros.juros.valor)) + "</h3>" + 
+                "<h3>" + Money(parseFloat(divida.valor)) + "</h3>" + 
             "</div>"
     ;
 }
 
-function QuadJuros (juros) 
+function QuadDivida (divida) 
 {
     return "<li>" +
-                "<h3>" + juros.compra.cliente + "</h3>" +
-                BoxJuros(juros) +
+                "<h3>" + divida.compra.cliente + "</h3>" +
+                BoxDivida(divida) +
            "</li>"
     ;
 }
 
-function GrupeJuros (title, array) 
+function GroupDivida (title, array) 
 {
+    const dividaGroup = array.reduce((p, divida) => 
+    { 
+        p.html += QuadDivida(divida);
+        p.total += parseFloat(divida.valor);
+        return p;//"<li>" + Boxdivida(x) + "</li>";
+    }, {html:"", total:0});
     return "<li class='grupo'>" +
                 "<h3>" + title + "</h3>" +
-                "<ul>" + array.reduce((p, x) => 
-                { 
-                    //console.log(p); 
-                    return p += QuadJuros(x);//"<li>" + BoxJuros(x) + "</li>";
-                }, "") +
-                "</ul>" +
+                "<ul>" + dividaGroup.html + "</ul>" +
+                "<h3>" + Money(parseFloat(dividaGroup.total)) + "</h3>" +
            "</li>"
     ;
 }
@@ -132,29 +159,31 @@ function RegistrarCompra ()
 }
 
 let dataVenc = new Date();
-function CalcularJuros () 
+function CalcularDivida () 
 {
-    tabela = compras.map(el => 
+    dividas = compras.map(divida => 
     {
         let atraso = 0;
-        const venc = el.vencimento;
+        const venc = divida.vencimento;
         dataVenc.setFullYear(venc.ano);
         dataVenc.setMonth(venc.mes-1);
         dataVenc.setDate(venc.dia);
         let ts = parseInt((dataHoje - dataVenc));
         atraso += ts / (1000 * 60 * 60 * 24);
-        const tjuros = atraso > 0 ? mora + (atraso * juroDia) : 0;
+        const tdivida = atraso > 0 ? mora + (atraso * juroDia) : 0;
+        const apagar = divida.valor * tdivida;
         return {
-            compra: el,
-            juros: {
-                total: tjuros,
-                valor: el.valor * tjuros,
-            }
+            compra: divida,
+            divida: {
+                total: tdivida,
+                valor: apagar,
+            },
+            valor: parseFloat(divida.valor) + apagar
         };
     });
 
-    ClientLog("Calculando juros...", false);
-    DesenharJuros(tabela);
+    ClientLog("Calculando divida...", false);
+    DesenharDivida(dividas);
 }
 
 function CreateHashset (array, keyfunc)
@@ -177,16 +206,16 @@ function CreateHashset (array, keyfunc)
 
 async function AgruparClientes()
 {
-    const container = jurosBox.children[0];
+    const container = dividaBox.children[0];
     
-    const carray = CreateHashset(tabela, x => {return x.compra.cliente;});
+    const carray = CreateHashset(dividas, x => {return x.compra.cliente;});
     container.innerHTML = "";
 
     for(element in carray) 
     {
         if(element == undefined) continue;
         //console.log(carray[element]);
-        container.innerHTML += GrupeJuros(element, carray[element]);
+        container.innerHTML += GroupDivida(element, carray[element]);
     }
     //console.log(carray);
     ClientLog("Agrupado por Cliente", true);
@@ -194,39 +223,39 @@ async function AgruparClientes()
 
 async function AgruparVencimento()
 {
-    const container = jurosBox.children[0];
+    const container = dividaBox.children[0];
 
-    const carray = CreateHashset(tabela, x => {return x.compra.vencimento.dia + "/" + x.compra.vencimento.mes + "/" + x.compra.vencimento.ano;});
+    const carray = CreateHashset(dividas, x => {return x.compra.vencimento.dia + "/" + x.compra.vencimento.mes + "/" + x.compra.vencimento.ano;});
     container.innerHTML = "";
 
     for(element in carray) 
     {
         if(element == undefined) continue;
         //console.log(carray[element]);
-        container.innerHTML += GrupeJuros(element, carray[element]);
+        container.innerHTML += GroupDivida(element, carray[element]);
     }
     ClientLog("Agrupado por Vencimento", true);
     //console.log(carray);
 }
 
-async function DesenharJuros (tab)
+async function DesenharDivida (tab)
 {
-    jurosBox.children[0].remove();
+    dividaBox.children[0].remove();
     const container = document.createElement("ul");
-    jurosBox.append(container);
+    dividaBox.append(container);
 
     comprasBox.classList.add("hidden");
-    jurosBox.classList.remove("hidden");
+    dividaBox.classList.remove("hidden");
     tab.forEach(element => 
     {
-        container.innerHTML += QuadJuros(element);
+        container.innerHTML += QuadDivida(element);
     });
-    ClientLog("Juros calculado", true);
+    ClientLog("divida calculado", true);
 }
 
 async function DesenharCompra (compra)
 {
     comprasBox.classList.remove("hidden");
-    jurosBox.classList.add("hidden");
+    dividaBox.classList.add("hidden");
     comprasBox.children[0].innerHTML += QuadCompra(compra);
 }
