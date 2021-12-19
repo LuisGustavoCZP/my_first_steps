@@ -45,7 +45,7 @@ function Money(num) {
 function BoxCompra (compra) 
 {
     return "<span>" +
-                    "<h5>" + compra.vencimento.getDate() + "/" + (compra.vencimento.getMonth()+1) + "/" + compra.vencimento.getFullYear() + "</h5>" +
+                    "<h5>" + StringfyData(compra.vencimento) + "</h5>" +
                     "<h4>" + Money(parseInt(compra.valor)) + "</h4>" +
            "</span>";
 }
@@ -90,7 +90,7 @@ function GroupDivida (title, array)
         return p;//"<li>" + Boxdivida(x) + "</li>";
     }, {html:"", total:0});
     return "<li class='grupo'>" +
-                "<h3>" + title + "</h3>" +
+                "<h2>" + title + "</h2>" +
                 "<ul>" + dividaGroup.html + "</ul>" +
                 "<h3>" + Money(parseFloat(dividaGroup.total)) + "</h3>" +
            "</li>"
@@ -112,6 +112,10 @@ function ParseData (text)
     const d = parseInt(datasplit[2]), m = parseInt(datasplit[1]), a = parseInt(datasplit[0]);
     const dt = new Date(a, m-1, d);
     return dt;
+}
+
+function StringfyData (data){
+    return data.getDate() + "/" + (data.getMonth()+1) + "/" + data.getFullYear();
 }
 
 function AtrasoData (data, vencimento) {
@@ -214,7 +218,7 @@ async function AgruparVencimento()
 {
     const container = dividaBox.children[0];
 
-    const carray = CreateHashset(dividas, x => {return x.compra.vencimento.dia + "/" + x.compra.vencimento.mes + "/" + x.compra.vencimento.ano;});
+    const carray = CreateHashset(dividas, x => {return StringfyData(x.compra.vencimento);});
     container.innerHTML = "";
 
     for(element in carray) 
