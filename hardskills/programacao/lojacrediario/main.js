@@ -1,5 +1,17 @@
-const registroBox = document.getElementById("registro");
-const cheatBox = document.getElementById("cheat");
+const headers = [
+    document.getElementById("main"),
+    document.getElementById("registro"),
+    document.getElementById("filtro"),
+];
+
+function MudarHeader (n) {
+    let i = 0;
+    headers.forEach(header => {
+        if(i++ != n) header.classList.add("hidden");
+        else header.classList.remove("hidden");
+    });
+}
+
 const comprasBox = document.getElementById("compras");
 const dividaBox = document.getElementById("dividas");
 
@@ -8,6 +20,14 @@ const inputs = [
     document.getElementById("compra-vencimento"),
     document.getElementById("compra-valor"),
 ]
+
+const filters = [
+    document.getElementById("filtro-data-inicial"),
+    document.getElementById("filtro-data-final"),
+    document.getElementById("filtro-valor-min"),
+    document.getElementById("filtro-valor-max"),
+]
+
 const logOutput = document.getElementById("log");
 function ClientLog (text, bool) {
     logOutput.textContent = text;
@@ -15,37 +35,8 @@ function ClientLog (text, bool) {
     logOutput.classList.toggle("sucess", bool);
 }
 
-const cheatSaida = document.getElementById("cheat-saida");
-const cheatEntrada = document.getElementById("cheat-entrada");
-let cheatmode = false;
-function SwitchMode () {
-    cheatmode = !cheatmode;
-    registroBox.classList.toggle("hidden");
-    cheatBox.classList.toggle("hidden");
-}
-
-async function CarregarCompras () {
-    const loaded = JSON.parse(cheatEntrada.value);
-    loaded.forEach(x => {compras.push(x); DesenharCompra (x);});
-}
-
-async function SalvarCompras () {
-    /*let jsontext = compras.reduce((txt, el) => 
-    {
-        jsontext += ;
-    });*/
-    cheatSaida.textContent = JSON.stringify(compras);
-}
-
 const compras = [];
 let dividas = [];
-const diasMes = 
-[
-    31, 28, 31,
-    30, 31, 30,
-    31, 31, 30,
-    31, 30, 31
-];
 
 function Money(num) {
     return num.toLocaleString("pt-br", { style: 'currency', currency: 'BRL' });
@@ -54,7 +45,7 @@ function Money(num) {
 function BoxCompra (compra) 
 {
     return "<span>" +
-                    "<h5>" + compra.vencimento.dia + "/" + compra.vencimento.mes + "/" + compra.vencimento.ano + "</h5>" +
+                    "<h5>" + compra.vencimento.getDate() + "/" + (compra.vencimento.getMonth()+1) + "/" + compra.vencimento.getFullYear() + "</h5>" +
                     "<h4>" + Money(parseInt(compra.valor)) + "</h4>" +
            "</span>";
 }
@@ -63,7 +54,7 @@ function QuadCompra (compra)
 {
     return "<li>" +
                 "<h3>" + compra.cliente + "</h3>" +
-                "<div>" + BoxCompra(compra)  + "</div>" +
+                BoxCompra(compra) +
            "</li>"
     ;
 }
@@ -119,14 +110,21 @@ function ParseData (text)
 {
     const datasplit = text.split("-");
     const d = parseInt(datasplit[2]), m = parseInt(datasplit[1]), a = parseInt(datasplit[0]);
-    return { dia:d, mes:m, ano:a };
+    const dt = new Date(a, m-1, d);
+    return dt;
+}
+
+function AtrasoData (data, vencimento) {
+    return parseInt(data - vencimento);
 }
 
 function RegistrarCompra () 
 {
+    const dt = ParseData(inputs[1].value);
+    console.log(dt);
     var compra = { 
         cliente:inputs[0].value, 
-        vencimento: ParseData(inputs[1].value), 
+        vencimento: dt, 
         valor:inputs[2].value 
     };
 
@@ -138,11 +136,7 @@ function RegistrarCompra ()
     {
         ClientLog("Informe o valor da compra!", false);
         return;
-    } else if (
-        compra.vencimento.ano > dataHoje.getFullYear() || 
-        (compra.vencimento.ano == dataHoje.getFullYear() && compra.vencimento.mes > dataHoje.getMonth()+1) ||
-        (compra.vencimento.ano == dataHoje.getFullYear() && compra.vencimento.mes == dataHoje.getMonth()+1 && compra.vencimento.dia > dataHoje.getDate())
-    )
+    } else if (AtrasoData(dataHoje, compra.vencimento) < 0)
     {
         ClientLog("A data informada não deve ser superior a atual!", false);
         return;
@@ -158,17 +152,12 @@ function RegistrarCompra ()
     DesenharCompra (compra);
 }
 
-let dataVenc = new Date();
 function CalcularDivida () 
 {
     dividas = compras.map(divida => 
     {
         let atraso = 0;
-        const venc = divida.vencimento;
-        dataVenc.setFullYear(venc.ano);
-        dataVenc.setMonth(venc.mes-1);
-        dataVenc.setDate(venc.dia);
-        let ts = parseInt((dataHoje - dataVenc));
+        const ts = AtrasoData(dataHoje, divida.vencimento);
         atraso += ts / (1000 * 60 * 60 * 24);
         const tdivida = atraso > 0 ? mora + (atraso * juroDia) : 0;
         const apagar = divida.valor * tdivida;
@@ -182,8 +171,8 @@ function CalcularDivida ()
         };
     });
 
-    ClientLog("Calculando divida...", false);
     DesenharDivida(dividas);
+    ClientLog("Dividas calculadas!", true);
 }
 
 function CreateHashset (array, keyfunc)
@@ -218,7 +207,7 @@ async function AgruparClientes()
         container.innerHTML += GroupDivida(element, carray[element]);
     }
     //console.log(carray);
-    ClientLog("Agrupado por Cliente", true);
+    ClientLog("Agrupando por Cliente", true);
 }
 
 async function AgruparVencimento()
@@ -234,7 +223,7 @@ async function AgruparVencimento()
         //console.log(carray[element]);
         container.innerHTML += GroupDivida(element, carray[element]);
     }
-    ClientLog("Agrupado por Vencimento", true);
+    ClientLog("Agrupando por Vencimento", true);
     //console.log(carray);
 }
 
@@ -250,12 +239,43 @@ async function DesenharDivida (tab)
     {
         container.innerHTML += QuadDivida(element);
     });
-    ClientLog("divida calculado", true);
+    ClientLog("Mostrando dividas ", true);
 }
 
-async function DesenharCompra (compra)
+function DesenharCompra (compra)
+{
+    comprasBox.children[0].innerHTML += QuadCompra(compra);
+}
+
+function FiltrarDividas () 
+{
+    const mind = filters[0].value, maxd = filters[1].value, minv = filters[2].value, maxv = filters[3].value;
+    const minData = mind != undefined ? ParseData(mind) : undefined;
+    const maxData = maxd != undefined ? ParseData(maxd) : undefined;
+    const minValor = minv != undefined ? parseFloat(minv) : undefined;
+    const maxValor = maxv != undefined ? parseFloat(maxv) : undefined;
+
+    const filt = dividas.filter(divida =>
+    {
+        if(AtrasoData(minData, divida.compra.vencimento) > 0) return false;
+        if(AtrasoData(maxData, divida.compra.vencimento) < 0) return false;
+        if(minValor > divida.compra.valor) return false;
+        if(maxValor < divida.compra.valor) return false;
+        return true;
+    });
+
+    DesenharDivida(filt);
+}
+
+function OpenCompras () 
 {
     comprasBox.classList.remove("hidden");
     dividaBox.classList.add("hidden");
-    comprasBox.children[0].innerHTML += QuadCompra(compra);
+}
+
+async function DesenharCompras (com)
+{
+    OpenCompras ();
+    comprasBox.children[0].innerHTML = "";
+    com.forEach(x=>{DesenharCompra (x);});
 }

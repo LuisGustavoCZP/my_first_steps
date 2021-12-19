@@ -5,8 +5,17 @@
     </head>
     <body>
         <main>
+            <h1>Debitos e Recebimentos</h1>
+            <section id="main" class="header">
+                <span>
+                    <button onclick="MudarHeader (1) & DesenharCompras (compras)">Registrar</button>
+                    <button onclick="MudarHeader (2) & CalcularDivida ()">Analisar</button>
+                    <button onclick="MudarHeader (3) & SalvarCompras () & DesenharCompras (compras)">Salvar/Carregar</button>
+                </span>
+            </section>
             <section id="cheat" class="header hidden">
-                <h2><button onclick="SwitchMode ()"></button>Test Engine</h2>
+                <button onclick="MudarHeader (0)">Voltar</button>
+                <h2><button onclick="TestLoad ()"></button> Salvar e Carregar</h2>
                 <form>
                     <label for="cheat-entrada">Entrada</label>
                     <textarea type="text" name="" id="cheat-entrada" inputmode="latin" placeholder="JSON data text"></textarea>
@@ -16,11 +25,35 @@
                 </form>
                 <span>
                     <button onclick="SalvarCompras ()">Salvar</button>
-                    <button onclick="CarregarCompras ()">Carregar</button>
+                    <button onclick="CarregarCompras (cheatEntrada.value)">Carregar</button>
                 </span>
             </section>
-            <section id="registro" class="header">
-                <h2><button onclick="SwitchMode ()"></button>Registrar Cliente</h2>
+            <section id="filtro" class="header hidden">
+                <button onclick="MudarHeader (0)">Voltar</button>
+                <h2>Analisar e Filtrar</h2>
+                <form>
+                    <label for="filtro-data-inicial">Data Inicial</label>
+                    <input type="date" name="" id="filtro-data-inicial" />
+                    <label for="filtro-data-final">Data Final</label>
+                    <input type="date" name="" id="filtro-data-final" />
+                    <label for="filtro-valor-min">Valor Minimo</label>
+                    <input type="number" name="" id="filtro-valor-min" placeholder="Menor Valor" />
+                    <label for="filtro-valor-max">Valor Maximo</label>
+                    <input type="number" name="" id="filtro-valor-max" placeholder="Maior Valor" />
+                </form>
+                <span>
+                    <button onclick="FiltrarDividas ()">Filtrar</button>
+                    <span>
+                        <h3>Ordenar</h3>
+                        <button onclick="DesenharDivida(dividas)">Padrao</button>
+                        <button onclick="AgruparClientes ()">Cliente</button>
+                        <button onclick="AgruparVencimento ()">Data</button>
+                    </span>
+                </span>
+            </section>
+            <section id="registro" class="header hidden">
+                <button onclick="MudarHeader (0)">Voltar</button>
+                <h2>Registrar Cliente</h2>
                 <form>
                     <label for="compra-cliente">Cliente</label>
                     <input type="text" name="" id="compra-cliente" placeholder="Nome Completo" />
@@ -33,9 +66,7 @@
                 </form>
                 <span>
                     <button onclick="RegistrarCompra ()">Registrar</button>
-                    <button onclick="CalcularDivida ()">Calcular</button>
-                    <button onclick="AgruparClientes ()">Cliente</button>
-                    <button onclick="AgruparVencimento ()">Data</button>
+                    <button onclick="CalcularDivida () & MudarHeader (2)">Calcular</button>
                 </span>
             </section>
             <span id="log"></span>
@@ -50,6 +81,8 @@
                 </ul>
             </section>
         </main>
+        <script src="datamanager.js"></script>
         <script src="main.js"></script>
+        <script src="cheatengine.js"></script>
     </body>
 </html>
